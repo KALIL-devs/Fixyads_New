@@ -103,6 +103,14 @@ const Navbar = () => {
           </Link>
 
           <Link
+            href="/blog"
+            className={styles.navLink}
+            onClick={() => setMenuOpen(false)}
+          >
+            Blog
+          </Link>
+
+          <Link
             href="/contact"
             className="btn btn-primary"
             onClick={() => setMenuOpen(false)}
