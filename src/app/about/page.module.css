@@ -43,11 +43,21 @@
 }
 
 /* ================= IMAGE ================= */
-.imageWrapper {
+/* .imageWrapper {
   width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: var(--radius);
+} */
+
+.imageWrapper {
+  width: 100%;
+  height: 380px;        /* CRITICAL */
+  max-height: 420px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  background: #f2f2f2;
 }
 
 .mainImage {
@@ -178,6 +188,9 @@
 
   .heroTitle {
     font-size: 2.4rem;
+  }
+  .imageWrapper {
+    height: 260px;
   }
 }
 
