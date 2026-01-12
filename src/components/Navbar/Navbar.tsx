@@ -35,7 +35,7 @@ const Navbar = () => {
         {/* LOGO */}
         <Link href="/" onClick={() => setMenuOpen(false)}>
           <img
-            src="/Logo/HeadLogo.png"
+            src="/Logo/Newlogo.png"
             alt="FixyAds Logo"
             className={styles.logoImage}
           />

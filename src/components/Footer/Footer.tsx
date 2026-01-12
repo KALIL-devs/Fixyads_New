@@ -6,7 +6,7 @@ const Footer = () => {
         <footer className={styles.footer}>
             <div className={styles.footerContainer}>
                 <div className={styles.column}>
-                    <img src="Logo/HeadLogo.png" alt="" />
+                    <img src="/Logo/Newlogo.png" alt="" />
                     <p>Transforming businesses with data-driven digital marketing strategies and empowering the next generation with expert training.</p>
                 </div>
 
