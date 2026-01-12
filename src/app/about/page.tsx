@@ -90,7 +90,7 @@ export default function AboutPage() {
       </section>
 
       {/* TEAM */}
-      <section className={`${styles.section} ${styles.teamSection}`}>
+      {/* <section className={`${styles.section} ${styles.teamSection}`}>
         <div className="container">
           <h2 className={styles.teamTitle}>Meet Our Team</h2>
 
@@ -118,7 +118,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }
