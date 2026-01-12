@@ -1,22 +1,27 @@
 /* ================= HERO ================= */
 .hero {
   text-align: center;
-  padding: 4rem 0;
+  padding: 6rem 0;
   background: linear-gradient(135deg, var(--primary), #1a4fd8);
+  background: var(--muted-light);
+  padding: 3rem 0;
+  background: var(--primary);
 }
 
+
 .heroTitle {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #ffffff;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: #111;
+    color: #ffffff;
 }
 
 .heroText {
-  max-width: 720px;
-  margin: 0 auto;
-  font-size: 1.25rem;
-  color: #ffffff;
-  opacity: 0.95;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.25rem;
+    color: var(--muted);
+    color: rgb(255, 255, 255);
 }
 
 /* ================= SECTION ================= */
@@ -151,6 +156,14 @@
 .teamGrid > :last-child:nth-child(odd) {
   grid-column: 1 / -1;
   justify-self: center;
+}
+
+.courseHeroImage {
+  position: relative;
+  height: 340px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
 }
 
 /* ================= RESPONSIVE ================= */

@@ -26,17 +26,13 @@ export default function AboutPage() {
       <section className={styles.section}>
         <div className="container">
           <div className={styles.grid}>
-            <div className={styles.imageWrapper}>
-              <Image
-                src="/aboutus/aboutus.png"
-                alt="Our digital marketing agency team working together"
-                fill
-                quality={90}
-                sizes="(max-width: 768px) 100vw, 50vw"
-                priority
-                className={styles.mainImage}
-              />
-            </div>
+          <div className={styles.courseHeroImage}>
+            <Image
+              src="/aboutus/aboutus.png"
+              alt="Digital Marketing Course"
+              fill
+            />
+          </div>
 
             <div className={styles.content}>
               <h2>Our Story</h2>
