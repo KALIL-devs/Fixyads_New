@@ -1,5 +1,6 @@
 const WP_BASE =
-  "https://public-api.wordpress.com/wp/v2/sites/b5690.wordpress.com";
+  // "https://public-api.wordpress.com/wp/v2/sites/b5690.wordpress.com";
+  "https://public-api.wordpress.com/wp/v2/sites/fixyadscom.wordpress.com";
 
 export async function getPosts() {
   const res = await fetch(
