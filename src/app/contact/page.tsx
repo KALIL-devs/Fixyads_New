@@ -18,28 +18,21 @@ export default function ContactPage() {
                             Have a project in mind or want to enroll in a course? Fill out the form or contact us directly.
                         </p>
 
-                        <div className={styles.infoItem}>
+                        {/* <div className={styles.infoItem}>
                             <h3>📍 Visit Us</h3>
                             <p>123 Business Avenue, Tech City, State, 123456</p>
-                        </div>
+                        </div> */}
 
                         <div className={styles.infoItem}>
                             <h3>📞 Call Us</h3>
-                            <p>+91 98765 43210</p>
-                            <p>+91 98765 43211</p>
+                            <p>+91 84380 83853</p>
+                            {/* <p>+91 98765 43211</p> */}
                         </div>
 
                         <div className={styles.infoItem}>
                             <h3>📧 Email Us</h3>
-                            <p>hello@agency.com</p>
-                            <p>support@agency.com</p>
-                        </div>
-
-                        <div className={styles.map}>
-                            {/* Embed Google Map here */}
-                            <div style={{ width: '100%', height: '100%', background: '#eee', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#aaa' }}>
-                                Google Map Embed
-                            </div>
+                            <p>fixyads@gmail.com</p>
+                            {/* <p>support@agency.com</p> */}
                         </div>
                     </div>
 

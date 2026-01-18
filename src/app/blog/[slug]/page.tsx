@@ -1,12 +1,17 @@
 import { getPostBySlug } from "@/lib/wp-rest";
+import { extractTOC, injectHeadingIds, TOCItem } from "@/lib/toc";
+import TableOfContents from "@/components/TableOfContents/TableOfContents";
 import { notFound } from "next/navigation";
-import styles from "../blog.module.css";
+import styles from "./blog.module.css";
+import Link from "next/link";
 
-type PageProps = {
+/* ---------------- METADATA ---------------- */
+
+export async function generateMetadata({
+  params,
+}: {
   params: Promise<{ slug: string }>;
-};
-
-export async function generateMetadata({ params }: PageProps) {
+}) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
 
@@ -20,7 +25,13 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
-export default async function BlogDetail({ params }: PageProps) {
+/* ---------------- PAGE ---------------- */
+
+export default async function BlogDetail({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
 
@@ -28,17 +39,36 @@ export default async function BlogDetail({ params }: PageProps) {
     notFound();
   }
 
-  return (
-    <article className={`${styles.container} ${styles.section}`}>
-      <h1
-        className={styles.postTitle}
-        dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-      />
+  const rawHtml: string = post.content.rendered;
+  const toc: TOCItem[] = extractTOC(rawHtml);
+  const contentWithIds: string = injectHeadingIds(rawHtml);
 
-      <div
-        className={styles.postContent}
-        dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-      />
-    </article>
+  return (
+    <div>
+      <Link href="/blog" className={styles.backButton}>
+        <span aria-hidden>←</span>
+        Back to Blog
+      </Link>
+      <section className={styles.blogLayout}>
+        {/* Main content */}
+        <article className={styles.blogContent}>
+          <h1
+            className={styles.postTitle}
+            dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+          />
+
+          <div
+            className={styles.postContent}
+            dangerouslySetInnerHTML={{ __html: contentWithIds }}
+          />
+        </article>
+
+        {/* Sidebar */}
+        <aside className={styles.blogSidebar}>
+          <TableOfContents toc={toc} />
+        </aside>
+      </section>
+    </div>
+
   );
 }

@@ -42,6 +42,9 @@ const Footer = () => {
                         <a href="https://www.facebook.com/profile.php?id=61568361441860">
                             <img src="/SocialMedia/facebook.png" alt="" style={{height:'50px', width:'50px'}}/>
                         </a>
+                        <a href="https://www.linkedin.com/company/fixyads/">
+                            <img src="/SocialMedia/linkedin.png" alt="" style={{height:'50px', width:'50px'}}/>
+                        </a>
                     </div>
                 </div>
             </div>

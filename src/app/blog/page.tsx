@@ -12,7 +12,9 @@ export default async function BlogPage() {
       <div className={styles.grid}>
         {posts.map((post: any) => (
           <article key={post.id} className={styles.blogCard}>
-            <h2 dangerouslySetInnerHTML={{ __html: post.title.rendered }} style={{color:'black'}}/>
+            <h2
+              dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+            />
 
             <p
               dangerouslySetInnerHTML={{

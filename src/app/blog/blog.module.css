@@ -42,6 +42,7 @@
   font-weight: 600;
   margin-bottom: 0.75rem;
   line-height: 1.4;
+  color: #111111;
 }
 
 .blogCard p {
@@ -54,7 +55,7 @@
 .readMore {
   display: inline-block;
   padding: 0.6rem 1.2rem;
-  background-color: #2563eb;
+  background-color: var(--primary);
   color: #ffffff;
   border-radius: 6px;
   font-size: 0.9rem;
@@ -63,7 +64,7 @@
 }
 
 .readMore:hover {
-  background-color: #1e40af;
+  background-color: var(--primary);
 }
 
 /* Blog detail page */

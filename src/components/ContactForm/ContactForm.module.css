@@ -1,13 +1,13 @@
 .form {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .formGroup {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.25rem;
 }
 
 .label {
@@ -17,11 +17,11 @@
 
 .input,
 .textarea {
-    padding: 0.75rem;
+    padding: 0.55rem 0.75rem;
     border: 1px solid var(--border);
-    border-radius: var(--radius);
+    border-radius: 10px;
     font-family: inherit;
-    font-size: 1rem;
+    font-size: 0.80rem;
     transition: border-color 0.2s;
 }
 
@@ -33,16 +33,16 @@
 }
 
 .textarea {
-    min-height: 150px;
+    min-height: 100px;
     resize: vertical;
 }
 
 .submitBtn {
     background: var(--primary);
     color: white;
-    padding: 1rem;
+    padding: 0.7rem 1rem;
     border: none;
-    border-radius: var(--radius);
+    border-radius: 10px;
     font-weight: 600;
     font-size: 1rem;
     cursor: pointer;

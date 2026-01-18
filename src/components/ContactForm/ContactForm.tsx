@@ -29,12 +29,13 @@ const ContactForm = () => {
     return (
         <form className={styles.form} onSubmit={handleSubmit}>
             <div className={styles.formGroup}>
-                <label htmlFor="name" className={styles.label}>Full Name</label>
+                {/* <label htmlFor="name" className={styles.label}>Full Name</label> */}
                 <input
                     type="text"
                     id="name"
                     name="name"
                     className={styles.input}
+                    placeholder='Full Name'
                     required
                     value={formData.name}
                     onChange={handleChange}
@@ -42,12 +43,13 @@ const ContactForm = () => {
             </div>
 
             <div className={styles.formGroup}>
-                <label htmlFor="email" className={styles.label}>Email Address</label>
+                {/* <label htmlFor="email" className={styles.label}>Email Address</label> */}
                 <input
                     type="email"
                     id="email"
                     name="email"
                     className={styles.input}
+                    placeholder='Email Address'
                     required
                     value={formData.email}
                     onChange={handleChange}
@@ -55,23 +57,25 @@ const ContactForm = () => {
             </div>
 
             <div className={styles.formGroup}>
-                <label htmlFor="phone" className={styles.label}>Phone Number</label>
+                {/* <label htmlFor="phone" className={styles.label}>Phone Number</label> */}
                 <input
                     type="tel"
                     id="phone"
                     name="phone"
                     className={styles.input}
+                    placeholder='Phone Number'
                     value={formData.phone}
                     onChange={handleChange}
                 />
             </div>
 
             <div className={styles.formGroup}>
-                <label htmlFor="service" className={styles.label}>Interested In</label>
+                {/* <label htmlFor="service" className={styles.label}>Interested In</label> */}
                 <select
                     id="service"
                     name="service"
                     className={styles.input}
+                    required
                     value={formData.service}
                     onChange={handleChange}
                 >
@@ -85,11 +89,12 @@ const ContactForm = () => {
             </div>
 
             <div className={styles.formGroup}>
-                <label htmlFor="message" className={styles.label}>Message</label>
+                {/* <label htmlFor="message" className={styles.label}>Message</label> */}
                 <textarea
                     id="message"
                     name="message"
                     className={styles.textarea}
+                    placeholder='Your Message'
                     required
                     value={formData.message}
                     onChange={handleChange}
