@@ -13,12 +13,12 @@
 
 .breadcrumb {
   max-width: 1200px;
-  margin: 1.5rem auto 0.75rem;
+  margin: 1.5rem auto 0.05rem;
   padding: 0 1rem;
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 
 .breadcrumbLink {
@@ -29,6 +29,7 @@
 
 .breadcrumbLink:hover {
   text-decoration: underline;
+  color: var(--primary);
 }
 
 .breadcrumbSeparator {
