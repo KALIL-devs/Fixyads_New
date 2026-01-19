@@ -1,28 +1,27 @@
 import { TOCItem } from "@/lib/toc";
+import styles from "./blog.module.css";
 
 type TableOfContentsProps = {
   toc: TOCItem[];
 };
 
-export default function TableOfContents({
-  toc,
-}: TableOfContentsProps) {
+export default function TableOfContents({ toc }: TableOfContentsProps) {
   if (!toc || toc.length === 0) return null;
 
   return (
-    <aside>
+    <nav aria-label="Table of contents">
       <h3>Table of Contents</h3>
 
       <ul>
-        {toc.map((item, index) => (
+        {toc.map((item) => (
           <li
-            key={index}
-            style={{ marginLeft: (item.level - 2) * 16 }}
+            key={item.id}
+            className={`tocItem tocLevel${item.level}`}
           >
             <a href={`#${item.id}`}>{item.text}</a>
           </li>
         ))}
       </ul>
-    </aside>
+    </nav>
   );
 }

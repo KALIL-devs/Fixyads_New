@@ -1,0 +1,22 @@
+/* =========================================================
+   TOC LEVEL INDENTATION
+========================================================= */
+
+.tocItem {
+  position: relative;
+}
+
+/* h2 */
+.tocLevel2 {
+  padding-left: 0;
+}
+
+/* h3 */
+.tocLevel3 {
+  padding-left: 1rem;
+}
+
+/* h4 (future-proof) */
+.tocLevel4 {
+  padding-left: 2rem;
+}
