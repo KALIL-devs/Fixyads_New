@@ -1,44 +1,103 @@
+/* ---------- PAGE WRAPPER ---------- */
+
+.pageWrapper {
+  width: 100%;
+  background: #ffffff;
+}
+
+/* ---------- BREADCRUMB ---------- */
+
+.breadcrumb {
+  max-width: 1200px;
+  margin: 2rem auto 1rem;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.breadcrumbLink {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.breadcrumbLink:hover {
+  text-decoration: underline;
+  color: var(--primary);
+}
+
+.breadcrumbSeparator {
+  color: #aaa;
+}
+
+.breadcrumbCurrent {
+  color: #555;
+  font-weight: 400;
+}
+
 /* ---------- BLOG LAYOUT ---------- */
 
 .blogLayout {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem 3rem;
   display: grid;
-  grid-template-columns: 3fr 1fr;
-  gap: 2rem;
+  grid-template-columns: minmax(0, 720px) 1fr;
+  gap: 3rem;
+  align-items: start;
 }
 
 /* ---------- CONTENT ---------- */
 
 .blogContent {
-  background: #ffffff;
+  width: 100%;
 }
 
 .postTitle {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
+  font-size: 3rem;
+  font-weight: 800;
   line-height: 1.2;
-  color: black;
+  margin-bottom: 2rem;
+  color: #0f172a;
 }
 
 .postContent {
-  font-size: 1rem;
-  line-height: 1.8;
-  color: #222;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: #374151;
 }
 
+/* Headings */
+
 .postContent h2 {
-  margin-top: 2.5rem;
+  margin-top: 3rem;
   margin-bottom: 1rem;
-  font-size: 1.25rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f172a;
+  position: relative;
+}
+
+.postContent h2::before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  top: 6px;
+  width: 4px;
+  height: 70%;
+  background: var(--primary);
+  border-radius: 4px;
 }
 
 .postContent h3 {
-  margin-top: 2rem;
+  margin-top: 2.25rem;
   margin-bottom: 0.75rem;
   font-size: 1.35rem;
+  font-weight: 600;
+  color: #1f2937;
 }
 
 .postContent p {
@@ -50,20 +109,20 @@
 .blogSidebar {
   position: sticky;
   top: 100px;
-  align-self: start;
 }
 
 .blogSidebar aside {
   border: 1px solid #e5e7eb;
-  padding: 1rem;
-  border-radius: 6px;
+  padding: 1.5rem;
+  border-radius: 12px;
   background: #fafafa;
-  color: black;
 }
 
 .blogSidebar h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #0f172a;
 }
 
 .blogSidebar ul {
@@ -73,77 +132,66 @@
 }
 
 .blogSidebar li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 }
 
 .blogSidebar a {
-  font-size: 0.95rem;
-  color: gray;
+  font-size: 0.9rem;
+  color: #4b5563;
   text-decoration: none;
+  line-height: 1.4;
 }
 
 .blogSidebar a:hover {
-  text-decoration: underline;
+  color: var(--primary);
 }
 
 /* ---------- RESPONSIVE ---------- */
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .blogLayout {
     grid-template-columns: 1fr;
   }
 
   .blogSidebar {
     position: static;
-    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .postTitle {
+    font-size: 2.2rem;
+  }
+
+  .postContent {
+    font-size: 1rem;
   }
 }
 
 
-/* ---------- BACK BUTTON ---------- */
+/* ---------- CTA CARD ---------- */
 
-.backButton {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-top: 1rem;
-  margin-left: 1rem;
+.ctaCard {
+  margin-top: 2rem;
+  padding: 1.75rem;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #fde7d0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
 
-  padding: 0.45rem 0.85rem;
-  margin-bottom: 1.5rem;
-
-  font-size: 0.9rem;
-  font-weight: 500;
-
+.ctaCard h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
   color: var(--primary);
-  background-color: #ffffff;
-  border: 1px solid var(--primary);
-  border-radius: 6px;
-
-  text-decoration: none;
-  line-height: 1;
-
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease,
-    transform 0.15s ease,
-    box-shadow 0.15s ease;
 }
 
-.backButton:hover {
-  background-color: var(--primary);
-  color: #ffffff;
-  text-decoration: none;
-  transform: translateX(-2px);
-  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+.ctaCard p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
 }
 
-.backButton:active {
-  transform: translateX(0);
-  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
-}
 
-.backButton:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-}

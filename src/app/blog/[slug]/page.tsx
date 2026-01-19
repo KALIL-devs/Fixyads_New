@@ -44,13 +44,21 @@ export default async function BlogDetail({
   const contentWithIds: string = injectHeadingIds(rawHtml);
 
   return (
-    <div>
-      <Link href="/blog" className={styles.backButton}>
-        <span aria-hidden>←</span>
-        Back to Blog
-      </Link>
+    <div className={styles.pageWrapper}>
+      {/* Breadcrumb */}
+      <nav className={styles.breadcrumb}>
+        <Link href="/blog" className={styles.breadcrumbLink}>
+          Blog
+        </Link>
+        <span className={styles.breadcrumbSeparator}>/</span>
+        <span
+          className={styles.breadcrumbCurrent}
+          dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+        />
+      </nav>
+
       <section className={styles.blogLayout}>
-        {/* Main content */}
+        {/* Main Content */}
         <article className={styles.blogContent}>
           <h1
             className={styles.postTitle}
@@ -64,11 +72,21 @@ export default async function BlogDetail({
         </article>
 
         {/* Sidebar */}
-        <aside className={styles.blogSidebar}>
-          <TableOfContents toc={toc} />
-        </aside>
+        {toc.length > 0 && (
+          <aside className={styles.blogSidebar}>
+              <TableOfContents toc={toc} />
+
+              {/* CTA Card */}
+              <div className={styles.ctaCard}>
+                <h4>Need help with Digital Marketing?</h4>
+                <p>Let our experts grow your business.</p>
+                <Link href="/contact" className="btn btn-primary" style={{color: "white"}}>
+                  Get a Free Quote
+                </Link>
+              </div>
+            </aside>
+        )}
       </section>
     </div>
-
   );
 }
