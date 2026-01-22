@@ -107,7 +107,7 @@ const Navbar = () => {
             className={styles.navLink}
             onClick={() => setMenuOpen(false)}
           >
-            Blog
+            Blogs
           </Link>
 
           <Link

@@ -2,6 +2,10 @@
    TOC LEVEL INDENTATION
 ========================================================= */
 
+.toc{
+
+}
+
 .tocItem {
   position: relative;
 }

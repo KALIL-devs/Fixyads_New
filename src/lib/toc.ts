@@ -14,7 +14,7 @@ function slugify(text: string): string {
 
 /* ---------- EXTRACT TOC ---------- */
 export function extractTOC(html: string): TOCItem[] {
-  const regex = /<h([2-4])[^>]*>(.*?)<\/h\1>/gi;
+  const regex = /<h([2])[^>]*>(.*?)<\/h\1>/gi;
   const toc: TOCItem[] = [];
 
   let match: RegExpExecArray | null;

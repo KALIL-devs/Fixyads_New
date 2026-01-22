@@ -125,10 +125,15 @@
 /* ---------- TOC ---------- */
 
 .tocCard {
-  border: 1px solid #e5e7eb;
-  background: #fafafa;
-  padding: 1.25rem 1.25rem 1.5rem;
-  border-radius: 14px;
+  /* border: 1px solid #e5e7eb; */
+  /* background: #fafafa; */
+    padding: 1.25rem 1.25rem 1.5rem;
+    border-radius: 14px;
+    /* padding: 1.75rem; */
+    border-radius: 16px;
+    background: linear-gradient(180deg, #fff7ed, #ffffff);
+    border: 1px solid #fed7aa;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 .tocCard h3 {

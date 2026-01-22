@@ -9,7 +9,7 @@ export default function TableOfContents({ toc }: TableOfContentsProps) {
   if (!toc || toc.length === 0) return null;
 
   return (
-    <nav aria-label="Table of contents">
+    <nav aria-label="Table of contents" className={styles.toc}>
       <h3>Table of Contents</h3>
 
       <ul>
