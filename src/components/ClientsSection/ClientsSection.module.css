@@ -1,0 +1,60 @@
+.clientsSection {
+  padding: 20px 24px;
+  background-color: #fff; /* single soft background */
+  margin: 30px auto 50px auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 56px;
+  letter-spacing: -0.4px;
+}
+
+/* .heading {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+} */
+
+.clientsGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 64px;
+  align-items: center;
+  justify-items: center;
+}
+
+/* LOGO CONTAINER — NO BOX */
+.clientLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: grayscale(100%);
+  opacity: 0.75;
+  transition: all 0.25s ease;
+}
+
+.clientLogo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* NORMAL LOGOS */
+.logo {
+  max-width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* WIDE LOGOS */
+.wideLogo .logo {
+  max-width: 190px;
+}

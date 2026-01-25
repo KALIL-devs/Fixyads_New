@@ -7,6 +7,7 @@ import HowWeWork from '@/components/HowWeWork/HowWeWork';
 import WhyChooseFixyAds from "@/components/WhyChooseFixyAds/WhyChooseFixyAds";
 import StatsBar from "@/components/StatsBar/StatsBar";
 import CoursesTraining from "@/components/CoursesTraining/CoursesTraining";
+import ClientsSection from "@/components/ClientsSection/ClientsSection";
 
 export default function Home() {
   return (
@@ -89,6 +90,8 @@ export default function Home() {
           </section>
         </div>
       </div>
+
+      <ClientsSection />
       
       <div className={styles.howwework}>
         <HowWeWork />
