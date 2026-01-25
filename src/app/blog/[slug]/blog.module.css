@@ -131,18 +131,18 @@
     border-radius: 14px;
     /* padding: 1.75rem; */
     border-radius: 16px;
-    background: linear-gradient(180deg, #fff7ed, #ffffff);
-    border: 1px solid #fed7aa;
+    background: linear-gradient(180deg, #8cb9b6, #8ec5c1);
+    border: 1px solid var(--primary);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 .tocCard h3 {
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-bottom: 1rem;
-  color: #0f172a;
+  color: #1f2022;
 }
 
 .tocCard ul {
@@ -157,13 +157,13 @@
 
 .tocCard a {
   font-size: 0.9rem;
-  color: #4b5563;
+  color: #2d2f32;
   text-decoration: none;
   line-height: 1.5;
 }
 
 .tocCard a:hover {
-  color: var(--primary);
+  text-decoration: underline;
 }
 
 /* ---------- CTA ---------- */

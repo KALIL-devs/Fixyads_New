@@ -1,60 +1,60 @@
 .clientsSection {
-  padding: 20px 24px;
-  background-color: #fff; /* single soft background */
-  margin: 30px auto 50px auto;
+  padding: 72px 24px;
+  background-color: #ffffff;
 }
 
 .title {
   text-align: center;
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 700;
-  color: #0f172a;
+  /* color: #0f172a; */
+  color: var(--primary);
   margin-bottom: 56px;
-  letter-spacing: -0.4px;
+  letter-spacing: -0.3px;
 }
 
-/* .heading {
-  text-align: center;
-  font-size: 36px;
-  font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 10px;
-} */
-
 .clientsGrid {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 64px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 56px;
   align-items: center;
   justify-items: center;
 }
 
-/* LOGO CONTAINER — NO BOX */
+/* LOGO WRAPPER */
 .clientLogo {
   display: flex;
   align-items: center;
   justify-content: center;
   filter: grayscale(100%);
-  opacity: 0.75;
-  transition: all 0.25s ease;
+  opacity: 0.6;
+  transition: opacity 0.25s ease, filter 0.25s ease;
 }
 
 .clientLogo:hover {
   filter: grayscale(0%);
   opacity: 1;
-  transform: translateY(-2px);
 }
 
-/* NORMAL LOGOS */
+/* LOGO IMAGE */
 .logo {
-  max-width: 150px;
+  max-width: 160px;
   height: auto;
   object-fit: contain;
 }
 
 /* WIDE LOGOS */
 .wideLogo .logo {
-  max-width: 190px;
+  max-width: 200px;
+}
+
+.clientname{
+  /* text-align: center; */
+  font-size: 15px;
+  font-weight: 600;
+  color: #6a6565;
+  /* margin-bottom: 56px;
+  letter-spacing: -0.3px; */
 }
