@@ -31,7 +31,8 @@
   background: #ffffff;
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid #e5e7eb;
+  border: 1px solid #615959;
+  padding: 0px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -47,12 +48,13 @@
   height: 200px;
   object-fit: cover;
   display: block;
+  border-radius: 12px 12px 0px 0px;
 }
 
 /* Body */
 
 .cardBody {
-  padding: 1.5rem;
+  padding: 0.8rem;
 }
 
 .cardTitle {

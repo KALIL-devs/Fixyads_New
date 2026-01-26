@@ -22,6 +22,7 @@ export default function ClientsSection() {
   return (
     <section className={styles.clientsSection}>
       <h2 className={styles.title}>Trusted by Our Clients</h2>
+      <link rel="stylesheet" href="" />
         <div className={styles.clientsGrid}>
           {clients.map((client) => (
             <div>

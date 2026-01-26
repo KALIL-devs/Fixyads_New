@@ -39,29 +39,31 @@ export default async function BlogPage() {
               )}
 
               {/* Content */}
-              <div className={styles.cardBody}>
-                <h2
-                  className={styles.cardTitle}
-                  dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-                />
+              <Link href={`/blog/${post.slug}`}>
+                <div className={styles.cardBody}>
+                  <h2
+                    className={styles.cardTitle}
+                    dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+                  />
 
-                <p className={styles.cardExcerpt}>
-                  {limitWords(post.excerpt.rendered)}
-                </p>
+                  <p className={styles.cardExcerpt}>
+                    {limitWords(post.excerpt.rendered)}
+                  </p>
 
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className={styles.readMore}
-                  style={{color: "var(--primary)"}}
-                >
-                  Read article →
-                </Link>
-              </div>
+                  {/* <Link
+                    href={`/blog/${post.slug}`}
+                    className={styles.readMore}
+                    style={{color: "var(--primary)"}}
+                  >
+                    Read article →
+                  </Link> */}
+                </div>                
+              </Link>
+
             </article>
           );
         })}
       </div>
     </section>
   );
-    
 }

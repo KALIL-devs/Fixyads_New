@@ -131,13 +131,14 @@
     border-radius: 14px;
     /* padding: 1.75rem; */
     border-radius: 16px;
-    background: linear-gradient(180deg, #8cb9b6, #8ec5c1);
+    /* background: linear-gradient(180deg, var(--primary)); */
+    /* background: var(--primary); */
     border: 1px solid var(--primary);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 .tocCard h3 {
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -156,7 +157,7 @@
 }
 
 .tocCard a {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: #2d2f32;
   text-decoration: none;
   line-height: 1.5;

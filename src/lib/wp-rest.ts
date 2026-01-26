@@ -5,7 +5,7 @@ const WP_BASE =
 /* Get all posts (list page) */
 export async function getAllPosts() {
   const res = await fetch(
-    `${WP_BASE}/posts?per_page=10&_embed`,
+    `${WP_BASE}/posts?per_page=10&_embed`, 
     { next: { revalidate: 3600 } }
   );
 
