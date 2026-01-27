@@ -10,12 +10,12 @@ type Client = {
 const clients: Client[] = [
   { name: "Tahrshop", logo: "/Clients/Tahrshop.png" },
   { name: "Nexvyon", logo: "/Clients/Nexvyon.png" },
-  { name: "Charvi Boutique", logo: "/Clients/logo.png" },
-  {
-    name: "Koothan Infotech",
-    logo: "/Clients/koothan.png",
-    wide: true,
-  },
+  { name: "Symphony Bali Spa", logo: "/Clients/logo.png" },
+  // {
+  //   name: "Koothan Infotech",
+  //   logo: "/Clients/koothan.png",
+  //   wide: true,
+  // },
 ];
 
 export default function ClientsSection() {
