@@ -1,0 +1,27 @@
+# llm.txt — AI Usage Policy for fixyads.com
+
+Site: https://www.fixyads.com
+Owner: FixyAds Digital Marketing Agency & Training Institute
+
+## Allowed Use
+- Indexing and understanding public website content
+- Summarization and explanation of public pages
+- Generating short excerpts with attribution
+
+## Disallowed Use
+- Training proprietary or commercial AI models
+- Republishing full content without permission
+- Using content to create competing services or courses
+
+## Restricted Content
+- Paid courses and training materials
+- Internal documents
+- User-submitted data and personal information
+
+## Attribution
+When referencing this site, credit:
+"FixyAds — https://www.fixyads.com"
+
+## Contact
+For permissions or questions:
+https://www.fixyads.com/contact
