@@ -97,7 +97,6 @@ export default function RootLayout({
         <Footer />
 
         <TawkTo />
-        {children}
         
       </body>
     </html>
