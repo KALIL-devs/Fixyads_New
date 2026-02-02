@@ -12,12 +12,12 @@ const ContactForm = () => {
         message: ''
     });
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Handle form submission logic here
-        alert('Thank you for your message! We will get back to you soon.');
-        console.log(formData);
-    };
+    // const handleSubmit = (e: React.FormEvent) => {
+    //     e.preventDefault();
+    //     // Handle form submission logic here
+    //     alert('Thank you for your message! We will get back to you soon.');
+    //     console.log(formData);
+    // };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData({
@@ -25,6 +25,42 @@ const ContactForm = () => {
             [e.target.name]: e.target.value
         });
     };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+
+        try {
+            const res = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await res.json();
+
+            if (!res.ok) {
+                alert(data.error || 'Something went wrong');
+                return;
+            }
+
+            alert('Thank you! We will contact you soon.');
+
+            // reset form
+            setFormData({
+                name: '',
+                email: '',
+                phone: '',
+                service: '',
+                message: ''
+            });
+
+        } catch (err) {
+            alert('Server error. Try again later.');
+        }
+    };
+
 
     return (
         <form className={styles.form} onSubmit={handleSubmit}>

@@ -3,9 +3,11 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import FloatingQuote from "@/components/FloatingQuote/FloatingQuote";
+import TawkTo from "@/components/TawkTo/TawkTo";
 import "./globals.css";
 import Script from "next/script";
 import { FAQPage, WithContext } from "schema-dts";
+
 
 
 const geistSans = Geist({
@@ -93,6 +95,10 @@ export default function RootLayout({
           <FloatingQuote />
         </main>
         <Footer />
+
+        <TawkTo />
+        {children}
+        
       </body>
     </html>
   );
