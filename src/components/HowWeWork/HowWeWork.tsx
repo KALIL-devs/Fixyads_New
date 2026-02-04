@@ -27,7 +27,7 @@ export default function HowWeWork() {
             <div className={styles.content}>
               {/* <span className={styles.stepNo}>01</span> */}
               <h3>Understand</h3>
-              <p>Understand your business goals, target audience, market trends, and digital marketing gaps through detailed research.</p>
+              <p>We begin with a deep exploration of your business objectives, audience behavior, market dynamics, and existing digital gaps. This research-led approach gives us a strategic understanding of your opportunities and challenges.</p>
             </div>
           </div>
 
@@ -36,16 +36,16 @@ export default function HowWeWork() {
             <div className={styles.content}>
               {/* <span className={styles.stepNo}>02</span> */}
               <h3>Strategize</h3>
-              <p>Strategize SEO, branding, content, and social media marketing plans tailored to your growth objectives.</p>
+              <p>Our focus is to craft a clear and purposeful roadmap for sustainable digital growth. Based on these insights, we design a digital marketing plan aligned with your brand vision and commercial goals.</p>
             </div>
           </div>
-
+          
           <div className={styles.step}>
             <div className={styles.circle}>03</div>
             <div className={styles.content}>
               {/* <span className={styles.stepNo}>03</span> */}
               <h3>Deliver Results</h3>
-              <p>Execute campaigns, measure performance, optimize tactics, and deliver measurable digital marketing results.</p>
+              <p>We bring the strategy to life through precise execution and continuous performance tracking. Every action is refined to maximize impact and deliver measurable, long-term results.</p>
             </div>
           </div>
         </div>

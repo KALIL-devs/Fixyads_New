@@ -2,8 +2,9 @@
    TOC LEVEL INDENTATION
 ========================================================= */
 
-.toc{
-  /* background-color: var(--primary); */
+
+.bg{
+  background-color: #fff;
 }
 
 .tocItem {

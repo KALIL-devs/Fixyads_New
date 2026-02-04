@@ -13,8 +13,8 @@ const courses = [
     icon: <FaCode />,
   },
   {
-    title: "Placement Support",
-    description: "Placement support with resume building, interview preparation, portfolio guidance, mock interviews, and career assistance tools.",
+    title: "Web Design",
+    description: "Learn web design from basics to advanced with UI/UX, Figma, HTML, CSS, and responsive design. Work on real projects to create modern, creative, and mobile-friendly websites.",
     icon: <FaBriefcase />,
   },
 ];
@@ -23,9 +23,9 @@ export default function CoursesTraining() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <h2 className={styles.heading}>Courses & Training</h2>
+        <h2 className={styles.heading}>Skills That Shape Your Career</h2>
         <p className={styles.subheading}>
-          Learn digital skills with practical, job-ready training
+          Real-time, practical learning crafted for individual growth and career success.
         </p>
 
         <div className={styles.cards}>

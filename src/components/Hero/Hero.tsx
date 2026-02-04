@@ -14,24 +14,25 @@ const Hero = () => {
         <div className={styles.container2}>
           
           <div className={styles.content}>
-          <h1 className={styles.title} style={{margin:'0px'}}>AI-Driven </h1>
+          <h1 className={styles.title} style={{margin:'0px'}}>AI-Based</h1>
+            
             <h1 className={styles.title}>
-              <span className={styles.orangehighlight}>Digital Marketing</span> to{' '}
-              <span className={styles.highlight}>Build</span>{' '}
-              <span className={styles.orangehighlight}>Strong Brands</span>
+              <span className={styles.orangehighlight}>Digital Marketing</span>{' '}
+              <span className={styles.highlight}>Company</span>{' '}
+              {/* <span className={styles.orangehighlight}>Strong Brands</span> */}
             </h1>
 
             <p className={styles.description}>
-              Expert Digital Marketing, Branding, and Social Media Marketing solutions built for measurable growth.
+              We are the best digital marketing company providing affordable services to boost online visibility, generate high-quality leads, and increase revenue.
             </p>
 
             <div className={styles.actions}>
               <Link href="/contact" className="btn btn-primary">
                 Free Marketing Audit
               </Link>
-              <Link href="/courses/digital-marketing" className="btn btn-outline">
+              {/* <Link href="/courses/digital-marketing" className="btn btn-outline">
                 Access Free Demo
-              </Link>
+              </Link> */}
             </div>
           </div>
 
