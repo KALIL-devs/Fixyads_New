@@ -1,6 +1,8 @@
 const WP_BASE =
   // "https://public-api.wordpress.com/wp/v2/sites/devs68.wordpress.com";
   "https://public-api.wordpress.com/wp/v2/sites/fixyadscom.wordpress.com";
+  //"https://public-api.wordpress.com/wp/v2/sites/symphonybalispa-ervhc.wordpress.com";
+
 
 /* Get all posts (list page) */
 export async function getAllPosts() {
