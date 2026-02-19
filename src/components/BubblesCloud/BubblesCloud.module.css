@@ -1,7 +1,10 @@
+/* ---------------- Wrapper ---------------- */
+
 .wrapper {
   position: relative;
-  width: 120%;
-  height: 420px;
+  width: 100%;
+  height: 460px;
+  overflow: visible; /* important */
 }
 
 /* ---------------- Bubble ---------------- */
@@ -9,22 +12,18 @@
 .bubble {
   position: absolute;
   border-radius: 50%;
-  background: white;
+  background: #ffffff;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   cursor: pointer;
 
-  --float-y: 0px;
-  --scale: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-  transform: translateY(var(--float-y)) scale(var(--scale));
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-
-  animation-name: float;
-  animation-timing-function: linear; /* key change */
-  animation-iteration-count: infinite;
+  animation: float 6s ease-in-out infinite;
 }
 
 /* Icon */
@@ -35,11 +34,9 @@
   pointer-events: none;
 }
 
-/* ---------------- Hover Effect ---------------- */
-
+/* Hover (desktop only) */
 .bubble:hover {
-  --scale: 1.35;
-  --float-y: -18px;
+  transform: scale(1.15);
   z-index: 10;
   box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
 }
@@ -48,47 +45,50 @@
 
 @keyframes float {
   0% {
-    --float-y: 0px;
+    transform: translateY(0);
   }
   50% {
-    --float-y: -12px;
+    transform: translateY(-10px);
   }
   100% {
-    --float-y: 0px;
+    transform: translateY(0);
   }
 }
 
-/* ---------------- Mobile Optimization ---------------- */
+/* ---------------- Mobile Grid ---------------- */
+
 @media (max-width: 768px) {
   .wrapper {
-    width: 100%;
+    position: relative;
     height: auto;
-    min-height: 360px;
 
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-    padding: 16px;
+    gap: 14px;
+
+    overflow: visible; /* important */
   }
 
   .bubble {
-    position: relative;
-    width: 80px !important;
-    height: 80px !important;
+    position: static;   /* remove absolute */
+    width: 85px;
+    height: 85px;
 
-    animation: none; /* no floating on mobile */
-    transform: scale(1);
-    margin: auto;
+    animation: none;
+    transform: none;
   }
 
-  /* Tap feedback */
+  .bubble:hover {
+    transform: none;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  }
+
   .bubble:active {
-    transform: scale(1.12);
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+    transform: scale(1.06);
   }
 
   .bubble img {
-    width: 58%;
-    height: 58%;
+    width: 55%;
+    height: 55%;
   }
 }

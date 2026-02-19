@@ -8,7 +8,6 @@ interface Bubble {
   size: number;
   top: number;
   left: number;
-  floatRange: string;
   floatDuration: string;
   floatDelay: string;
 }
@@ -26,8 +25,9 @@ const bubbleImages = [
   '/bubbles/googleads.png',
 ];
 
-const MAX_ATTEMPTS = 50;
-const MIN_GAP = 14;
+const MAX_ATTEMPTS = 100;
+const FIXED_SIZE = 100; // same size for desktop
+const MIN_GAP = 18;
 
 const BubblesCloud = () => {
   const [bubbles, setBubbles] = useState<Bubble[]>([]);
@@ -35,48 +35,42 @@ const BubblesCloud = () => {
   useEffect(() => {
     const placed: Bubble[] = [];
 
-    bubbleImages.forEach((img) => {
-      const size = Math.floor(Math.random() * 40) + 70;
+    const cols = 4;  // control horizontal spread
+    const rows = 3;  // control vertical spread
 
-      let bubble: Omit<Bubble, 'floatRange' | 'floatDuration' | 'floatDelay'>;
-      let attempts = 0;
+    const cellWidth = 100 / cols;
+    const cellHeight = 100 / rows;
 
-      do {
-        bubble = {
-          img,
-          size,
-          top: Math.random() * 80,
-          left: Math.random() * 80,
-        };
+    let index = 0;
 
-        attempts++;
-      } while (
-        attempts < MAX_ATTEMPTS &&
-        placed.some((b) => {
-          const dx = (bubble.left - b.left) * 5;
-          const dy = (bubble.top - b.top) * 5;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-          return distance < (bubble.size + b.size) / 2 + MIN_GAP;
-        })
-      );
+    for (let r = 0; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        if (index >= bubbleImages.length) break;
 
-      placed.push({
-        ...bubble,
-        floatRange: `${Math.random() * 10 + 8}px`,
-        floatDuration: `${Math.random() * 4 + 5}s`,
-        floatDelay: `${Math.random() * 2}s`,
-      });
-    });
+        const randomOffsetX = Math.random() * (cellWidth * 0.4);
+        const randomOffsetY = Math.random() * (cellHeight * 0.4);
+
+        placed.push({
+          img: bubbleImages[index],
+          size: FIXED_SIZE,
+          left: c * cellWidth + randomOffsetX,
+          top: r * cellHeight + randomOffsetY,
+          floatDuration: `${Math.random() * 4 + 6}s`,
+          floatDelay: `${Math.random() * 2}s`,
+        });
+
+        index++;
+      }
+    }
 
     setBubbles(placed);
   }, []);
 
-  // 🚨 Prevent hydration mismatch
   if (bubbles.length === 0) return null;
 
   return (
     <div className={styles.wrapper}>
-      {bubbles.map((bubble, index) => (
+      {bubbles.slice(0, 9).map((bubble, index) => (
         <div
           key={index}
           className={styles.bubble}
@@ -85,9 +79,8 @@ const BubblesCloud = () => {
             height: bubble.size,
             top: `${bubble.top}%`,
             left: `${bubble.left}%`,
-            ['--float-range' as any]: bubble.floatRange,
-            ['--float-duration' as any]: bubble.floatDuration,
-            ['--float-delay' as any]: bubble.floatDelay,
+            animationDuration: bubble.floatDuration,
+            animationDelay: bubble.floatDelay,
           }}
         >
           <img src={bubble.img} alt="Bubble icon" />

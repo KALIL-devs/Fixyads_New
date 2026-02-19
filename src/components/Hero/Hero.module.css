@@ -148,4 +148,8 @@
     flex-direction: column;
     gap: 0.75rem;
   }
+
+  /* .imageWrapper{
+    display: none;
+  } */
 }

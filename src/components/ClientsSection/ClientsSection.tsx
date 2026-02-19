@@ -26,13 +26,13 @@ export default function ClientsSection() {
               client.wide ? styles.wideLogo : ""
             }`}
           >
-            <Image
-              src={client.logo}
-              alt={client.name}
-              width={160}
-              height={80}
-              className={styles.logo}
-            />
+          <Image
+            src={client.logo}
+            alt={client.name}
+            width={200}
+            height={100}
+            className={styles.logo}
+          />
             <h4 className={styles.clientname}>{client.name}</h4>
           </div>
         ))}

@@ -22,7 +22,6 @@ export default function Home() {
             <p className={styles.sectionSubtitleblack}>
               As a results-focused digital marketing company, we deliver end-to-end digital marketing solutions designed to help businesses improve conversion rates, and achieve consistent revenue growth across competitive markets.
             </p>
-
             <div className={styles.grid}>
 
               <ServiceCard
