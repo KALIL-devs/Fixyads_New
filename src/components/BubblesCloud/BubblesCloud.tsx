@@ -22,7 +22,7 @@ const bubbleImages = [
   '/bubbles/lighthouse.png',
   '/bubbles/aistudio.png',
   '/bubbles/notebook.png',
-  '/bubbles/googleads.png',
+  // '/bubbles/googleads.png',
 ];
 
 const FIXED_SIZE = 100;

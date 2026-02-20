@@ -139,7 +139,9 @@
 
 /* Grid improvement for small screens */
 .grid {
+  display: grid;
   gap: 2rem;
+  grid-template-columns: repeat(2, 1fr); /* Default: 2 cards on mobile */
 }
 
 /* Tablets */
@@ -151,10 +153,9 @@
 }
 
 /* Mobile */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .sectionSubtitleblack,

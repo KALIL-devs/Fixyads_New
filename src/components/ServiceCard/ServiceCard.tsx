@@ -17,11 +17,11 @@ const ServiceCard = ({ title, description, icon, link }: ServiceCardProps) => {
       <div className={styles.iconWrapper}>
         <div className={styles.icon}>{icon}</div>
       </div>
-
-      {/* Content */}
-      <h3 className={styles.title}>{title}</h3>
-      <p className={styles.description}>{description}</p>
-
+      <div className={styles.content}>
+        {/* Content */}
+        <h3 className={styles.title}>{title}</h3>
+        <p className={styles.description}>{description}</p>
+      </div>
       {/* Arrow */}
       <div className={styles.arrowBtn}>↗</div>
     </Link>
