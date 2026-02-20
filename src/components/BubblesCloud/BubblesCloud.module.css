@@ -1,48 +1,55 @@
-/* ---------------- Wrapper ---------------- */
-
 .wrapper {
   position: relative;
   width: 100%;
-  height: 460px;
-  overflow: visible; /* important */
+  height: 100%;
+  min-height: 420px;
+  /* overflow: hidden; */
 }
 
-/* ---------------- Bubble ---------------- */
-
+/* Bubble container */
 .bubble {
   position: absolute;
+  transition: transform 0.15s ease-out, box-shadow 0.25s ease;
+  will-change: transform;
+  z-index: 3;
+}
+
+/* Bubble UI */
+.float {
+  width: 100%;
+  height: 100%;
+
   border-radius: 50%;
   background: #ffffff;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 
+  position: relative;
+  z-index: 2;
+
   display: flex;
   align-items: center;
   justify-content: center;
-
-  cursor: pointer;
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
+  
   animation: float 6s ease-in-out infinite;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 /* Icon */
-.bubble img {
+.float img {
   width: 60%;
   height: 60%;
   object-fit: contain;
   pointer-events: none;
 }
 
-/* Hover (desktop only) */
-.bubble:hover {
-  transform: scale(1.15);
+/* Hover effect */
+.bubble:hover .float {
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.35);
+  transform: scale(1.12);
   z-index: 10;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.25);
 }
 
-/* ---------------- Floating Animation ---------------- */
-
+/* Floating animation */
 @keyframes float {
   0% {
     transform: translateY(0);
@@ -55,39 +62,29 @@
   }
 }
 
-/* ---------------- Mobile Grid ---------------- */
+/* ---------------- Mobile ---------------- */
 
 @media (max-width: 768px) {
   .wrapper {
-    position: relative;
-    height: auto;
-
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 14px;
-
-    overflow: visible; /* important */
+    height: auto;
   }
 
   .bubble {
-    position: static;   /* remove absolute */
+    position: static;
     width: 85px;
     height: 85px;
+    transform: none !important;
+    z-index: 1;
+  }
 
+  .float {
     animation: none;
-    transform: none;
   }
 
-  .bubble:hover {
-    transform: none;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-  }
-
-  .bubble:active {
-    transform: scale(1.06);
-  }
-
-  .bubble img {
+  .float img {
     width: 55%;
     height: 55%;
   }
