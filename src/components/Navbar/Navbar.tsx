@@ -57,7 +57,7 @@ const Navbar = () => {
 
           <Link href="/" className={styles.navLink}>Home</Link>
 
-          {/* SERVICES */}
+          {/* services */}
           <div className={`${styles.dropdown} ${openDropdown === 'services' ? styles.open : ''}`}>
             <span className={styles.navLink} onClick={(e) => toggleDropdown(e, 'services')}>
               Services ▾

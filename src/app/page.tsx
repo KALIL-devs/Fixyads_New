@@ -30,7 +30,7 @@ export default function Home() {
                 Every detail, from visuals to messaging, is designed to tell your story with clarity and impact.
                 A compelling brand instills confidence in your business,turning that trust into lasting customer loyalty."
                 icon="🔍"
-                link="/Services/search-engine-optimization"
+                link="/services/search-engine-optimization"
               />
 
               <ServiceCard
@@ -39,7 +39,7 @@ export default function Home() {
                 We use precise keyword strategies, technical expertise, and high-quality content to support your visibility.
                 This brings steady, relevant organic traffic to your website."
                 icon="🔍"
-                link="/Services/search-engine-optimization"
+                link="/services/search-engine-optimization"
               />
 
               <ServiceCard
@@ -48,7 +48,7 @@ export default function Home() {
                 Our campaigns target high-intent users, driving meaningful engagement and conversions.
                 Every ad is meticulously optimized to maximize ROI and efficiency."
                 icon="📱"
-                link="/Services/social-media-marketing"
+                link="/services/social-media-marketing"
               />
 
               <ServiceCard
@@ -57,7 +57,7 @@ export default function Home() {
                 We create content that answers real questions and addresses real needs of business.
                 It strengthens your SEO while keeping visitors engaged turning attention into lasting brand connections."
                 icon="🎨"
-                link="/Services/content-branding"
+                link="/services/content-branding"
               />
 
               <ServiceCard
@@ -66,7 +66,7 @@ export default function Home() {
                 and bidding strategies to improve performance.This minimizes wasted spend while increasing conversions giving 
                 you clear insight into what performs and where to scale."
                 icon="🌐"
-                link="/Services/web-development"
+                link="/services/web-development"
               />
 
               <ServiceCard
@@ -95,7 +95,7 @@ export default function Home() {
                 introduce your business to new communities. The focus remains on meaningful engagement 
                 rather than surface-level reach, so your brand feels trusted, relevant, and real."
                 icon="🤝"
-                link="/Services/influencer-marketing"
+                link="/services/influencer-marketing"
               />
 
               <ServiceCard
@@ -104,7 +104,7 @@ export default function Home() {
                 that deliver real outcomes. We help structure and manage affiliate programs designed for measurable growth. 
                 You pay only when results are achieved, making it a scalable and cost-efficient channel for expanding your business."
                 icon="⭐"
-                link="/Services/content-marketing"
+                link="/services/content-marketing"
               />
 
               <ServiceCard
@@ -114,7 +114,7 @@ export default function Home() {
                 Built with SEO, usability, and conversions in mind, your website becomes a powerful asset that 
                 supports marketing and business growth."
                 icon="⭐"
-                link="/Services/content-marketing"
+                link="/services/content-marketing"
               />
 
             </div>
