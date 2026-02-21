@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <Hero />
 
-      <div className={styles.servicebg}>
+      <div className={styles.servicebg} id="services">
         <div className={styles.servicebg1}>
         {/* Services Section */}
           <section className="section container" >

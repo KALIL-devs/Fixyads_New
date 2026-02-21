@@ -1,0 +1,68 @@
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* 404 number */
+.code {
+  font-size: 80px;
+  font-weight: 700;
+  color: #119c90;
+  margin-bottom: 10px;
+}
+
+/* Title */
+.title {
+  font-size: 28px;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+/* Description */
+.description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 25px;
+  max-width: 400px;
+}
+
+/* Buttons container */
+.actions {
+  display: flex;
+  gap: 15px;
+}
+
+/* Primary button */
+.primaryBtn {
+  background: #119c90;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.primaryBtn:hover {
+  opacity: 0.85;
+}
+
+/* Secondary button */
+.secondaryBtn {
+  border: 2px solid #fc7922;
+  color: #fc7922;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.secondaryBtn:hover {
+  background: #fc7922;
+  color: #fff;
+}
