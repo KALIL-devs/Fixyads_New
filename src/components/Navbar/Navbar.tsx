@@ -81,7 +81,7 @@ const Navbar = () => {
             <div className={styles.dropdownMenu}>
               <Link href="/courses/digital-marketing" onClick={closeAllMenus}>Digital Marketing</Link>
               <Link href="/courses/web-development" onClick={closeAllMenus}>Web Development</Link>
-              <Link href="/courses/placement-Support" onClick={closeAllMenus}>Placement Support</Link>
+              <Link href="/courses/placement-support" onClick={closeAllMenus}>Placement Support</Link>
             </div>
           </div>
 
