@@ -64,11 +64,11 @@ const Navbar = () => {
             </span>
 
             <div className={styles.dropdownMenu}>
-              <Link href="/Services/search-engine-optimization" onClick={closeAllMenus}>SEO</Link>
-              <Link href="/Services/social-media-marketing" onClick={closeAllMenus}>SMM</Link>
-              <Link href="/Services/content-branding" onClick={closeAllMenus}>Content & Branding</Link>
-              <Link href="/Services/web-development" onClick={closeAllMenus}>Web Development</Link>
-              <Link href="/Services/influencer-marketing" onClick={closeAllMenus}>Influencer Marketing</Link>
+              <Link href="/services/search-engine-optimization" onClick={closeAllMenus}>SEO</Link>
+              <Link href="/services/social-media-marketing" onClick={closeAllMenus}>SMM</Link>
+              <Link href="/services/content-branding" onClick={closeAllMenus}>Content & Branding</Link>
+              <Link href="/services/web-development" onClick={closeAllMenus}>Web Development</Link>
+              <Link href="/services/influencer-marketing" onClick={closeAllMenus}>Influencer Marketing</Link>
             </div>
           </div>
 
@@ -81,7 +81,7 @@ const Navbar = () => {
             <div className={styles.dropdownMenu}>
               <Link href="/courses/digital-marketing" onClick={closeAllMenus}>Digital Marketing</Link>
               <Link href="/courses/web-development" onClick={closeAllMenus}>Web Development</Link>
-              <Link href="/courses/Placement-Support" onClick={closeAllMenus}>Placement Support</Link>
+              <Link href="/courses/placement-Support" onClick={closeAllMenus}>Placement Support</Link>
             </div>
           </div>
 
