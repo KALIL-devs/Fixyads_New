@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import styles from "../Services.module.css";
+// import styles from "../Services.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import faqStyles from "./Faq.module.css";
+import Styles from "./SeoPage.module.css";
 
 export const metadata: Metadata = {
   title: "SEO Services | Rank Higher & Grow Organic Traffic",
@@ -22,9 +22,9 @@ export default function ServicesPage() {
   return (
     <>
       {/* Hero Section with Image */}
-      <section className={styles.seoHero}>
-        <div className={styles.seoHeroGrid}>
-          <div className={styles.seoHeroContent}>
+      <section className={Styles.seoHero}>
+        <div className={Styles.seoHeroGrid}>
+          <div className={Styles.seoHeroContent}>
             <p>Turn Website Visitors Into Paying Clients</p>
             <h1>Leading Search Engine Optimization Company</h1>
             <p>
@@ -39,7 +39,7 @@ export default function ServicesPage() {
           </div>
 
           {/* Image */}
-          <div className={styles.seoHeroImage}>
+          <div className={Styles.seoHeroImage}>
             <Image
               src="/services/seo.png"
               alt="SEO analytics and growth dashboard"
@@ -51,12 +51,12 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Overview */}
-      <section className={styles.section}>
-        <div className={styles.container}>
-          <h2 className={styles.sectionTitle}>Our End to End SEO Services to Meet Your Business Needs</h2>
+      <section className={Styles.section}>
+        <div className={Styles.container}>
+          <h2 className={Styles.sectionTitle}>Our End to End SEO Services to Meet Your Business Needs</h2>
 
-          <div className={styles.grid}>
-            <div className={styles.card}>
+          <div className={Styles.grid}>
+            <div className={Styles.card}>
               <h3>Website SEO Audit</h3>
               <p>
                 Your growth starts with clarity. Our Website SEO Audit identifies exactly what is limiting your search 
@@ -67,7 +67,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className={styles.card}>
+            <div className={Styles.card}>
               <h3>On-Page SEO</h3>
               <p>
                 Traffic alone isn’t enough, it needs to convert. Our On-Page SEO strategy aligns your content with real search 
@@ -77,7 +77,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className={styles.card}>
+            <div className={Styles.card}>
               <h3>Technical SEO</h3>
               <p>
                 Search engines reward fast, structured, and accessible websites. We optimize page speed, mobile responsiveness, 
@@ -87,7 +87,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className={styles.card}>
+            <div className={Styles.card}>
               <h3>Off-Page SEO</h3>
               <p>
                 Authority builds trust, and trust drives conversions. Our Off-Page SEO approach focuses on acquiring high-quality backlinks, 
@@ -96,7 +96,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className={styles.card}>
+            <div className={Styles.card}>
               <h3>Local SEO</h3>
               <p>
                 If your customers are searching locally, you need to dominate local results. We optimize your Google Business Profile, 
@@ -105,7 +105,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className={styles.card}>
+            <div className={Styles.card}>
               <h3>SEO Reporting & Analytics</h3>
               <p>
                 Marketing should be measurable. Our detailed SEO reports provide transparent insights into keyword rankings, 
@@ -164,10 +164,10 @@ export default function ServicesPage() {
       </section> */}
 
       {/* Business Value Section - Alternate Layout */}
-      <section className={faqStyles.valueSection}>
-        <div className={faqStyles.container}>
+      <section className={Styles.valueSection}>
+        <div className={Styles.container}>
 
-          <div className={faqStyles.valueHeader}>
+          <div className={Styles.valueHeader}>
             <h2>
               Boost Your Business Potential with a Search Engine Optimization Company
             </h2>
@@ -181,9 +181,9 @@ export default function ServicesPage() {
             </p>
           </div>
 
-          <div className={faqStyles.valueList}>
+          <div className={Styles.valueList}>
 
-            <div className={faqStyles.valueItem}>
+            <div className={Styles.valueItem}>
               <h3>Increase Visibility & Attract Ready-to-Buy Customers</h3>
               <p>
                 SEO places your business at the top of search results, connecting you with customers 
@@ -192,7 +192,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className={faqStyles.valueItem}>
+            <div className={Styles.valueItem}>
               <h3>Turn Traffic into Revenue</h3>
               <p>
                 SEO brings qualified visitors who are more likely to convert. 
@@ -201,7 +201,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className={faqStyles.valueItem}>
+            <div className={Styles.valueItem}>
               <h3>Build Trust & Brand Authority</h3>
               <p>
                 Websites that rank higher are often viewed as more credible. 
@@ -209,7 +209,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className={faqStyles.valueItem}>
+            <div className={Styles.valueItem}>
               <h3>Achieve Long-Term Marketing ROI</h3>
               <p>
                 SEO delivers sustainable growth. Once your rankings improve, your website continues 
@@ -217,7 +217,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className={faqStyles.valueItem}>
+            <div className={Styles.valueItem}>
               <h3>Stay Ahead of Competitors</h3>
               <p>
                 If competitors rank above you, they capture your potential customers. A strategic SEO 
@@ -229,15 +229,92 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* AI SEO Features Section */}
+      <section className={Styles.aiFeatures}>
+        <div className={Styles.container}>
+
+          <div className={Styles.centerHeader}>
+            <h2>Dominate AI Search with Our Smart AI SEO Solutions</h2>
+            <p>
+              Search is changing with AI-powered algorithms from platforms like Google. Businesses must focus on 
+              user intent and smart optimization to stay competitive. Fixyads deliver AI SEO strategies that improve 
+              visibility, drive targeted traffic, and boost rankings with data-driven precision.
+            </p>
+          </div>
+
+          <div className={Styles.featureGrid}>
+
+            <div>
+              <h3>AI Search Optimization</h3>
+              <p>
+                We optimize your website for AI-powered search engines by aligning content with user intent, 
+                structured data, and conversational queries.
+              </p>
+            </div>
+
+            <div>
+              <h3>Semantic SEO</h3>
+              <p>
+                We improve rankings by focusing on topic depth, search intent, and meaningful keyword relationships 
+                rather than simple keyword repetition.
+              </p>
+            </div>
+
+            <div>
+              <h3>Entity & Context SEO</h3>
+              <p>
+                Fixyads strengthen content relevance by optimizing around entities (people, brands, places, concepts) 
+                and contextual signals recognized by search engines.
+              </p>
+            </div>
+
+            <div>
+              <h3>AI Algorithm-Based SEO</h3>
+              <p>
+                We adapt strategies according to AI ranking systems such as Google RankBrain and Google BERT to improve 
+                visibility and organic performance.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* AI SEO Services Section */}
+      <section className={Styles.aiSection}>
+        <div className={Styles.container}>
+
+          <div className={Styles.aiGrid}>
+
+            <div className={Styles.aiContent}>
+              <h2>AI SEO Services</h2>
+              <p>
+                AI SEO Services help businesses improve their search engine rankings using intelligent automation, 
+                advanced data analysis, and smart content strategies. By using AI-driven tools, brands can achieve 
+                better visibility on any search engine and attract highly targeted organic traffic. Fixyads deliver 
+                result-focused AI SEO solutions that combine technical expertise with data-driven insights to maximize 
+                search performance. Our team focuses on smarter keyword targeting, optimized content structure, and 
+                continuous performance monitoring to help businesses grow faster in competitive digital markets.
+              </p>
+
+              <a href="/contact" className="btn primary-btn" style={{ marginTop: "20px" }}>
+                Talk To Our Expert
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
-      <section className={faqStyles.faqSection}>
-        <div className={faqStyles.container}>
+      <section className={Styles.faqSection}>
+        <div className={Styles.container}>
 
-          <h2 className={faqStyles.faqTitle}>Frequently Asked Questions</h2>
+          <h2 className={Styles.faqTitle}>Frequently Asked Questions</h2>
 
-          <div className={faqStyles.faqList}>
+          <div className={Styles.faqList}>
 
-            <div className={faqStyles.faqItem}>
+            <div className={Styles.faqItem}>
               <h3>Why should I choose Fixyads for SEO services?</h3>
               <p>
                 Fixyads is more than an SEO agency; we act as your long-term digital growth partner. 
@@ -247,7 +324,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className={faqStyles.faqItem}>
+            <div className={Styles.faqItem}>
               <h3>How much do SEO services cost at Fixyads?</h3>
               <p>
                 Every business is different, and so is every SEO strategy. Our pricing depends on your industry competition, 
@@ -256,7 +333,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className={faqStyles.faqItem}>
+            <div className={Styles.faqItem}>
               <h3>How long does it take to see real SEO results?</h3>
               <p>
                 SEO is a strategic investment, not a quick fix. While early improvements can appear within a few months, 
@@ -265,7 +342,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className={faqStyles.faqItem}>
+            <div className={Styles.faqItem}>
               <h3>Can SEO genuinely increase leads and revenue?</h3>
               <p>
                 Absolutely. SEO attracts users who are already searching for what you offer. 
@@ -274,7 +351,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className={faqStyles.faqItem}>
+            <div className={Styles.faqItem}>
               <h3>How do I know which SEO strategy fits my business?</h3>
               <p>
                 There is no one-size-fits-all solution in SEO. After understanding your business model, audience, and objectives, 
@@ -283,7 +360,7 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className={faqStyles.faqItem}>
+            <div className={Styles.faqItem}>
               <h3>Why continue SEO after reaching top rankings?</h3>
               <p>
                 Search rankings are competitive and constantly shifting. Competitors improve, algorithms update, 
@@ -296,8 +373,20 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* AI CTA Banner */}
+      <section className={Styles.aiCta}>
+        <div className={Styles.container}>
+          <h2>Turn Searches into Sales</h2>
+          <p>Professional SEO services that deliver measurable results.</p>
+
+          <a href="/contact" className="btn btn-secondary" style={{ marginTop: "20px" }}>
+            Request a Strategy Call
+          </a>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className={styles.cta}>
+      {/* <section className={styles.cta}>
         <div className={styles.container}>
           <h2>Ready to Dominate Search Results?</h2>
           <p>
@@ -307,7 +396,7 @@ export default function ServicesPage() {
             Talk to an Expert
           </Link>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }
