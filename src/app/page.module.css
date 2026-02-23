@@ -22,11 +22,12 @@
 
 .sectionSubtitleblack{
   text-align: center;
-  color: black;
-  max-width: 75%;
+  color: rgb(46, 46, 46);
+  max-width: 100%;
   margin: 0 auto 2rem;
   font-size: 1.125rem;
 }
+
 
 .grid {
   display: grid;
@@ -127,7 +128,7 @@
 /* Headings scale properly */
 .sectionTitleblack,
 .sectionTitle {
-  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  font-size: clamp(1.8rem, 5vw, 2rem);
 }
 
 /* Subtitle scales */

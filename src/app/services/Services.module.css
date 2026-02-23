@@ -52,13 +52,13 @@
   text-align: center;
   font-size: 2rem;
   margin-bottom: 3rem;
-  color: #0f172a;
+  color: #0f766e;
 }
 
 /* Grid */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 2rem;
 }
 
@@ -538,3 +538,4 @@
     grid-template-columns: 1fr;
   }
 }
+

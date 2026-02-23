@@ -18,7 +18,7 @@ export default function Home() {
         <div className={styles.servicebg1}>
         {/* Services Section */}
           <section className="section container" >
-            <h2 className={styles.sectionTitleblack}><span style={{color: '#119c90'}}> Scale Your Online Presence with Military Grade Digital Marketing Services </span></h2>
+            <h2 className={styles.sectionTitleblack}><span style={{color: '#12978c'}}> Scale Your Online Presence with Military Grade Digital Marketing Services </span></h2>
             <p className={styles.sectionSubtitleblack}>
               As a results-focused digital marketing company, we deliver end-to-end digital marketing solutions designed to help businesses improve conversion rates, and achieve consistent revenue growth across competitive markets.
             </p>

@@ -176,10 +176,17 @@ p {
   padding: 0 var(--container-padding);
 }
 
+
+
 .section {
-  padding: 5rem 0; /* Adjusted slightly */
+  padding: 4rem 0; /* Adjusted slightly */
 }
 
+@media (max-width: 480px) {
+  .section{
+    padding: 1rem;
+  }
+}
 
 /* =========================================================================
    6. BUTTONS & INTERACTION

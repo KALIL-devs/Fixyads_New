@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import styles from "../Services.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import faqStyles from "./Faq.module.css";
 
 export const metadata: Metadata = {
   title: "SEO Services | Rank Higher & Grow Organic Traffic",
@@ -24,10 +25,13 @@ export default function ServicesPage() {
       <section className={styles.seoHero}>
         <div className={styles.seoHeroGrid}>
           <div className={styles.seoHeroContent}>
-            <h1>SEO Services That Drive Real Growth</h1>
+            <p>Turn Website Visitors Into Paying Clients</p>
+            <h1>Leading Search Engine Optimization Company</h1>
             <p>
-              Rank higher on Google, attract quality traffic, and convert visitors
-              into customers with our proven SEO strategies.
+              We help businesses attract the right audience and convert traffic into real customer inquiries. 
+              Our SEO services strengthen your search visibility, improve rankings, and drive consistent, high-intent 
+              visitors to your website. With a focused strategy and continuous optimization, we support steady growth 
+              and measurable results for your brand.
             </p>
             <Link href="/contact" className='btn primary-btn'>
               Get Free SEO Audit
@@ -49,46 +53,74 @@ export default function ServicesPage() {
       {/* Services Overview */}
       <section className={styles.section}>
         <div className={styles.container}>
-          <h2 className={styles.sectionTitle}>Our SEO Services</h2>
+          <h2 className={styles.sectionTitle}>Our End to End SEO Services to Meet Your Business Needs</h2>
 
           <div className={styles.grid}>
             <div className={styles.card}>
+              <h3>Website SEO Audit</h3>
+              <p>
+                Your growth starts with clarity. Our Website SEO Audit identifies exactly what is limiting your search 
+                visibility and conversions. We analyze your website structure, competitor landscape, keyword positioning, 
+                technical performance, and content gaps to uncover missed revenue opportunities. Instead of guesswork, 
+                you receive a clear, prioritized action plan designed to increase rankings, attract qualified traffic, 
+                and turn visitors into customers.
+              </p>
+            </div>
+
+            <div className={styles.card}>
               <h3>On-Page SEO</h3>
               <p>
-                Keyword optimization, content improvements, meta tags, internal
-                linking, and UX enhancements.
+                Traffic alone isn’t enough, it needs to convert. Our On-Page SEO strategy aligns your content with real search 
+                intent and buyer behavior. We optimize target keywords, enhance content quality, refine meta tags, strengthen 
+                internal linking, and improve user experience across every important page. The result is a website that ranks 
+                higher, engages visitors longer, and drives consistent inquiries and sales.
               </p>
             </div>
 
             <div className={styles.card}>
               <h3>Technical SEO</h3>
               <p>
-                Website speed, mobile optimization, crawlability, indexing,
-                schema markup, and site health fixes.
+                Search engines reward fast, structured, and accessible websites. We optimize page speed, mobile responsiveness, 
+                crawlability, indexing, and structured data implementation to ensure your website performs flawlessly. By removing 
+                technical barriers, we help search engines understand your content clearly and rank it confidently leading to 
+                stronger visibility and sustainable growth.
               </p>
             </div>
 
             <div className={styles.card}>
               <h3>Off-Page SEO</h3>
               <p>
-                High-quality backlinks, brand mentions, and authority building
-                to improve trust and rankings.
+                Authority builds trust, and trust drives conversions. Our Off-Page SEO approach focuses on acquiring high-quality backlinks, 
+                strengthening brand mentions, and building digital credibility within your industry. By improving your domain authority and 
+                online reputation, we position your business as a reliable choice helping you outrank competitors and win more customers.
               </p>
             </div>
 
             <div className={styles.card}>
               <h3>Local SEO</h3>
               <p>
-                Google Business Profile optimization, local citations, and
-                location-based ranking improvements.
+                If your customers are searching locally, you need to dominate local results. We optimize your Google Business Profile, 
+                enhance local citations, manage reviews, and improve location-based keyword targeting. This ensures your business appears 
+                in map listings and local searches driving calls, walk-ins, and high-intent leads from nearby customers ready to take action.
               </p>
             </div>
+
+            <div className={styles.card}>
+              <h3>SEO Reporting & Analytics</h3>
+              <p>
+                Marketing should be measurable. Our detailed SEO reports provide transparent insights into keyword rankings, 
+                organic traffic growth, user behavior, and conversion performance. We track progress, identify new opportunities, 
+                and continuously refine strategies to maximize your return on investment ensuring your SEO delivers real business 
+                impact.
+              </p>
+            </div>
+
           </div>
         </div>
       </section>
 
       {/* Process Section */}
-      <section className={styles.altSection}>
+      {/* <section className={styles.altSection}>
         <div className={styles.container}>
           <h2 className={styles.sectionTitle}>Our SEO Process</h2>
 
@@ -101,8 +133,6 @@ export default function ServicesPage() {
           </ol>
         </div>
       </section>
-
-
       <section className={styles.curriculum}>
         <h2 style={{color:'#119c90'}}>What You’ll Learn</h2>
 
@@ -130,6 +160,139 @@ export default function ServicesPage() {
         </div>
         <div className="text-center" style={{ marginTop: '3rem',}}>
           <Link href="/contact" className="btn btn-primary">Contact us</Link>
+        </div>
+      </section> */}
+
+      {/* Business Value Section - Alternate Layout */}
+      <section className={faqStyles.valueSection}>
+        <div className={faqStyles.container}>
+
+          <div className={faqStyles.valueHeader}>
+            <h2>
+              Boost Your Business Potential with a Search Engine Optimization Company
+            </h2>
+            <p>
+              We follow a structured, data-backed SEO process focused on growing your business. 
+              Our step-by-step approach increases online visibility, attracts the right customers, 
+              and converts search traffic into real revenue.From market analysis and competitor research 
+              to website optimization and local search improvements, every action supports your business 
+              goals. Fixyads focus on stronger rankings, steady growth, and measurable results that help 
+              your business stand out and win more customers.
+            </p>
+          </div>
+
+          <div className={faqStyles.valueList}>
+
+            <div className={faqStyles.valueItem}>
+              <h3>Increase Visibility & Attract Ready-to-Buy Customers</h3>
+              <p>
+                SEO places your business at the top of search results, connecting you with customers 
+                actively looking for your products or services. This leads to higher visibility, consistent 
+                inquiries, and steady lead generation.
+              </p>
+            </div>
+
+            <div className={faqStyles.valueItem}>
+              <h3>Turn Traffic into Revenue</h3>
+              <p>
+                SEO brings qualified visitors who are more likely to convert. 
+                By targeting high-intent keywords and optimizing your website experience, 
+                it helps transform search traffic into real revenue.
+              </p>
+            </div>
+
+            <div className={faqStyles.valueItem}>
+              <h3>Build Trust & Brand Authority</h3>
+              <p>
+                Websites that rank higher are often viewed as more credible. 
+                A strong SEO presence strengthens your brand reputation and builds long-term customer confidence.
+              </p>
+            </div>
+
+            <div className={faqStyles.valueItem}>
+              <h3>Achieve Long-Term Marketing ROI</h3>
+              <p>
+                SEO delivers sustainable growth. Once your rankings improve, your website continues 
+                generating organic traffic and sales without constant advertising costs.
+              </p>
+            </div>
+
+            <div className={faqStyles.valueItem}>
+              <h3>Stay Ahead of Competitors</h3>
+              <p>
+                If competitors rank above you, they capture your potential customers. A strategic SEO 
+                approach strengthens your position and helps your business lead the market.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className={faqStyles.faqSection}>
+        <div className={faqStyles.container}>
+
+          <h2 className={faqStyles.faqTitle}>Frequently Asked Questions</h2>
+
+          <div className={faqStyles.faqList}>
+
+            <div className={faqStyles.faqItem}>
+              <h3>Why should I choose Fixyads for SEO services?</h3>
+              <p>
+                Fixyads is more than an SEO agency; we act as your long-term digital growth partner. 
+                Our team builds customized strategies based on real data, competitor insights, and your 
+                business goals. We focus on improving your visibility on platforms like Google and turning search traffic 
+                into measurable leads, sales, and brand authority.
+              </p>
+            </div>
+
+            <div className={faqStyles.faqItem}>
+              <h3>How much do SEO services cost at Fixyads?</h3>
+              <p>
+                Every business is different, and so is every SEO strategy. Our pricing depends on your industry competition, 
+                website condition, and growth targets. After a detailed website audit, we provide a clear action plan with 
+                transparent pricing, no hidden costs, only result-focused execution.
+              </p>
+            </div>
+
+            <div className={faqStyles.faqItem}>
+              <h3>How long does it take to see real SEO results?</h3>
+              <p>
+                SEO is a strategic investment, not a quick fix. While early improvements can appear within a few months, 
+                strong and stable growth typically develops over 6–12 months. Consistent optimization and quality content 
+                are the keys to sustainable rankings.
+              </p>
+            </div>
+
+            <div className={faqStyles.faqItem}>
+              <h3>Can SEO genuinely increase leads and revenue?</h3>
+              <p>
+                Absolutely. SEO attracts users who are already searching for what you offer. 
+                By optimizing your website for the right keywords and search intent, we help convert organic 
+                visitors into qualified leads and long-term customers.
+              </p>
+            </div>
+
+            <div className={faqStyles.faqItem}>
+              <h3>How do I know which SEO strategy fits my business?</h3>
+              <p>
+                There is no one-size-fits-all solution in SEO. After understanding your business model, audience, and objectives, 
+                our specialists recommend the right combination of technical SEO, content optimization, local SEO, or full-scale 
+                search strategy to deliver maximum impact.
+              </p>
+            </div>
+
+            <div className={faqStyles.faqItem}>
+              <h3>Why continue SEO after reaching top rankings?</h3>
+              <p>
+                Search rankings are competitive and constantly shifting. Competitors improve, algorithms update, 
+                and user behavior changes. Ongoing SEO keeps your brand visible, protects your rankings, and maintains 
+                a steady flow of leads and revenue over time.
+              </p>
+            </div>
+
+          </div>
         </div>
       </section>
 
