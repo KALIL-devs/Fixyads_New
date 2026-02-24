@@ -14,7 +14,6 @@
   background: linear-gradient(135deg, #0f766e, #15b597);
   color: #ffffff;
   padding: 6rem 10rem;
-
 }
 
 .seoHeroGrid {
@@ -281,5 +280,18 @@
 
   .grid {
     grid-template-columns: 1fr;
+  }
+  .seoHero{
+    padding: 6rem 1.5rem;
+  }
+  .seoHeroContent p{
+    margin: 0px auto 20px;
+    font-size: 1rem;
+  }
+  .seoHero{
+    padding-top: 40px;
+  }
+  .seoHeroContent h1{
+    font-size: 2rem;
   }
 }

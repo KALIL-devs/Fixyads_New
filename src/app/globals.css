@@ -4,7 +4,7 @@
 
 :root {
   /* Brand Colors - Directly matched to the Fixyads logo */
-  --primary: #119c90;       /* The vibrant Teal/Green from the logo (main color) */
+  --primary: #0f766e;       /* The vibrant Teal/Green from the logo (main color) */
   --primary-dark: #fff;   /* Darker shade for hover states */
   --secondary: #fff;     /* A rich, complementary deep purple for contrast/secondary actions */
   --accent: #fc7922;       /* An energetic, warm orange for high visibility and focus rings */
