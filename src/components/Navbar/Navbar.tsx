@@ -11,7 +11,7 @@ const Navbar = () => {
   const navRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
-  // Close menu & dropdown when URL changes
+  // Close menu & dropdown on route change
   useEffect(() => {
     setMenuOpen(false);
     setOpenDropdown(null);
@@ -21,11 +21,11 @@ const Navbar = () => {
   const toggleDropdown = (e: React.MouseEvent, name: string) => {
     e.preventDefault();
     e.stopPropagation();
-    if (window.innerWidth > 768) return; 
+    if (window.innerWidth > 768) return;
     setOpenDropdown(openDropdown === name ? null : name);
   };
 
-  // Close on outside click
+  // Close when clicking outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(e.target as Node)) {
@@ -37,7 +37,6 @@ const Navbar = () => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Close menu when any dropdown item is clicked
   const closeAllMenus = () => {
     setMenuOpen(false);
     setOpenDropdown(null);
@@ -57,11 +56,24 @@ const Navbar = () => {
 
           <Link href="/" className={styles.navLink}>Home</Link>
 
-          {/* services */}
-          <div className={`${styles.dropdown} ${openDropdown === 'services' ? styles.open : ''}`}>
-            <span className={styles.navLink} onClick={(e) => toggleDropdown(e, 'services')}>
+          {/* SERVICES */}
+          <div
+            className={`${styles.dropdown} ${openDropdown === 'services' ? styles.open : ''}`}
+            onMouseEnter={() => window.innerWidth > 768 && setOpenDropdown('services')}
+            onMouseLeave={() => window.innerWidth > 768 && setOpenDropdown(null)}
+          >
+            <Link
+              href="/services"
+              className={styles.navLink}
+              onClick={(e) => {
+                if (window.innerWidth <= 768) {
+                  e.preventDefault();
+                  toggleDropdown(e, 'services');
+                }
+              }}
+            >
               Services ▾
-            </span>
+            </Link>
 
             <div className={styles.dropdownMenu}>
               <Link href="/services/search-engine-optimization" onClick={closeAllMenus}>SEO</Link>
@@ -73,10 +85,23 @@ const Navbar = () => {
           </div>
 
           {/* COURSES */}
-          <div className={`${styles.dropdown} ${openDropdown === 'courses' ? styles.open : ''}`}>
-            <span className={styles.navLink} onClick={(e) => toggleDropdown(e, 'courses')}>
+          <div
+            className={`${styles.dropdown} ${openDropdown === 'courses' ? styles.open : ''}`}
+            onMouseEnter={() => window.innerWidth > 768 && setOpenDropdown('courses')}
+            onMouseLeave={() => window.innerWidth > 768 && setOpenDropdown(null)}
+          >
+            <Link
+              href="/courses"
+              className={styles.navLink}
+              onClick={(e) => {
+                if (window.innerWidth <= 768) {
+                  e.preventDefault();
+                  toggleDropdown(e, 'courses');
+                }
+              }}
+            >
               Courses ▾
-            </span>
+            </Link>
 
             <div className={styles.dropdownMenu}>
               <Link href="/courses/digital-marketing" onClick={closeAllMenus}>Digital Marketing</Link>
@@ -90,7 +115,7 @@ const Navbar = () => {
           <Link href="/contact" className="btn btn-primary">Get Free Audit</Link>
         </nav>
 
-        {/* MOBILE MENU BUTTON */}
+        {/* MOBILE BUTTON */}
         <button
           className={styles.mobileMenuBtn}
           onClick={() => setMenuOpen(!menuOpen)}

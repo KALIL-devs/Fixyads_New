@@ -13,10 +13,16 @@ const Footer = () => {
                 <div className={styles.column}>
                     <h3>Services</h3>
                     <ul className={styles.linkList}>
-                        <li><Link href="/services#seo">SEO Optimization</Link></li>
+                        {/* <li><Link href="/services#seo">SEO Optimization</Link></li>
                         <li><Link href="/services#smm">Social Media Marketing</Link></li>
                         <li><Link href="/services#ads">Performance Marketing</Link></li>
-                        <li><Link href="/services#web-dev">Web Development</Link></li>
+                        <li><Link href="/services/influencer-marketing">Web Development</Link></li> */}
+
+                        <li><Link href="/services/search-engine-optimization">SEO</Link></li>
+                        <li><Link href="/services/social-media-marketing">SMM</Link></li>
+                        <li><Link href="/services/content-branding">Content & Branding</Link></li>
+                        <li><Link href="/services/web-development">Web Development</Link></li>
+                        <li><Link href="/services/influencer-marketing">Influencer Marketing</Link></li>
                     </ul>
                 </div>
 
