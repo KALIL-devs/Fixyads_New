@@ -57,6 +57,13 @@ export default function ServicesPage() {
 
           <div className={Styles.grid}>
             <div className={Styles.card}>
+              <div className={Styles.cardImage}>
+                <Image
+                  src="/services/seopage/webseoaudit.png"
+                  alt="Website SEO Audit"
+                  fill
+                />
+              </div>
               <h3>Website SEO Audit</h3>
               <p>
                 Your growth starts with clarity. Our Website SEO Audit identifies exactly what is limiting your search 
@@ -68,6 +75,13 @@ export default function ServicesPage() {
             </div>
 
             <div className={Styles.card}>
+              <div className={Styles.cardImage}>
+                <Image
+                  src="/services/seopage/onpageseo.png"
+                  alt="On-page SEO"
+                  fill
+                />
+              </div>
               <h3>On-Page SEO</h3>
               <p>
                 Traffic alone isn’t enough, it needs to convert. Our On-Page SEO strategy aligns your content with real search 
@@ -78,6 +92,13 @@ export default function ServicesPage() {
             </div>
 
             <div className={Styles.card}>
+              <div className={Styles.cardImage}>
+                <Image
+                  src="/services/seopage/technicalseo.png"
+                  alt="Technical SEO"
+                  fill
+                />
+              </div>
               <h3>Technical SEO</h3>
               <p>
                 Search engines reward fast, structured, and accessible websites. We optimize page speed, mobile responsiveness, 
@@ -88,6 +109,13 @@ export default function ServicesPage() {
             </div>
 
             <div className={Styles.card}>
+              <div className={Styles.cardImage}>
+                <Image
+                  src="/services/seopage/offpageseo.png"
+                  alt="Off-page SEO"
+                  fill
+                />
+              </div>
               <h3>Off-Page SEO</h3>
               <p>
                 Authority builds trust, and trust drives conversions. Our Off-Page SEO approach focuses on acquiring high-quality backlinks, 
@@ -97,6 +125,13 @@ export default function ServicesPage() {
             </div>
 
             <div className={Styles.card}>
+              <div className={Styles.cardImage}>
+                <Image
+                  src="/services/seopage/localseo.png"
+                  alt="Local SEO"
+                  fill
+                />
+              </div>
               <h3>Local SEO</h3>
               <p>
                 If your customers are searching locally, you need to dominate local results. We optimize your Google Business Profile, 
@@ -106,6 +141,13 @@ export default function ServicesPage() {
             </div>
 
             <div className={Styles.card}>
+              <div className={Styles.cardImage}>
+                <Image
+                  src="/services/seopage/report.png"
+                  alt="SEO Reporting & Analytics"
+                  fill
+                />
+              </div>
               <h3>SEO Reporting & Analytics</h3>
               <p>
                 Marketing should be measurable. Our detailed SEO reports provide transparent insights into keyword rankings, 
@@ -301,6 +343,14 @@ export default function ServicesPage() {
                 Talk To Our Expert
               </a>
             </div>
+            <div className={Styles.aiImage}>
+            <Image
+              src="/services/ai-seo.png"
+              alt="AI SEO services"
+              fill
+            />
+           </div>
+
 
           </div>
         </div>
