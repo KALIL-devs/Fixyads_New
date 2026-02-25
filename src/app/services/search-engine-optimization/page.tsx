@@ -325,11 +325,19 @@ export default function ServicesPage() {
       {/* AI SEO Services Section */}
       <section className={Styles.aiSection}>
         <div className={Styles.container}>
+          <div className={Styles.aititle}>
+            <h2>AI SEO Services</h2>
+          </div>
 
           <div className={Styles.aiGrid}>
-
+            <div className={Styles.aiImage}>
+                <Image
+                  src="/services/ai-seo.png"
+                  alt="AI SEO services"
+                  fill
+                />
+            </div>
             <div className={Styles.aiContent}>
-              <h2>AI SEO Services</h2>
               <p>
                 AI SEO Services help businesses improve their search engine rankings using intelligent automation, 
                 advanced data analysis, and smart content strategies. By using AI-driven tools, brands can achieve 
@@ -343,15 +351,6 @@ export default function ServicesPage() {
                 Talk To Our Expert
               </a>
             </div>
-            <div className={Styles.aiImage}>
-            <Image
-              src="/services/ai-seo.png"
-              alt="AI SEO services"
-              fill
-            />
-           </div>
-
-
           </div>
         </div>
       </section>
