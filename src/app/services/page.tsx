@@ -75,8 +75,6 @@ export default function ServicesPage() {
                     </Link>
                 </div>
             </div>
-
-
             </div>
         ))}
       </div>

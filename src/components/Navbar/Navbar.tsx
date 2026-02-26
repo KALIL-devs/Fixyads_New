@@ -76,7 +76,7 @@ const Navbar = () => {
             </Link>
 
             <div className={styles.dropdownMenu}>
-              <Link href="/services/search-engine-optimization" onClick={closeAllMenus}>SEO</Link>
+              <Link href="/search-engine-optimization" onClick={closeAllMenus}>SEO</Link>
               <Link href="/services/social-media-marketing" onClick={closeAllMenus}>SMM</Link>
               <Link href="/services/content-branding" onClick={closeAllMenus}>Content & Branding</Link>
               <Link href="/services/web-development" onClick={closeAllMenus}>Web Development</Link>

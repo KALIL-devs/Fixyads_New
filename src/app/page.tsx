@@ -16,13 +16,13 @@ const services = [
     title: "Branding",
     description: "We craft a brand that commands recognition and trust.Every detail, from visuals to messaging, is designed to tell your story with clarity and impact.A compelling brand instills confidence in your business,turning that trust into lasting customer loyalty.",
     icon: "🔍",
-    link: "/services/search-engine-optimization",
+    link: "/search-engine-optimization",
   },
   {
     title: "Search Engine Optimization (SEO)",
     description: "Your business appears prominently when customers search for your services. We use precise keyword strategies, technical expertise, and high-quality content to support your visibility.This brings steady, relevant organic traffic to your website.",
     icon: "🔍",
-    link: "/services/search-engine-optimization",
+    link: "/search-engine-optimization",
   },
   {
     title: "Search Engine Marketing (SEM)",
@@ -46,13 +46,13 @@ const services = [
     title: "Video Marketing",
     description: "Video allows messages to connect quickly and effectively.We create videos that explain concepts, engage viewers, and encourage action. Ideal for websites, social platforms, and paid campaigns helping your brand stand out in competitive digital spaces.",
     icon: "💬",
-    link: "/services/automation",
+    link: "/search-engine-optimization",
   },
   {
     title: "Email Marketing",
     description: "Email marketing keeps your brand present and relevant to your audience. We design personalized campaigns that feel timely and meaningful rather than intrusive. Automation ensures the right message reaches the right user at the right moment, encouraging stronger engagement and repeat business.",
     icon: "📊",
-    link: "/services/dummy",
+    link: "/search-engine-optimization",
   },
   {
     title: "Influencer Marketing",
@@ -64,7 +64,7 @@ const services = [
     title: "Affiliate Marketing",
     description: "Affiliate marketing extends your reach through performance-based partnerships that deliver real outcomes. We help structure and manage affiliate programs designed for measurable growth. You pay only when results are achieved, making it a scalable and cost-efficient channel for expanding your business.",
     icon: "⭐",
-    link: "/services/content-marketing",
+    link: "/search-engine-optimization",
   },
   {
     title: "Website Development Services",

@@ -74,7 +74,7 @@ export default function WhyChooseFixyAds() {
           </div>
 
           <div className={styles.ctaWrapper}>
-            <a href="#contact" className="btn btn-primary"  style={{color: 'white'}}>
+            <a href="/contact" className="btn btn-primary"  style={{color: 'white'}}>
               Free Marketing Audit Call →
             </a>
           </div>

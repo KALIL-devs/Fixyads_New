@@ -1,10 +1,14 @@
-import type { NextConfig } from "next";
-
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/services/search-engine-optimization',
+        destination: '/search-engine-optimization',
+        permanent: true,
+      }
+    ];
+  },
 };
 
-
-export default nextConfig;
-
+module.exports = nextConfig;

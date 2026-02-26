@@ -33,7 +33,7 @@ export default function ServicesPage() {
               visitors to your website. With a focused strategy and continuous optimization, we support steady growth 
               and measurable results for your brand.
             </p>
-            <Link href="/contact" className='btn primary-btn'>
+            <Link href="/contact" className="btn btn-primary">
               Get Free SEO Audit
             </Link>
           </div>
@@ -347,7 +347,7 @@ export default function ServicesPage() {
                 continuous performance monitoring to help businesses grow faster in competitive digital markets.
               </p>
 
-              <a href="/contact" className="btn primary-btn" style={{ marginTop: "20px" }}>
+              <a href="/contact" className="btn btn-primary" style={{ marginTop: "20px" }}>
                 Talk To Our Expert
               </a>
             </div>
