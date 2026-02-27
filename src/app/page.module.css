@@ -1,28 +1,65 @@
 /* =========================================================================
-   SECTION HEADINGS (Reusable)
+   SERVICES SECTION (MERGE + VISUAL FIX)
+   ========================================================================= */
+
+.serviceBg {
+  position: relative;
+  margin-top: -140px; /* strong overlap */
+  padding: 80px 16px;
+  z-index: 2;
+}
+
+/* Main white card */
+.serviceCardWrapper {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 70px 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+
+  /* depth */
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.12),
+    0 10px 30px rgba(0, 0, 0, 0.06);
+
+  /* visual connection */
+  border-top: 6px solid var(--primary);
+
+  /* smooth hover */
+  transition: transform 0.3s ease;
+}
+
+
+
+.serviceCardWrapper:hover {
+  transform: translateY(-5px);
+}
+
+/* =========================================================================
+   SECTION HEADINGS
    ========================================================================= */
 
 .sectionTitle {
   font-size: clamp(1.8rem, 5vw, 2.5rem);
   text-align: center;
   margin-bottom: var(--space-2);
+  line-height: 1.3;
 }
 
 .sectionSubtitle {
   text-align: center;
-  max-width: 800px;
+  max-width: 600px;
   margin: 0 auto var(--space-8);
   font-size: var(--text-lg);
-  padding: 0 var(--space-2);
-}
-
-/* Variants */
-.light {
-  color: #fff;
+  color: var(--muted);
 }
 
 .dark {
   color: var(--text);
+}
+
+.highlight {
+  color: var(--primary);
 }
 
 /* =========================================================================
@@ -32,7 +69,7 @@
 .grid {
   display: grid;
   gap: var(--space-4);
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
 }
 
 /* =========================================================================
@@ -42,10 +79,10 @@
 .ctaSection {
   background: var(--primary);
   color: #fff;
-  padding: var(--space-8) 0;
+  padding: var(--space-8);
   text-align: center;
   border-radius: var(--radius-lg);
-  margin: var(--space-4) auto;
+  margin: var(--space-6) auto;
 }
 
 .ctaTitle {
@@ -59,6 +96,13 @@
   opacity: 0.9;
   max-width: 600px;
   margin-inline: auto;
+}
+
+.ctaActions {
+  display: flex;
+  gap: var(--space-2);
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* =========================================================================
@@ -93,36 +137,32 @@
 }
 
 /* =========================================================================
-   SECTION BACKGROUNDS
-   ========================================================================= */
-
-.serviceBg {
-  background: var(--muted-light);
-  padding: 0 var(--space-2);
-}
-
-.courses {
-  background: var(--bg);
-}
-
-.highlight {
-  color: var(--primary);
-}
-
-.ctaActions {
-  display: flex;
-  gap: var(--space-2);
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* =========================================================================
    RESPONSIVE FIXES
    ========================================================================= */
 
+@media (max-width: 1024px) {
+  .sectionSubtitle {
+    margin-bottom: var(--space-6);
+  }
+}
+
 @media (max-width: 768px) {
+  .serviceBg {
+    margin-top: -80px;
+    padding: 60px 12px;
+  }
+
+  .serviceCardWrapper {
+    padding: 40px 20px;
+    border-radius: 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
   .ctaSection {
-    padding: var(--space-4);
+    padding: var(--space-5);
   }
 
   .ctaTitle {
@@ -132,14 +172,35 @@
   .ctaText {
     font-size: var(--text-md);
   }
+
+  .ctaActions {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media (max-width: 480px) {
   .sectionTitle {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .sectionSubtitle {
     font-size: 0.95rem;
+  }
+
+  .serviceCardWrapper {
+    padding: 30px 16px;
+  }
+
+  .ctaTitle {
+    font-size: var(--text-xl);
+  }
+
+  .ctaText {
+    font-size: var(--text-sm);
+  }
+
+  .testimonialCard {
+    padding: var(--space-3);
   }
 }

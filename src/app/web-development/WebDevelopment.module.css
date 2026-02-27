@@ -1,0 +1,266 @@
+/* ===============================
+   HERO SECTION
+================================= */
+
+.webHero {
+  background: linear-gradient(135deg, #0f766e, #15b597);
+  color: var(--secondary);
+  padding: 6rem 1.5rem;
+}
+
+.webHeroGrid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.webHeroContent h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  color: var(--muted-light);
+}
+
+.webHeroContent p {
+  font-size: 1.1rem;
+  max-width: 520px;
+  opacity: 0.95;
+  margin-bottom: 2rem;
+  color: var(--muted-light);
+}
+
+.webHeroImage {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+.webHeroImage img {
+  object-fit: cover;
+}
+
+/* ===============================
+   PRIMARY BUTTON
+================================= */
+
+.primaryBtn {
+  background: var(--accent);
+  color: white;
+  padding: 0.8rem 1.75rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 127, 42, 0.35);
+}
+
+/* ===============================
+   COMMON SECTION STYLES
+================================= */
+
+.section {
+  padding: 4.5rem 1.5rem;
+}
+
+.altSection {
+  padding: 4.5rem 1.5rem;
+  background: #f0fdfa;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* .container h2{
+  color: var(--muted-light);
+} */
+
+/* .container p{
+  color: var(--muted-light);
+} */
+
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: var(--primary);
+}
+
+/* ===============================
+   GRID & CARDS
+================================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: var(--secondary);
+  padding: 2.2rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+  border-top: 4px solid var(--primary);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin-bottom: 0.75rem;
+  color: #0f766e;
+}
+
+.card p {
+  color: #475569;
+}
+
+/* ===============================
+   PROCESS
+================================= */
+
+.processList {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 2;
+  color: #334155;
+}
+
+/* ===============================
+   CURRICULUM
+================================= */
+
+.curriculum {
+  background: linear-gradient(180deg, #f8fafc, #ffffff);
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+}
+
+.curriculum h2 {
+  color: #119c90;
+}
+
+.curriculumGrid {
+  max-width: 900px;
+  margin: 2.5rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.curriculumItem {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: white;
+  padding: 1.2rem 1.4rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.curriculumItem span {
+  background: linear-gradient(135deg, #15b597, #0f766e);
+  color: white;
+  font-weight: bold;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.curriculumItem p {
+  font-size: 1.05rem;
+  color: #334155;
+  margin: 0;
+}
+
+.curriculumItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+}
+
+/* ===============================
+   CTA
+================================= */
+
+.cta {
+  background: linear-gradient(135deg, #0f766e, #022c22);
+  color: var(--muted-light);
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 2.2rem;
+}
+
+.cta p {
+  max-width: 650px;
+  margin: 1rem auto 1rem;
+  opacity: 0.95;
+}
+
+.secondaryBtn {
+  display: inline-block;
+  margin-top: 1.75rem;
+  padding: 0.8rem 1.75rem;
+  border-radius: 10px;
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.secondaryBtn:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 900px) {
+  .webHeroGrid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .webHeroContent p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .webHeroImage {
+    height: 280px;
+    margin-top: 3rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .curriculumGrid {
+    grid-template-columns: 1fr;
+  }
+}

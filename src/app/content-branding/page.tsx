@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import styles from "../Services.module.css";
+import styles from "./ContentBranding.module.css";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -132,7 +132,7 @@ export default function ContentBrandingPage() {
             Let our branding experts help you stand out and create lasting
             connections.
           </p>
-          <Link href="/contact" className={styles.secondaryBtn}>
+          <Link href="/contact" className="btn btn-primary">
             Talk to a Branding Expert
           </Link>
         </div>

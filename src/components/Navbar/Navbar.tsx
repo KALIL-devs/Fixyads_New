@@ -77,10 +77,10 @@ const Navbar = () => {
 
             <div className={styles.dropdownMenu}>
               <Link href="/search-engine-optimization" onClick={closeAllMenus}>SEO</Link>
-              <Link href="/services/social-media-marketing" onClick={closeAllMenus}>SMM</Link>
-              <Link href="/services/content-branding" onClick={closeAllMenus}>Content & Branding</Link>
-              <Link href="/services/web-development" onClick={closeAllMenus}>Web Development</Link>
-              <Link href="/services/influencer-marketing" onClick={closeAllMenus}>Influencer Marketing</Link>
+              <Link href="/social-media-marketing" onClick={closeAllMenus}>SMM</Link>
+              <Link href="/content-branding" onClick={closeAllMenus}>Content & Branding</Link>
+              <Link href="/web-development" onClick={closeAllMenus}>Web Development</Link>
+              <Link href="/influencer-marketing" onClick={closeAllMenus}>Influencer Marketing</Link>
             </div>
           </div>
 

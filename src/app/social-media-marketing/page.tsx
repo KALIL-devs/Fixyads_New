@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import styles from "../Services.module.css";
+import styles from "./SocialMediaMarketing.module.css"
 import Link from "next/link";
 import Image from "next/image";
 
@@ -145,7 +145,7 @@ export default function SocialMediaMarketingPage() {
             Let our social media experts turn your followers into loyal
             customers.
           </p>
-          <Link href="/contact" className='btn btn-secondary' style={{marginTop: '35px'}}>
+          <Link href="/contact" className='btn btn-primary' style={{marginTop: '35px'}}>
             Talk to a Social Media Expert
           </Link>
         </div>

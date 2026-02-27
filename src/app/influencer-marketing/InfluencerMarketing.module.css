@@ -1,0 +1,326 @@
+/* ===============================
+   HERO SECTION
+================================= */
+
+.influencerHero {
+  padding: 6rem 1.5rem;
+  background: var(--primary);
+  color: white;
+}
+
+.influencerGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.influencerContent h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.influencerContent p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 500px;
+}
+
+/* ===============================
+   IMAGE GRID
+================================= */
+
+/* Image Stack */
+.influencerImages {
+  position: relative;
+  height: 420px;
+}
+
+.influencerImage {
+  position: absolute;
+  width: 220px;
+  height: 280px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+.influencerImage:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.influencerImage:nth-child(2) {
+  top: 60px;
+  left: 160px;
+}
+
+.influencerImage:nth-child(3) {
+  top: 130px;
+  left: 60px;
+}
+
+/* ===============================
+   PRIMARY BUTTON
+================================= */
+
+.primaryBtn {
+  background: #ff7f2a;
+  color: white;
+  padding: 0.85rem 1.8rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 127, 42, 0.4);
+}
+
+/* ===============================
+   SECTIONS
+================================= */
+
+.section {
+  padding: 4.5rem 1.5rem;
+}
+
+.altSection {
+  padding: 4.5rem 1.5rem;
+  background: #f9fafb;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  color: #111827;
+}
+
+/* ===============================
+   GRID & CARDS
+================================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: white;
+  padding: 2.2rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+  border-top: 4px solid #ff7f2a;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  margin-bottom: 0.75rem;
+  color: #111827;
+}
+
+.card p {
+  color: #4b5563;
+}
+
+/* ===============================
+   PROCESS
+================================= */
+
+.processList {
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 2;
+  color: #374151;
+}
+
+/* ===============================
+   CURRICULUM
+================================= */
+
+.curriculum {
+  background: linear-gradient(180deg, #f8fafc, #ffffff);
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+}
+
+.curriculumGrid {
+  max-width: 900px;
+  margin: 2.5rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.curriculumItem {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: white;
+  padding: 1.2rem 1.4rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.curriculumItem span {
+  background: linear-gradient(135deg, #ff7f2a, #fb923c);
+  color: white;
+  font-weight: bold;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.curriculumItem p {
+  font-size: 1.05rem;
+  color: #374151;
+  margin: 0;
+}
+
+.curriculumItem:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+}
+
+/* ===============================
+   CTA
+================================= */
+
+.cta {
+  background: var(--primary);
+  color: white;
+  padding: 4.5rem 1.5rem;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: 2.2rem;
+}
+
+.cta p {
+  max-width: 650px;
+  margin: 1rem auto 1rem;
+  opacity: 0.9;
+}
+
+.secondaryBtn {
+  display: inline-block;
+  margin-top: 1.75rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: 10px;
+  background: transparent;
+  border: 2px solid #ff7f2a;
+  color: #ff7f2a;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.secondaryBtn:hover {
+  background: #ff7f2a;
+  color: white;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+
+@media (max-width: 1024px) {
+  .influencerGrid {
+    gap: 2rem;
+  }
+
+  .influencerContent h1 {
+    font-size: 2.3rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .influencerGrid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .influencerContent p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .influencerImages {
+    position: static;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .influencerImage {
+    position: relative;
+    width: 30%;
+    height: 180px;
+  }
+
+  .influencerImage:nth-child(1),
+  .influencerImage:nth-child(2),
+  .influencerImage:nth-child(3) {
+    top: auto;
+    left: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .influencerHero {
+    padding: 4rem 1.2rem;
+  }
+
+  .influencerContent h1 {
+    font-size: 1.9rem;
+  }
+
+  .influencerContent p {
+    font-size: 1rem;
+  }
+
+  .influencerImage {
+    height: 150px;
+  }
+
+  .section {
+    padding: 3.5rem 1.2rem;
+  }
+
+  .altSection {
+    padding: 3.5rem 1.2rem;
+  }
+
+  .curriculumGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta h2 {
+    font-size: 1.8rem;
+  }
+}

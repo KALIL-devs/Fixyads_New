@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import styles from "../Services.module.css";
+import styles from "./WebDevelopment.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -29,7 +29,7 @@ export default function WebDevelopmentPage() {
               We build high-performance, scalable, and user-friendly websites
               that convert visitors into customers.
             </p>
-            <Link href="/contact" className={styles.primaryBtn}>
+            <Link href="/contact" className="btn btn-primary">
               Start Your Project
             </Link>
           </div>
@@ -141,7 +141,7 @@ export default function WebDevelopmentPage() {
             Let our developers turn your idea into a high-performing digital
             product.
           </p>
-          <Link href="/contact" className={styles.secondaryBtn}>
+          <Link href="/contact" className="btn btn-primary">
             Talk to a Developer
           </Link>
         </div>

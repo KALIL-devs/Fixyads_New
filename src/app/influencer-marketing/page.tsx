@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import styles from "../Services.module.css";
+import styles from "./InfluencerMarketing.module.css";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -28,7 +28,7 @@ export default function InfluencerMarketingPage() {
               Collaborate with trusted creators to amplify your brand message
               and connect with audiences that truly care.
             </p>
-            <Link href="/contact" className={styles.primaryBtn}>
+            <Link href="/contact" className="btn btn-primary">
               Launch a Campaign
             </Link>
           </div>
@@ -156,7 +156,7 @@ export default function InfluencerMarketingPage() {
             Let us connect your brand with creators who truly influence buying
             decisions.
           </p>
-          <Link href="/contact" className={styles.secondaryBtn}>
+          <Link href="/contact" className="btn btn-secondary">
             Talk to Our Team
           </Link>
         </div>

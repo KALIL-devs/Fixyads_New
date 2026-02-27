@@ -9,68 +9,68 @@ import ClientsSection from "@/components/ClientsSection/ClientsSection";
 import styles from "./page.module.css";
 
 /* ================================
-   DATA (separate from UI)
+   DATA
 ================================ */
 const services = [
   {
     title: "Branding",
-    description: "We craft a brand that commands recognition and trust.Every detail, from visuals to messaging, is designed to tell your story with clarity and impact.A compelling brand instills confidence in your business,turning that trust into lasting customer loyalty.",
+    description: "We craft a brand that commands recognition and trust. Every detail is designed to tell your story with clarity and impact.",
     icon: "🔍",
     link: "/search-engine-optimization",
   },
   {
     title: "Search Engine Optimization (SEO)",
-    description: "Your business appears prominently when customers search for your services. We use precise keyword strategies, technical expertise, and high-quality content to support your visibility.This brings steady, relevant organic traffic to your website.",
+    description: "We improve your visibility with strong keyword strategy, technical SEO, and high-quality content.",
     icon: "🔍",
     link: "/search-engine-optimization",
   },
   {
     title: "Search Engine Marketing (SEM)",
-    description: "We position your brand in front of the right audience at the right time. Our campaigns target high-intent users, driving meaningful engagement and conversions.Every ad is meticulously optimized to maximize ROI and efficiency.",
+    description: "Target the right audience at the right time with optimized ad campaigns that maximize ROI.",
     icon: "📱",
-    link: "/services/social-media-marketing",
+    link: "/social-media-marketing",
   },
   {
     title: "Content Marketing",
-    description: "Strong content helps your audience understand your brand and trust your expertise. We create content that answers real questions and addresses real needs of business.It strengthens your SEO while keeping visitors engaged turning attention into lasting brand connections.",
+    description: "We create meaningful content that builds trust, improves SEO, and drives engagement.",
     icon: "🎨",
-    link: "/services/content-branding",
+    link: "/content-branding",
   },
   {
     title: "PPC Marketing",
-    description: "Our PPC campaigns focus on delivering fast, measurable outcomes.We refine targeting, ad copy, and bidding strategies to improve performance.This minimizes wasted spend while increasing conversions giving you clear insight into what performs and where to scale.",
+    description: "Drive fast results with optimized ads, smart bidding, and reduced wasted spend.",
     icon: "🌐",
-    link: "/services/web-development",
+    link: "/web-development",
   },
   {
     title: "Video Marketing",
-    description: "Video allows messages to connect quickly and effectively.We create videos that explain concepts, engage viewers, and encourage action. Ideal for websites, social platforms, and paid campaigns helping your brand stand out in competitive digital spaces.",
+    description: "Engaging video content that explains, connects, and converts your audience.",
     icon: "💬",
     link: "/search-engine-optimization",
   },
   {
     title: "Email Marketing",
-    description: "Email marketing keeps your brand present and relevant to your audience. We design personalized campaigns that feel timely and meaningful rather than intrusive. Automation ensures the right message reaches the right user at the right moment, encouraging stronger engagement and repeat business.",
+    description: "Personalized campaigns that improve engagement and drive repeat business.",
     icon: "📊",
     link: "/search-engine-optimization",
   },
   {
     title: "Influencer Marketing",
-    description: "We connect your brand with influencers who align naturally with your values and audience. Authentic collaborations help build credibility and introduce your business to new communities. The focus remains on meaningful engagement rather than surface-level reach, so your brand feels trusted, relevant, and real.",
+    description: "Collaborate with the right influencers to build trust and expand your reach.",
     icon: "🤝",
-    link: "/services/influencer-marketing",
+    link: "/influencer-marketing",
   },
   {
     title: "Affiliate Marketing",
-    description: "Affiliate marketing extends your reach through performance-based partnerships that deliver real outcomes. We help structure and manage affiliate programs designed for measurable growth. You pay only when results are achieved, making it a scalable and cost-efficient channel for expanding your business.",
+    description: "Performance-based partnerships that scale your growth efficiently.",
     icon: "⭐",
     link: "/search-engine-optimization",
   },
   {
-    title: "Website Development Services",
-    description: "Your website often creates the first impression of your business. We design fast, intuitive, and user-friendly websites that are easy to navigate. Built with SEO, usability, and conversions in mind, your website becomes a powerful asset that supports marketing and business growth.",
+    title: "Website Development",
+    description: "Fast, user-friendly websites built for conversions and SEO.",
     icon: "⭐",
-    link: "/services/content-marketing",
+    link: "/content-marketing",
   },
 ];
 
@@ -78,35 +78,38 @@ export default function Home() {
   return (
     <>
       <Hero />
+
+
+      <div className="wave"></div>
+
+
       {/* ================= SERVICES ================= */}
-      <section className={`${styles.serviceBg} section`} id="services">
+      <section className={styles.serviceBg} id="services">
         <div className="container">
-          <h2 className={`${styles.sectionTitle} ${styles.dark}`}>
-            <span className={styles.highlight}>
-              Scale Your Online Presence with Military Grade Digital Marketing Services
-            </span>
-          </h2>
+            
+            <h2 className={`${styles.sectionTitle} ${styles.dark}`}>
+              <span className={styles.highlight}>
+                Scale Your Online Presence with Proven Digital Marketing
+              </span>
+            </h2>
 
-          <p className={`${styles.sectionSubtitle} ${styles.dark}`}>
-            As a results-focused digital marketing company, we deliver end-to-end digital marketing 
-            solutions designed to help businesses improve conversion rates, and achieve consistent revenue 
-            growth across competitive markets.
-          </p>
+            <p className={`${styles.sectionSubtitle} ${styles.dark}`}>
+              We deliver end-to-end digital marketing solutions to improve conversions,
+              generate quality leads, and drive consistent revenue growth.
+            </p>
 
-          <div className={styles.grid}>
-            {services.map((service, index) => (
-              <ServiceCard key={index} {...service} />
-            ))}
-          </div>
+            <div className={styles.grid}>
+              {services.map((service, index) => (
+                <ServiceCard key={index} {...service} />
+              ))}
+            </div>
+
         </div>
       </section>
 
       <ClientsSection />
-
       <HowWeWork />
-
       <CoursesTraining />
-
       <WhyChooseFixyAds />
 
       {/* ================= CTA ================= */}
@@ -115,7 +118,7 @@ export default function Home() {
           <h2 className={styles.ctaTitle}>Ready to Grow?</h2>
 
           <p className={styles.ctaText}>
-            Grow your business with digital marketing strategies that attract the right audience,
+            Grow your business with strategies that attract the right audience,
             generate quality leads, and maximize ROI.
           </p>
 
