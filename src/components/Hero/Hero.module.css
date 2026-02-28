@@ -1,6 +1,6 @@
-.hero {
+/* .hero {
   background: var(--accent);
-}
+} */
 
 /* OUTER CONTAINER */
 .container1 {
@@ -138,6 +138,9 @@
     max-width: 90%;
     margin-top: 2rem;
   }
+  .imageWrapper{
+    display: none;
+  }
 }
 
 /* ===================== */
@@ -153,7 +156,7 @@
     gap: 0.75rem;
   }
 
-  .imageWrapper{
+  /* .imageWrapper{
     display: none;
-  }
+  } */
 }

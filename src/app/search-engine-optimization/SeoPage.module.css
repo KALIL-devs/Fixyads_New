@@ -113,7 +113,7 @@
 
 .valueHeader {
   text-align: center;
-  max-width: 780px;
+  /* max-width: 780px; */
   margin: 0 auto 50px;
 }
 
@@ -121,6 +121,11 @@
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   margin-bottom: 20px;
   color: var(--primary);
+}
+
+.valueHeader p{
+  color: var(--muted);
+  /* max-width: 1000px; */
 }
 
 .valueList {
@@ -137,6 +142,10 @@
   margin-bottom: 8px;
   font-size: 1.25rem;
   color: #0f766e;
+}
+
+.valueItem p{
+  color: var(--muted);
 }
 
 /* ========================= */
@@ -156,6 +165,10 @@
   margin-bottom: 50px;
 }
 
+.centerHeader{
+  color: var(--muted);
+}
+
 .centerHeader h2{
   color: var(--primary);
 }
@@ -168,6 +181,10 @@
 
 .featureGrid h3{
   color: var(--primary);
+}
+
+.featureGrid p{
+  color: black;
 }
 /* ========================= */
 /* AI SECTION */
@@ -196,6 +213,10 @@
   color: var(--primary);
 }
 
+.aiContent p{
+  color: var(--muted);
+}
+
 /* ========================= */
 /* FAQ */
 /* ========================= */
@@ -219,6 +240,10 @@
   font-size: 1.2rem;
   color: #0f766e;
   margin-bottom: 6px;
+}
+
+.faqItem p{
+  color: var(--muted);
 }
 
 /* ========================= */

@@ -428,7 +428,7 @@ export default function ServicesPage() {
           <h2>Turn Searches into Sales</h2>
           <p>Professional SEO services that deliver measurable results.</p>
 
-          <a href="/contact" className="btn btn-secondary" style={{ marginTop: "20px" }}>
+          <a href="/contact" className="btn btn-primary" style={{ marginTop: "20px" }}>
             Request a Strategy Call
           </a>
         </div>

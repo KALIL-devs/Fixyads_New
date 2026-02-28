@@ -14,61 +14,61 @@ import styles from "./page.module.css";
 const services = [
   {
     title: "Branding",
-    description: "We craft a brand that commands recognition and trust. Every detail is designed to tell your story with clarity and impact.",
+    description: "We craft a brand that commands recognition and trust.Every detail, from visuals to messaging, is designed to tell your story with clarity and impact.A compelling brand instills confidence in your business,turning that trust into lasting customer loyalty.",
     icon: "🔍",
     link: "/search-engine-optimization",
   },
   {
     title: "Search Engine Optimization (SEO)",
-    description: "We improve your visibility with strong keyword strategy, technical SEO, and high-quality content.",
+    description: "Your business appears prominently when customers search for your services. We use precise keyword strategies, technical expertise, and high-quality content to support your visibility.This brings steady, relevant organic traffic to your website.",
     icon: "🔍",
     link: "/search-engine-optimization",
   },
   {
     title: "Search Engine Marketing (SEM)",
-    description: "Target the right audience at the right time with optimized ad campaigns that maximize ROI.",
+    description: "We position your brand in front of the right audience at the right time. Our campaigns target high-intent users, driving meaningful engagement and conversions.Every ad is meticulously optimized to maximize ROI and efficiency.",
     icon: "📱",
     link: "/social-media-marketing",
   },
   {
     title: "Content Marketing",
-    description: "We create meaningful content that builds trust, improves SEO, and drives engagement.",
+    description: "Strong content helps your audience understand your brand and trust your expertise. We create content that answers real questions and addresses real needs of business.It strengthens your SEO while keeping visitors engaged turning attention into lasting brand connections.",
     icon: "🎨",
     link: "/content-branding",
   },
   {
     title: "PPC Marketing",
-    description: "Drive fast results with optimized ads, smart bidding, and reduced wasted spend.",
+    description: "Our PPC campaigns focus on delivering fast, measurable outcomes.We refine targeting, ad copy, and bidding strategies to improve performance.This minimizes wasted spend while increasing conversions giving you clear insight into what performs and where to scale.",
     icon: "🌐",
     link: "/web-development",
   },
   {
     title: "Video Marketing",
-    description: "Engaging video content that explains, connects, and converts your audience.",
+    description: "Video allows messages to connect quickly and effectively.We create videos that explain concepts, engage viewers, and encourage action. Ideal for websites, social platforms, and paid campaigns helping your brand stand out in competitive digital spaces.",
     icon: "💬",
     link: "/search-engine-optimization",
   },
   {
     title: "Email Marketing",
-    description: "Personalized campaigns that improve engagement and drive repeat business.",
+    description: "Email marketing keeps your brand present and relevant to your audience. We design personalized campaigns that feel timely and meaningful rather than intrusive. Automation ensures the right message reaches the right user at the right moment, encouraging stronger engagement and repeat business.",
     icon: "📊",
     link: "/search-engine-optimization",
   },
   {
     title: "Influencer Marketing",
-    description: "Collaborate with the right influencers to build trust and expand your reach.",
+    description: "We connect your brand with influencers who align naturally with your values and audience. Authentic collaborations help build credibility and introduce your business to new communities. The focus remains on meaningful engagement rather than surface-level reach, so your brand feels trusted, relevant, and real.",
     icon: "🤝",
     link: "/influencer-marketing",
   },
   {
     title: "Affiliate Marketing",
-    description: "Performance-based partnerships that scale your growth efficiently.",
+    description: "Affiliate marketing extends your reach through performance-based partnerships that deliver real outcomes. We help structure and manage affiliate programs designed for measurable growth. You pay only when results are achieved, making it a scalable and cost-efficient channel for expanding your business.",
     icon: "⭐",
     link: "/search-engine-optimization",
   },
   {
     title: "Website Development",
-    description: "Fast, user-friendly websites built for conversions and SEO.",
+    description: "Your website often creates the first impression of your business. We design fast, intuitive, and user-friendly websites that are easy to navigate. Built with SEO, usability, and conversions in mind, your website becomes a powerful asset that supports marketing and business growth.",
     icon: "⭐",
     link: "/content-marketing",
   },
@@ -80,22 +80,20 @@ export default function Home() {
       <Hero />
 
 
-      <div className="wave"></div>
-
-
       {/* ================= SERVICES ================= */}
       <section className={styles.serviceBg} id="services">
         <div className="container">
             
             <h2 className={`${styles.sectionTitle} ${styles.dark}`}>
               <span className={styles.highlight}>
-                Scale Your Online Presence with Proven Digital Marketing
+                Scale Your Online Presence with Military Grade Digital Marketing Services
               </span>
             </h2>
 
             <p className={`${styles.sectionSubtitle} ${styles.dark}`}>
-              We deliver end-to-end digital marketing solutions to improve conversions,
-              generate quality leads, and drive consistent revenue growth.
+              As a results-focused digital marketing company, we deliver end-to-end digital marketing 
+              solutions designed to help businesses improve conversion rates, and achieve consistent revenue 
+              growth across competitive markets.
             </p>
 
             <div className={styles.grid}>
@@ -103,7 +101,6 @@ export default function Home() {
                 <ServiceCard key={index} {...service} />
               ))}
             </div>
-
         </div>
       </section>
 
@@ -124,11 +121,11 @@ export default function Home() {
 
           <div className={styles.ctaActions}>
             <Link href="/contact" className="btn btn-primary">
-              Get Audit
+              Get a Free Audit 
             </Link>
-            <Link href="/contact" className="btn btn-secondary">
+            {/* <Link href="/contact" className="btn btn-secondary">
               View Quotation
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>
