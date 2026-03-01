@@ -5,6 +5,8 @@ import HowWeWork from "@/components/HowWeWork/HowWeWork";
 import WhyChooseFixyAds from "@/components/WhyChooseFixyAds/WhyChooseFixyAds";
 import CoursesTraining from "@/components/CoursesTraining/CoursesTraining";
 import ClientsSection from "@/components/ClientsSection/ClientsSection";
+import Industries from "@/components/Industries/Industries";
+
 
 import type { IconName } from "@/components/ServiceCard/ServiceCard";
 
@@ -114,13 +116,14 @@ export default function Home() {
                 </Link>
             </div>
           </div>
-            
-
         </div>
 
       </section>
 
+      <Industries />
+
       <ClientsSection />
+
       <HowWeWork />
       <CoursesTraining />
       <WhyChooseFixyAds />
