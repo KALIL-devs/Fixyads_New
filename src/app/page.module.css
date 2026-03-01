@@ -1,38 +1,90 @@
-.sectionTitle {
-  font-size: 2.5rem;
+/* =============================== */
+/* TITLES */
+/* =============================== */
+
+.sectionTitle,
+.sectionTitleblack {
+  font-size: clamp(1.8rem, 5vw, 2.2rem);
   text-align: center;
   margin-bottom: 1rem;
+}
+
+.sectionTitle {
   color: var(--primary);
 }
 
-.sectionTitleblack{
-  font-size: 2.5rem;
+.sectionTitleblack {
+  color: black;
+}
+
+.sectionSubtitle,
+.sectionSubtitleblack {
   text-align: center;
-  margin-bottom: 1rem;
-  color:black !important;
+  font-size: clamp(0.95rem, 2.5vw, 1.125rem);
+  padding: 0 1rem;
 }
 
 .sectionSubtitle {
-  text-align: center;
   color: var(--muted);
   max-width: 1000px;
   margin: 0 auto 4rem;
-  font-size: 1.125rem;
 }
 
-.sectionSubtitleblack{
-  text-align: center;
+.sectionSubtitleblack {
   color: black;
   max-width: 75%;
   margin: 0 auto 2rem;
-  font-size: 1.125rem;
 }
+
+.orangehighlight{
+  color: var(--accent);
+}
+
+/* =============================== */
+/* GRID (FIXED) */
+/* =============================== */
 
 .grid {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: 1fr; /* mobile */
+  gap: 1.5rem;
+  grid-template-columns: 1fr; /* Mobile */
 }
+
+/* Tablet → 2 cards */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sectionSubtitle,
+  .sectionSubtitleblack {
+    margin-bottom: 2rem;
+  }
+
+  .ctaSection {
+    padding: 3rem 1.5rem;
+    margin: 3rem auto;
+  }
+
+  .ctaTitle {
+    font-size: 1.8rem;
+  }
+
+  .ctaText {
+    font-size: 1rem;
+  }
+}
+
+/* Desktop → 3 cards */
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =============================== */
+/* CTA */
+/* =============================== */
 
 .ctaSection {
   background-color: var(--primary);
@@ -43,7 +95,7 @@
   margin: 2rem auto;
 }
 
-.ctaSection p{
+.ctaSection p {
   font-size: medium;
 }
 
@@ -62,6 +114,10 @@
   margin-right: auto;
 }
 
+/* =============================== */
+/* TESTIMONIAL */
+/* =============================== */
+
 .testimonialGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -72,12 +128,21 @@
   background: #f9fafb;
   padding: 2rem;
   border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .testimonialText {
   font-style: italic;
   margin-bottom: 1.5rem;
   color: #444;
+
+  /* Text clamp */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .testimonialAuthor {
@@ -90,23 +155,23 @@
   color: var(--muted);
 }
 
+/* =============================== */
+/* BACKGROUNDS */
+/* =============================== */
 
-.servicebg{
-  /* background-image: linear-gradient(to top,  #ffffff, #ff9d5b); */
-    /* background-image: linear-gradient(to top,  #43a593, #15b597); */
-  background-color: #f9fafb;
-  padding: 0px 15px;
+.serviceBg{
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f3fffe;
 }
 
-
-.courses{
-  background-image: linear-gradient(to top, #ffffff, #ffffff );
-  /* background-color: white; */
+.courses {
+  background-image: linear-gradient(to top, #ffffff, #ffffff);
 }
 
-/* .howwework{
-  background-color: #d1d1d1;
-} */
+/* =============================== */
+/* BUTTON */
+/* =============================== */
 
 .btn-rev-primary {
   display: inline-flex;
@@ -116,7 +181,7 @@
   border-radius: var(--btn-radius);
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.25s ease-out; /* Clean, fast transitions */
+  transition: all 0.25s ease-out;
   border: 1px solid transparent;
   text-align: center;
   user-select: none;
@@ -124,91 +189,27 @@
   box-shadow: var(--shadow-sm);
 }
 
+.servicebtn{
+  margin: 25px 45%;
+  /* background-color: #111; */
+}
+
 /* =============================== */
-/* RESPONSIVE SERVICES SECTION */
+/* SMALL MOBILE */
 /* =============================== */
 
-/* Headings scale properly */
-.sectionTitleblack,
-.sectionTitle {
-  font-size: clamp(1.8rem, 5vw, 2.2rem);
-}
-
-/* Subtitle scales */
-.sectionSubtitleblack,
-.sectionSubtitle {
-  font-size: clamp(0.95rem, 2.5vw, 1.125rem);
-  padding: 0 1rem;
-}
-
-/* Grid improvement for small screens */
-.grid {
-  display: grid;
-  gap: 8px;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-}
-
-/* Tablets */
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.75rem;
-  }
-}
-
-/* Mobile */
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .sectionSubtitleblack,
-  .sectionSubtitle {
-    margin-bottom: 2rem;
-  }
-
-  .ctaSection {
-    padding: 3rem 1.5rem;
-    margin: 3rem auto;
-  }
-
-  .ctaTitle {
-    font-size: 1.8rem;
-  }
-
-  .ctaText {
-    font-size: 1rem;
-  }
-}
-
-/* Small mobile */
 @media (max-width: 480px) {
-  .sectionTitleblack,
-  .sectionTitle {
+  .sectionTitle,
+  .sectionTitleblack {
     font-size: 1.6rem;
   }
 
-  .sectionSubtitleblack,
-  .sectionSubtitle {
+  .sectionSubtitle,
+  .sectionSubtitleblack {
     font-size: 0.95rem;
   }
 
   .btn-rev-primary {
     width: 100%;
-  }
-}
-
-/* Small desktop */
-@media (min-width: 1024px) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-}
-
-/* Large desktop */
-@media (min-width: 1280px) {
-  .grid {
-    grid-template-columns: repeat(4, 1fr);
   }
 }

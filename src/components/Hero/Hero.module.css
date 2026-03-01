@@ -2,14 +2,18 @@
   background: var(--accent);
 } */
 
+
 /* OUTER CONTAINER */
 .container1 {
-  background-color: white;
+  /* background-color: white; */
   padding: 4rem 0;
   position: relative;
   overflow: hidden;
   border-radius: 0% 0% 0% 0%;
+  background: linear-gradient(180deg, #E6FFFA 0%, #f2fdfb 25%, #f2fdfb 55%,  #f3fffe 100%);
+  overflow: hidden;
 }
+
 
 /* INNER LAYOUT */
 .container2 {
@@ -20,6 +24,7 @@
   align-items: stretch;
   justify-content: space-between;
   gap: 3rem;
+
 }
 
 /* CONTENT */
@@ -37,9 +42,10 @@
 }
 
 .highlight {
-  /* color: var(--primary); */
-  /* linear-gradient(135deg, #15b597, #0f766e); */
-  color: #119c90;
+  color: var(--primary);
+  /* color: linear-gradient(135deg, #0f766e, #0d5f59); */
+  /* color: #119c90; */
+
   position: relative;
 }
 
