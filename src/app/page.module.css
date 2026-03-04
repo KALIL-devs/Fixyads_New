@@ -161,7 +161,7 @@
 
 .serviceBg{
   padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   background-color: #f3fffe;
 }
 
@@ -190,7 +190,11 @@
 }
 
 .servicebtn{
-  margin: 25px 45%;
+  margin: 25px auto;
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  height: 10vh; /* Example height for demonstration */
   /* background-color: #111; */
 }
 
