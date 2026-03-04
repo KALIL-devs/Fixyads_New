@@ -1,49 +1,106 @@
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 40px;
+    align-items: start;
+    margin: 0 8%;
 }
 
+.contactdetails{
+    max-width: 40%;
+}
+
+/* LEFT SIDE (CONTACT INFO) */
 .infoItem {
-    margin-bottom: 2rem;
+    margin-bottom: 18px;
 }
 
 .infoItem h3 {
+    font-size: 16px;
+    /* 🔽 reduced size */
+    font-weight: 600;
     color: var(--primary);
-    margin-bottom: 0.5rem;
-    font-size: 1.25rem;
-}
-
-.title{
-    color: #1a1a1a;
+    margin-bottom: 4px;
 }
 
 .infoItem p {
-    color: #444;
+    font-size: 14px;
+    /* 🔽 reduced size */
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.5;
 }
 
-.map {
-    width: 100%;
-    height: 300px;
-    background: #f0f0f0;
-    border-radius: var(--radius);
-    margin-top: 2rem;
-    overflow: hidden;
-}
-
+/* FORM WRAPPER */
 .formWrapper {
-    background: #f9fafb;
-    padding: 3rem;
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
-@media (max-width: 968px) {
+.contactdetails h1{
+    font-size: 1.5rem;
+}
+
+/* FORM HEADING */
+.formWrapper h2 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
     .grid {
         grid-template-columns: 1fr;
     }
 
     .formWrapper {
-        padding: 2rem;
+        padding: 20px;
     }
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+.input,
+.textarea,
+.select {
+    padding: 12px 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.2s ease;
+    outline: none;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+    border-color: #15b597;
+    box-shadow: 0 0 0 2px rgba(21, 181, 151, 0.15);
+}
+
+.textarea {
+    min-height: 120px;
+    resize: none;
+}
+
+/* BUTTON */
+.button {
+    background: #15b597;
+    color: #fff;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.button:hover {
+    background: #129e84;
 }

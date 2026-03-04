@@ -37,18 +37,22 @@
     resize: vertical;
 }
 
-.submitBtn {
-    background: var(--primary);
-    color: white;
-    padding: 0.7rem 1rem;
-    border: none;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.2s;
+.successMsg {
+    color: #15b597;
+    background: #e6fffa;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
 }
 
-.submitBtn:hover {
-    background: var(--primary-dark);
+.errorMsg {
+    color: #e53e3e;
+    background: #fff5f5;
+    padding: 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
 }

@@ -19,6 +19,9 @@ const ContactForm = () => {
     //     console.log(formData);
     // };
 
+    const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+    const [statusMsg, setStatusMsg] = useState('');
+
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData({
             ...formData,
@@ -28,6 +31,7 @@ const ContactForm = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        setStatus('loading');
 
         try {
             const res = await fetch('/api/contact', {
@@ -41,23 +45,29 @@ const ContactForm = () => {
             const data = await res.json();
 
             if (!res.ok) {
-                alert(data.error || 'Something went wrong');
+                setStatus('error');
+                setStatusMsg(data.error || 'Something went wrong. Please try again.');
                 return;
             }
 
-            alert('Thank you! We will contact you soon.');
+            setStatus('success');
+            setStatusMsg('Thank you! Your message has been sent successfully. We will contact you soon.');
 
-            // reset form
-            setFormData({
-                name: '',
-                email: '',
-                phone: '',
-                service: '',
-                message: ''
-            });
+            // reset form after 3 seconds
+            setTimeout(() => {
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    service: '',
+                    message: ''
+                });
+                setStatus('idle');
+            }, 5000);
 
         } catch (err) {
-            alert('Server error. Try again later.');
+            setStatus('error');
+            setStatusMsg('Server error. Please try again later.');
         }
     };
 
@@ -137,7 +147,16 @@ const ContactForm = () => {
                 ></textarea>
             </div>
 
-            <button type="submit" className={styles.submitBtn}>Send Message</button>
+            <button
+                type="submit"
+                className="btn btn-primary"
+                disabled={status === 'loading'}
+            >
+                {status === 'loading' ? 'Sending...' : 'Send Message'}
+            </button>
+
+            {status === 'success' && <p className={styles.successMsg}>{statusMsg}</p>}
+            {status === 'error' && <p className={styles.errorMsg}>{statusMsg}</p>}
         </form>
     );
 };

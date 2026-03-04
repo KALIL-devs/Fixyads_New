@@ -12,8 +12,8 @@ export default function ContactPage() {
         <>
             <div className="container section">
                 <div className={styles.grid}>
-                    <div>
-                        <h1 className="mb-4" style={{color: '#15b597'}}>Get In Touch</h1>
+                    <div className='contactdetails'>
+                        <h1 className="mb-4 title" style={{ color: '#15b597' }}>Get In Touch</h1>
                         <p className="mb-4" style={{ fontSize: '1.2rem', color: 'var(--muted)' }}>
                             Have a project in mind or want to enroll in a course? Fill out the form or contact us directly.
                         </p>
@@ -37,7 +37,7 @@ export default function ContactPage() {
                     </div>
 
                     <div className={styles.formWrapper}>
-                        <h2 className="mb-4" style={{color: '#15b597'}}>Send us a Message</h2>
+                        <h2 className="mb-4" style={{ color: '#15b597' }}>Send us a Message</h2>
                         <ContactForm />
                     </div>
                 </div>

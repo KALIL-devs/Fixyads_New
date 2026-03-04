@@ -32,7 +32,7 @@ const Footer = () => {
                         <li><Link href="/courses/digital-marketing">Digital Marketing Course</Link></li>
                         <li><Link href="/courses/web-development">Web development Course</Link></li>
                         <li><Link href="/courses/placement-support">Placement Support</Link></li>
-                        
+
                     </ul>
                 </div>
 
@@ -41,15 +41,15 @@ const Footer = () => {
                     {/* <p>54/A, Chinnakadai Street, Muthaiahpillay Lane, Madurai, India, Tamil Nadu</p> */}
                     <p>Email: fixyads@gmail.com</p>
                     <p>Phone: +91 84380 83853</p>
-                    <div style={{display: 'flex', flexDirection: 'row'}}>
+                    <div style={{ display: 'flex', flexDirection: 'row' }}>
                         <a href="https://www.instagram.com/fixyads/">
-                            <img src="/SocialMedia/instagram.png" alt="" style={{height:'50px', width:'50px'}}/>
+                            <img src="/SocialMedia/instagram.png" alt="" style={{ height: '50px', width: '50px' }} />
                         </a>
                         <a href="https://www.facebook.com/profile.php?id=61568361441860">
-                            <img src="/SocialMedia/facebook.png" alt="" style={{height:'50px', width:'50px'}}/>
+                            <img src="/SocialMedia/facebook.png" alt="" style={{ height: '50px', width: '50px' }} />
                         </a>
                         <a href="https://www.linkedin.com/company/fixyads/">
-                            <img src="/SocialMedia/linkedin.png" alt="" style={{height:'50px', width:'50px'}}/>
+                            <img src="/SocialMedia/linkedin.png" alt="" style={{ height: '50px', width: '50px' }} />
                         </a>
                     </div>
                 </div>
@@ -57,7 +57,11 @@ const Footer = () => {
 
 
             <div className={styles.copyright}>
-                &copy; {new Date().getFullYear()} Fixyads. All rights reserved.
+                <div>&copy; {new Date().getFullYear()} Fixyads. All rights reserved.</div>
+                <div style={{ marginTop: '10px', display: 'flex', gap: '20px', justifyContent: 'center', fontSize: '0.85rem' }}>
+                    <Link href="/privacy-policy">Privacy Policy</Link>
+                    <Link href="/terms-of-service">Terms of Service</Link>
+                </div>
             </div>
         </footer>
     );

@@ -1,0 +1,14 @@
+.legalContent {
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+.legalContent section {
+    margin-bottom: 2rem;
+}
+
+.legalContent h2 {
+    color: #15b597;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}

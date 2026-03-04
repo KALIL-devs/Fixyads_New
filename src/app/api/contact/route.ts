@@ -1,35 +1,31 @@
 import { NextResponse } from 'next/server';
+import { prisma } from '@/lib/prisma';
 
 export async function POST(req: Request) {
-    try {
-        const body = await req.json();
-        console.log('Incoming form data:', body);
+  try {
+    const body = await req.json();
 
-        const webhook = process.env.GOOGLE_SHEET_WEBHOOK;
+    const { name, email, phone, service, message } = body;
 
-        if (!webhook) {
-            throw new Error('GOOGLE_SHEET_WEBHOOK is missing');
-        }
-
-        const response = await fetch(webhook, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(body),
-        });
-
-        const text = await response.text();
-        console.log('Google response:', text);
-
-        if (!response.ok) {
-            throw new Error(`Google error: ${response.status}`);
-        }
-
-        return NextResponse.json({ success: true });
-    } catch (error: any) {
-        console.error('API ERROR:', error.message);
-        return NextResponse.json(
-            { error: error.message },
-            { status: 500 }
-        );
+    // Basic server-side validation
+    if (!name || !email || !message) {
+      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
+
+    if (name.length > 100 || email.length > 100 || (phone && phone.length > 20) || message.length > 2000) {
+      return NextResponse.json({ error: 'Input too long' }, { status: 400 });
+    }
+
+    const saved = await prisma.contact.create({
+      data: { name, email, phone, service, message }
+    });
+
+    return NextResponse.json({ success: true, saved });
+  } catch (error) {
+    console.error('Error saving contact:', error);
+    return NextResponse.json(
+      { error: 'Failed to save message' },
+      { status: 500 }
+    );
+  }
 }

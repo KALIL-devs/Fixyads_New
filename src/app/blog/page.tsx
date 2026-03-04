@@ -13,7 +13,6 @@ function limitWords(text: string, limit = 18) {
 export default async function BlogPage() {
   const posts = await getAllPosts();
 
-  console.log(posts[0]._embedded?.["wp:featuredmedia"]);
 
 
   return (
@@ -57,7 +56,7 @@ export default async function BlogPage() {
                   >
                     Read article →
                   </Link> */}
-                </div>                
+                </div>
               </Link>
 
             </article>
