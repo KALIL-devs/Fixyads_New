@@ -1,11 +1,8 @@
 .section {
+  /* background: linear-gradient(135deg, #f3fffe 60%,  #ffffff); */
   background: #ffffff;
-  padding: 30px 0;
-}
-
-.sectionbg {
-  background: linear-gradient(135deg, #ffffff 60%, #f1fbff);
   border-radius: 40px;
+  padding: 30px 0;
 }
 
 .container {
@@ -17,16 +14,20 @@
 
 /* Headings */
 .heading {
-  font-size: 42px;
+  font-size: 35px;
   font-weight: 700;
-  color: #111;
-  margin-bottom: 14px;
+  color: var(--primary);
+  margin: 14px 0;
 }
 
 .subheading {
   font-size: 17px;
   color: #555;
-  margin-bottom: 70px;
+  margin-bottom: 30px;
+}
+
+.subheading b{
+  color: var(--primary);
 }
 
 /* Cards grid */
@@ -83,7 +84,7 @@
 /* Trust bar */
 .trustBar {
   color: #111;
-  margin: 70px auto 0;
+  margin: 30px auto 0;
   padding: 16px 32px;
   background: #ffffff;
   border-radius: 999px;

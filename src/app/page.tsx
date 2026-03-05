@@ -6,6 +6,7 @@ import WhyChooseFixyAds from "@/components/WhyChooseFixyAds/WhyChooseFixyAds";
 import CoursesTraining from "@/components/CoursesTraining/CoursesTraining";
 import ClientsSection from "@/components/ClientsSection/ClientsSection";
 import Industries from "@/components/Industries/Industries";
+import FreeStrategy from "@/components/FreeStrategy/FreeStrategy";
 
 
 import type { IconName } from "@/components/ServiceCard/ServiceCard";
@@ -123,12 +124,11 @@ export default function Home() {
       </section>
 
       <Industries />
-
       <ClientsSection />
-
       <HowWeWork />
-      <CoursesTraining />
       <WhyChooseFixyAds />
+      <FreeStrategy />
+      <CoursesTraining />
 
       {/* ================= CTA ================= */}
       <section className="container">
