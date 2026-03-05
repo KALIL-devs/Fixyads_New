@@ -33,10 +33,11 @@
   border-radius: 10px;
 
   background: rgba(255, 255, 255, 0.25);
+  /* background: linear-gradient(to top, #fffbf9, #fffaf4); */
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid #e6e6e6;
 
   font-weight: 600;
   color: #0B1F2A;
@@ -47,6 +48,10 @@
   overflow: hidden;
 
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.card p {
+  margin: 0;
 }
 
 /* Glass shine layer */
@@ -84,4 +89,21 @@
 /* Activate shine */
 .card:hover::before {
   opacity: 1;
+}
+
+.icon {
+  font-size: 28px;
+  color: var(--primary);
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .icon {
+  transform: scale(1.15);
+}
+
+.card:hover .icon {
+  color: #188279;
 }

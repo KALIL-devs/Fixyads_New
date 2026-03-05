@@ -1,16 +1,26 @@
 'use client';
 
 import styles from './Industries.module.css';
+import {
+  FaShoppingCart,
+  FaIndustry,
+  FaHospital,
+  FaUtensils,
+  FaGraduationCap,
+  FaBriefcase,
+  FaBoxOpen,
+  FaMapMarkedAlt
+} from "react-icons/fa";
 
 const industries = [
-  "E-Commerce Brands",
-  "Manufacturing & Large Enterprises",
-  "Healthcare & Hospitals",
-  "Retail, Cafés & Restaurants",
-  "Educational Institutions",
-  "Service-Based Businesses",
-  "FMCG Brands",
-  "Multi-Location Businesses"
+  { name: "E-Commerce Brands", icon: <FaShoppingCart /> },
+  { name: "Manufacturing & Large Enterprises", icon: <FaIndustry /> },
+  { name: "Healthcare & Hospitals", icon: <FaHospital /> },
+  { name: "Retail, Cafés & Restaurants", icon: <FaUtensils /> },
+  { name: "Educational Institutions", icon: <FaGraduationCap /> },
+  { name: "Service-Based Businesses", icon: <FaBriefcase /> },
+  { name: "FMCG Brands", icon: <FaBoxOpen /> },
+  { name: "Multi-Location Businesses", icon: <FaMapMarkedAlt /> }
 ];
 
 export default function Industries() {
@@ -26,7 +36,8 @@ export default function Industries() {
       <div className={styles.grid}>
         {industries.map((item, index) => (
           <div key={index} className={styles.card}>
-            {item}
+            <div className={styles.icon}>{item.icon}</div>
+            <p>{item.name}</p>
           </div>
         ))}
       </div>
