@@ -1,57 +1,37 @@
 'use client';
 
 import Image from "next/image";
-import styles from "./FreeStrategy.module.css";
+import Link from "next/link";
+import Styles from "./FreeStrategy.module.css";
 
 export default function FreeStrategy() {
   return (
-    <section className={styles.section}>
-      <div className={styles.container}>
-
-        <div className={styles.grid}>
-
-          {/* TEXT BLOCK */}
-          <div className={styles.textBlock}>
-            <h2 className={styles.title}>
-              Receive a <span>Free Digital Marketing Strategy</span>
-            </h2>
-
-            <div className={styles.text}>
-              <p className={styles.description}>
-                In today’s digital era, countless agencies compete for attention.
-                At <strong>FixyAds</strong>, we stand out as true game changers.
-              </p>
-
-              <p className={styles.description}>
-                We craft a fully customized strategy tailored specifically for your 
-                business goals. Speak with our experts today and unlock your 
-                complimentary growth roadmap.
-              </p>
-            </div>
+      <section className={Styles.seoHero}>
+        <div className={Styles.seoHeroGrid}>
+          <div className={Styles.seoHeroContent}>
+            <h2>Receive a <strong>Free Digital Marketing Strategy</strong></h2>
+            <p>
+              In today’s digital era, countless agencies compete for attention.
+              At <strong>FixyAds</strong>, we stand out as true game changers.
+			  We craft a fully customized strategy tailored specifically for your 
+              business goals. Speak with our experts today and unlock your 
+              complimentary growth roadmap. 
+            </p>
+            <Link href="/contact" className="btn btn-primary">
+              Get Free Strategy
+            </Link>
           </div>
 
-          {/* IMAGE */}
-          <div className={styles.imageWrapper}>
+          {/* Image */}
+          <div className={Styles.seoHeroImage}>
             <Image
               src="/strategy.png"
               alt="Digital Marketing Strategy"
               fill
-              className={styles.image}
-              // sizes="(max-width: 768px) 100vw,
-              //        (max-width: 1200px) 50vw,
-              //        500px"
               priority
             />
           </div>
-
-          {/* BUTTON */}
-          <button className={styles.button}>
-            Get a Free Strategy
-          </button>
-
         </div>
-
-      </div>
-    </section>
+      </section>
   );
 }
