@@ -27,6 +27,7 @@
 /* ================= SECTION ================= */
 .section {
   padding: 5rem 0;
+  background-color: #e8fffc;
 }
 
 .teamSection {
@@ -108,7 +109,7 @@
 .teamTitle {
   text-align: center;
   margin-bottom: 3rem;
-  color: #000;
+  color: var(--primary);
 }
 
 .teamGrid {
@@ -117,6 +118,20 @@
   gap: 2.5rem;
   justify-content: center;   /* center rows */
   justify-items: center;     /* center cards */
+  margin-bottom: 20px;
+  /* margin-left: 150px; */
+  /* margin-right: 150px; */
+}
+
+.teamGrid_1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2.5rem;
+  justify-content: space-between; 
+  justify-items: space-between;     
+  margin-bottom: 20px;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
 .teamMember {
@@ -164,7 +179,7 @@
 
 /* Center single item in last row */
 .teamGrid > :last-child:nth-child(odd) {
-  grid-column: 1 / -1;
+  /* grid-column: 1; */
   justify-self: center;
 }
 
@@ -191,6 +206,12 @@
   }
   .imageWrapper {
     height: 260px;
+  }
+  .teamGrid_1{
+  justify-content: center; 
+  justify-items:  center;  
+  margin-left: 0px;
+  margin-right: 0px;
   }
 }
 

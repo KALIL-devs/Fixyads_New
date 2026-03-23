@@ -86,17 +86,15 @@ export default function AboutPage() {
       </section>
 
       {/* TEAM */}
-      {/* <section className={`${styles.section} ${styles.teamSection}`}>
+      <section className={`${styles.section} ${styles.teamSection}`}>
         <div className="container">
           <h2 className={styles.teamTitle}>Meet Our Team</h2>
 
           <div className={styles.teamGrid}>
             {[
-              { name: 'Praveenkumar', role: 'SEO Specialist', img: '/Team/Praveen.png' },
-              { name: 'Raja Sleha', role: 'SEO Specialist', img: '/Team/sleha.png' },
-              { name: 'Karthikeyan', role: 'Editor', img: '/Team/karthikeyan1.png' },
-              { name: 'Kalil Rahman', role: 'Developer', img: '/Team/Kalil.png' },
-              { name: 'Praseena', role: 'SEO Specialist', img: '/Team/praseenaa.png' },
+              { name: 'Praveenkumar', role: 'Digital Marketing Specialist', img: '/Team/Praveen.png' },
+              { name: 'Raja Slega', role: 'Digital Marketing Specialist', img: '/Team/slega.png' },
+              { name: 'Kalil Rahman', role: 'Web Developer', img: '/Team/Kalil.png' },
             ].map((member) => (
               <div key={member.name} className={styles.teamMember}>
                 <div className={styles.memberImage}>
@@ -113,8 +111,31 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
+
+          <div className={styles.teamGrid}>
+            {[
+              { name: 'Gowtham', role: 'Social Media Expert', img: '/Team/gowtham.png' },
+              { name: 'Yoga', role: 'Social Media Expert', img: '/Team/yoga.png' },
+              { name: 'Aruna', role: 'Digital Marketing Specialist', img: '/Team/aruna.png' },
+            ].map((member) => (
+              <div key={member.name} className={styles.teamMember}>
+                <div className={styles.memberImage}>
+                  <Image
+                    src={member.img}
+                    alt={`${member.name} - ${member.role}`}
+                    fill
+                    quality={90}
+                    sizes="200px"
+                  />
+                </div>
+                <div className={styles.memberName}>{member.name}</div>
+                <div className={styles.memberRole}>{member.role}</div>
+              </div>
+            ))}
+          </div>
+
         </div>
-      </section> */}
+      </section>
     </>
   );
 }

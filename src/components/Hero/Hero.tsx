@@ -3,7 +3,8 @@
 import Link from 'next/link';
 import styles from './Hero.module.css';
 import { useEffect, useRef } from 'react';
-import BubblesCloud from '../BubblesCloud/BubblesCloud'
+import BubblesCloud from '../BubblesCloud/BubblesCloud';
+import FloatingDots from "@/components/Floatingdots/Floatingdots";
 
 const Hero = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -14,7 +15,8 @@ const Hero = () => {
         <div className={styles.container2}>
           
           <div className={styles.content}>
-          <h1 className={styles.title} style={{margin:'0px'}}>AI-Based</h1>
+            <FloatingDots />
+            <h1 className={styles.title} style={{margin:'0px'}}>AI-Based</h1>
             
             <h1 className={styles.title}>
               <span className={styles.orangehighlight}>Digital Marketing</span>{' '}
