@@ -113,6 +113,7 @@ export default function AboutPage() {
             {[
               { name: 'Gowtham', role: 'Social Media Expert', img: '/Team/gowtham.png' },
               { name: 'Yoga', role: 'Social Media Expert', img: '/Team/yoga.png' },
+              { name: 'Yoga', role: 'Social Media Expert', img: '/Team/yoga.png' },
               { name: 'Aruna', role: 'Digital Marketing Specialist', img: '/Team/aruna.png' },
             ].map((member) => (
               <div key={member.name} className={styles.teamMember}>
