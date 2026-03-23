@@ -109,7 +109,7 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <div className={styles.teamGrid}>
+          <div className={styles.teamGrid_1}>
             {[
               { name: 'Gowtham', role: 'Social Media Expert', img: '/Team/gowtham.png' },
               { name: 'Yoga', role: 'Social Media Expert', img: '/Team/yoga.png' },
