@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
@@ -98,12 +97,10 @@ export default function AboutPage() {
             ].map((member) => (
               <div key={member.name} className={styles.teamMember}>
                 <div className={styles.memberImage}>
-                  <Image
+                  <img
                     src={member.img}
                     alt={`${member.name} - ${member.role}`}
-                    fill
-                    quality={90}
-                    sizes="200px"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 </div>
                 <div className={styles.memberName}>{member.name}</div>
@@ -120,12 +117,10 @@ export default function AboutPage() {
             ].map((member) => (
               <div key={member.name} className={styles.teamMember}>
                 <div className={styles.memberImage}>
-                  <Image
+                  <img
                     src={member.img}
                     alt={`${member.name} - ${member.role}`}
-                    fill
-                    quality={90}
-                    sizes="200px"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 </div>
                 <div className={styles.memberName}>{member.name}</div>
