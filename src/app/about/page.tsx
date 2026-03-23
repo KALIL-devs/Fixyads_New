@@ -112,7 +112,7 @@ export default function AboutPage() {
           <div className={styles.teamGrid_1}>
             {[
               { name: 'Gowtham', role: 'Social Media Expert', img: '/Team/gowtham.png' },
-              { name: 'Yoga', role: 'Social Media Expert', img: '/Team/yoga.png' },
+              // { name: 'Yoga', role: 'Social Media Expert', img: '/Team/yoga.png' },
               { name: 'Yoga', role: 'Social Media Expert', img: '/Team/yoga.png' },
               { name: 'Aruna', role: 'Digital Marketing Specialist', img: '/Team/aruna.png' },
             ].map((member) => (
