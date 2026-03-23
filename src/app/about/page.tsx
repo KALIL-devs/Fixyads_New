@@ -27,10 +27,10 @@ export default function AboutPage() {
         <div className="container">
           <div className={styles.grid}>
           <div className={styles.courseHeroImage}>
-            <Image
+            <img
               src="/aboutus/aboutus.png"
               alt="Digital Marketing Course"
-              fill
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
           </div>
 
@@ -92,7 +92,7 @@ export default function AboutPage() {
 
           <div className={styles.teamGrid}>
             {[
-              { name: 'Praveenkumar', role: 'Digital Marketing Specialist', img: '/Team/Praveen.png' },
+              { name: 'Praveenkumar', role: 'Digital Marketing Specialist', img: '/Team/praveen.png' },
               { name: 'Raja Slega', role: 'Digital Marketing Specialist', img: '/Team/slega.png' },
               { name: 'Kalil Rahman', role: 'Web Developer', img: '/Team/Kalil.png' },
             ].map((member) => (
