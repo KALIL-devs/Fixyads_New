@@ -109,10 +109,9 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <div className={styles.teamGrid_1}>
+          <div className={styles.teamGrid}>
             {[
-              { name: 'Gowtham', role: 'Social Media Expert', img: '/Team/selva.png' },
-              // { name: 'Yoga', role: 'Social Media Expert', img: '/Team/yoga.png' },
+              { name: 'gowtham', role: 'Social Media Expert', img: '/Team/gowtham.png' },
               { name: 'Yoga', role: 'Social Media Expert', img: '/Team/yoga.png' },
               { name: 'Aruna', role: 'Digital Marketing Specialist', img: '/Team/aruna.png' },
             ].map((member) => (
