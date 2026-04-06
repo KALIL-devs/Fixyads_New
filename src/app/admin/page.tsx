@@ -4,11 +4,7 @@ import { useState, useEffect } from 'react';
 import { useSession, signIn, signOut } from "next-auth/react";
 import styles from './page.module.css';
 
-import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/admin' },
-};
 
 interface Message {
     id: number;
