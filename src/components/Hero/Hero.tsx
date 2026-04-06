@@ -16,9 +16,11 @@ const Hero = () => {
           
           <div className={styles.content}>
             <FloatingDots />
-            <h1 className={styles.title} style={{margin:'0px'}}>AI-Based</h1>
+            {/* <h1 className={styles.title} style={{margin:'0px'}}>AI-Based</h1> */}
             
             <h1 className={styles.title}>
+              <span className={styles.title} style={{margin:'0px'}}>AI-Based</span>{' '}
+              <br />
               <span className={styles.orangehighlight}>Digital Marketing</span>{' '}
               <span className={styles.highlight}>Company</span>{' '}
               {/* <span className={styles.orangehighlight}>Strong Brands</span> */}
