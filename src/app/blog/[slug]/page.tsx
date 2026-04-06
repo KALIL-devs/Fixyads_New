@@ -5,6 +5,19 @@ import { notFound } from "next/navigation";
 import styles from "./blog.module.css";
 import Link from "next/link";
 
+import type { Metadata } from 'next';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  return {
+    alternates: { canonical: `/blog/${slug}` },
+  };
+}
+
 export default async function BlogDetail({
   params,
 }: {

@@ -1,5 +1,11 @@
 import styles from '../privacy-policy/Legal.module.css';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/terms-of-service' },
+};
+
 export default function TermsOfService() {
     return (
         <div className="container section">

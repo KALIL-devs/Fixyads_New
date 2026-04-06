@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/portfolio' },
     title: 'Portfolio | Our Work & Case Studies',
     description: 'See how we have helped businesses grow with our digital marketing and web development services.',
 };

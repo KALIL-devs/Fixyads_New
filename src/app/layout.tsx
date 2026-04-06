@@ -21,6 +21,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.fixyads.com"),
   title: "Digital Marketing Agency & Training Institute",
   description:
     "Expert digital marketing services and professional training courses in Digital Marketing and Java.",

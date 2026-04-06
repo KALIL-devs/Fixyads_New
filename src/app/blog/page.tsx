@@ -2,6 +2,12 @@ import Link from "next/link";
 import { getAllPosts } from "@/lib/wp-rest";
 import styles from "./blog.module.css";
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/blog' },
+};
+
 /* Utility: limit words */
 function limitWords(text: string, limit = 18) {
   const cleanText = text.replace(/<[^>]+>/g, "");

@@ -3,6 +3,7 @@ import ContactForm from '@/components/ContactForm/ContactForm';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/contact' },
     title: 'Contact Us | Get a Free Quote',
     description: 'Get in touch with us for digital marketing services or training inquiries. Visit our office or drop us a message.',
 };

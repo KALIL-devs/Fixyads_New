@@ -13,6 +13,12 @@ import type { IconName } from "@/components/ServiceCard/ServiceCard";
 
 import styles from "./page.module.css";
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/' },
+};
+
 /* ================================
    DATA
 ================================ */

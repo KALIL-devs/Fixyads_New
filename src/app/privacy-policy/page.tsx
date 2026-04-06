@@ -1,5 +1,11 @@
 import styles from './Legal.module.css';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/privacy-policy' },
+};
+
 export default function PrivacyPolicy() {
     return (
         <div className="container section">

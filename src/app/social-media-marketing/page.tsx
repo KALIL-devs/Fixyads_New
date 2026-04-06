@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/social-media-marketing' },
   title: "Social Media Marketing Services | Grow Your Brand Online",
   description:
     "Professional social media marketing services to increase brand awareness, engagement, and sales across Instagram, Facebook, LinkedIn, and more.",

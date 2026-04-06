@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/influencer-marketing' },
   title: "Influencer Marketing Services | Build Trust & Drive Sales",
   description:
     "Strategic influencer marketing campaigns to increase brand trust, reach the right audience, and drive real conversions.",

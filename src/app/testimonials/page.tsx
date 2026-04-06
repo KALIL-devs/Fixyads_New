@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/testimonials' },
     title: 'Testimonials | Student & Client Reviews',
     description: 'Read what our students and clients have to say about our training and services.',
 };

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/about' },
   title: 'About Us | Digital Marketing Agency',
   description:
     'Learn about our journey, mission, and the team behind our success. We help businesses grow and students build careers.',

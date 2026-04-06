@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/web-development' },
   title: "Web Development Services | High-Performance Websites & Apps",
   description:
     "Custom web development services to build fast, secure, and scalable websites using modern technologies.",

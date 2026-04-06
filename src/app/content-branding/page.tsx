@@ -3,6 +3,7 @@ import styles from "./ContentBranding.module.css";
 import Link from "next/link";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/content-branding' },
   title: "Content & Branding Services | Build a Powerful Brand Identity",
   description:
     "Strategic content and branding services to create a strong brand voice, compelling visuals, and consistent messaging that connects with your audience.",

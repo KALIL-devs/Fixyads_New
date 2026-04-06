@@ -2,6 +2,12 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./Services.module.css";
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  alternates: { canonical: '/services' },
+};
+
 const services = [
   {
     title: "Web Development",

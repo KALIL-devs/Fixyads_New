@@ -5,6 +5,7 @@ import Image from "next/image";
 import Styles from "./SeoPage.module.css";
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/search-engine-optimization' },
   title: "SEO Services | Rank Higher & Grow Organic Traffic",
   description:
     "Professional SEO services to boost your website rankings, increase organic traffic, and drive quality leads. On-page, off-page & technical SEO.",
