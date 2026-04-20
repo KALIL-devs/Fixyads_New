@@ -15,7 +15,7 @@ const Hero = () => {
         <div className={styles.container2}>
           
           <div className={styles.content}>
-            <FloatingDots />
+            {/* <FloatingDots /> */}
             {/* <h1 className={styles.title} style={{margin:'0px'}}>AI-Based</h1> */}
             
             <h1 className={styles.title}>
