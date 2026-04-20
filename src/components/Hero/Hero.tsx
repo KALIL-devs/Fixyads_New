@@ -4,7 +4,7 @@ import Link from 'next/link';
 import styles from './Hero.module.css';
 import { useEffect, useRef } from 'react';
 import BubblesCloud from '../BubblesCloud/BubblesCloud';
-import FloatingDots from "@/components/Floatingdots/Floatingdots";
+// import FloatingDots from "@/components/Floatingdots/Floatingdots";
 
 const Hero = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
