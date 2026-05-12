@@ -1,0 +1,312 @@
+/**
+ * Shared layout + surface styles for service pages, course pages, and PageTemplate.
+ * Uses tokens from globals.css (:root --ds-*).
+ */
+
+/* ——— Hero (PageTemplate + shared language) ——— */
+
+.hero {
+  background: var(--ds-gradient-hero);
+  color: var(--ds-on-teal);
+  padding: var(--ds-hero-y) var(--ds-section-x);
+}
+
+.heroGrid {
+  max-width: var(--ds-content-max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 3rem;
+}
+
+.heroGridSingle {
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+
+.heroContentCenter {
+  margin-inline: auto;
+}
+
+.heroContent h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  margin-bottom: 1rem;
+  color: var(--ds-on-teal);
+  line-height: 1.15;
+}
+
+.heroContent p {
+  font-size: 1.1rem;
+  max-width: 32rem;
+  margin-bottom: 2rem;
+  color: var(--ds-on-teal-soft);
+  line-height: 1.6;
+}
+
+.heroContentCenter p {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heroImage {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  border-radius: var(--ds-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--ds-shadow-hero);
+}
+
+.heroImage img {
+  object-fit: cover;
+}
+
+/* ——— Body sections (service / course inner pages) ——— */
+
+.section {
+  padding: var(--ds-section-y) var(--ds-section-x);
+  color: var(--ds-text-subtle);
+  background-color: var(--ds-surface);
+}
+
+.altSection {
+  padding: var(--ds-section-y) var(--ds-section-x);
+  background: var(--ds-surface-mint);
+  color: var(--ds-text-subtle);
+}
+
+.container {
+  max-width: var(--ds-content-max);
+  margin-inline: auto;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 3rem;
+  color: var(--primary);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.gridWide {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.card {
+  background: var(--ds-surface);
+  padding: 2rem 1.75rem;
+  border-radius: var(--ds-radius-md);
+  box-shadow: var(--ds-shadow-card);
+  border-top: var(--ds-card-accent-border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--ds-shadow-card-hover);
+}
+
+.card h3 {
+  margin-bottom: 0.75rem;
+  color: var(--ds-teal-700);
+  font-size: 1.2rem;
+}
+
+.card p {
+  color: var(--ds-text-subtle);
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+.cardImage {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  border-radius: var(--ds-radius-xs);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.cardImage img {
+  object-fit: cover;
+}
+
+.processList {
+  max-width: 36rem;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--ds-text-subtle);
+  list-style: decimal;
+  list-style-position: outside;
+  padding-left: 1.5rem;
+}
+
+.processList li {
+  margin-bottom: 0.35rem;
+  padding-left: 0.35rem;
+}
+
+/* ——— “What you get” / curriculum block ——— */
+
+.curriculum {
+  background: linear-gradient(180deg, var(--ds-surface-muted), var(--ds-surface));
+  padding: var(--ds-section-y) var(--ds-section-x);
+  text-align: center;
+  color: var(--ds-text-subtle);
+}
+
+.curriculumTitle {
+  color: var(--ds-teal-600);
+  margin-bottom: 0.5rem;
+}
+
+.curriculumGrid {
+  max-width: 56rem;
+  margin: 2.5rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.curriculumItem {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: var(--ds-surface);
+  padding: 1.2rem 1.4rem;
+  border-radius: var(--ds-radius-sm);
+  box-shadow: var(--ds-shadow-card);
+  border: 1px solid var(--ds-border-accent);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  text-align: left;
+}
+
+.curriculumItem:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--ds-shadow-card-hover);
+}
+
+.curriculumItem span {
+  background: var(--ds-gradient-check);
+  color: var(--ds-on-teal);
+  font-weight: 700;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  font-size: 0.85rem;
+}
+
+.curriculumItem p {
+  font-size: 1.05rem;
+  color: var(--ds-text-subtle);
+  margin: 0;
+}
+
+.curriculumFoot {
+  margin-top: 3rem;
+}
+
+.bottomCta {
+  background: var(--ds-gradient-cta);
+  color: var(--ds-on-teal-soft);
+  padding: var(--ds-section-y) var(--ds-section-x);
+  text-align: center;
+}
+
+.bottomCta h2 {
+  font-size: clamp(1.65rem, 3vw, 2.2rem);
+  color: var(--ds-on-teal);
+}
+
+.bottomCta p {
+  max-width: 42rem;
+  margin: 1rem auto 0;
+  opacity: 0.95;
+  color: var(--ds-on-teal-soft);
+}
+
+.bottomCtaLead {
+  margin-top: 2rem;
+}
+
+/* ——— Course highlight row (under hero) ——— */
+
+.courseHighlights {
+  width: 100%;
+  max-width: var(--ds-content-max);
+  margin: 0 auto;
+  padding: 4rem var(--ds-section-x);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+  background-color: var(--ds-surface);
+  box-sizing: border-box;
+}
+
+.courseHighlight {
+  background: var(--ds-surface);
+  padding: 2rem 1.25rem;
+  border-radius: var(--ds-radius-md);
+  box-shadow: var(--ds-shadow-card);
+  border: 1px solid var(--ds-border-accent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.courseHighlight:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--ds-shadow-card-hover);
+}
+
+.courseHighlight h3 {
+  color: var(--primary);
+  font-size: 1.75rem;
+  margin-bottom: 0.35rem;
+}
+
+.courseHighlight p {
+  margin: 0;
+  color: var(--ds-text-muted);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .heroImage {
+    height: 280px;
+    margin-top: 2rem;
+  }
+
+  .heroContent p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .courseHighlights {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .curriculumGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .courseHighlights {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,11 +1,12 @@
 import { getPostBySlug } from "@/lib/wp-rest";
 import { extractTOC, injectHeadingIds, TOCItem } from "@/lib/toc";
+import { stripHtml, truncateForMeta } from "@/lib/text";
 import TableOfContents from "@/components/TableOfContents/TableOfContents";
 import { notFound } from "next/navigation";
 import styles from "./blog.module.css";
 import Link from "next/link";
 
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
 export async function generateMetadata({
   params,
@@ -13,8 +14,38 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  const post = await getPostBySlug(slug);
+
+  if (!post) {
+    return { title: "Post not found | Fixyads" };
+  }
+
+  const titlePlain = stripHtml(post.title.rendered);
+  const title = `${titlePlain} | Fixyads Blog`;
+  const description = truncateForMeta(
+    post.excerpt?.rendered || post.content?.rendered || ""
+  );
+
+  const imageUrl =
+    post._embedded?.["wp:featuredmedia"]?.[0]?.source_url as string | undefined;
+
   return {
+    title,
+    description,
     alternates: { canonical: `/blog/${slug}` },
+    openGraph: {
+      title: titlePlain,
+      description,
+      url: `/blog/${slug}`,
+      type: "article",
+      ...(imageUrl ? { images: [{ url: imageUrl }] } : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: titlePlain,
+      description,
+      ...(imageUrl ? { images: [imageUrl] } : {}),
+    },
   };
 }
 

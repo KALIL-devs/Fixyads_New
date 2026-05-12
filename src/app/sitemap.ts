@@ -11,6 +11,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
     },
     {
+      url: `${baseUrl}/services`,
+      lastModified: new Date(),
+      priority: 0.95,
+      changeFrequency: "weekly",
+    },
+    {
+      url: `${baseUrl}/courses`,
+      lastModified: new Date(),
+      priority: 0.95,
+      changeFrequency: "weekly",
+    },
+    {
       url: `${baseUrl}/services/search-engine-optimization`,
       lastModified: new Date(),
       priority: 0.9,
@@ -74,6 +86,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/contact`,
       lastModified: new Date(),
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/portfolio`,
+      lastModified: new Date(),
+      priority: 0.65,
+      changeFrequency: "monthly",
+    },
+    {
+      url: `${baseUrl}/testimonials`,
+      lastModified: new Date(),
+      priority: 0.65,
+      changeFrequency: "monthly",
+    },
+    {
+      url: `${baseUrl}/privacy-policy`,
+      lastModified: new Date(),
+      priority: 0.3,
+      changeFrequency: "yearly",
+    },
+    {
+      url: `${baseUrl}/terms-of-service`,
+      lastModified: new Date(),
+      priority: 0.3,
+      changeFrequency: "yearly",
     },
   ];
 } 

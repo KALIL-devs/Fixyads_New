@@ -6,14 +6,54 @@
   /* Brand Colors - Directly matched to the Fixyads logo */
   --primary: #188279;
   --primary-hover: #0d5f59;
+  --primary-dark: #0d5f59;
   --accent: #fc7922;      /* An energetic, warm orange for high visibility and focus rings */
+  --secondary: #ffffff;   /* Surfaces on tinted sections (legacy + page shells) */
 
   /* Neutral Colors (Light Mode) - Clean and modern */
   --background: #ffffff;
   --foreground: #2c2c2c;    /* Dark gray for good readability, slightly softer than black */
-  --muted: black;         /* Medium gray for supporting text */
+  --muted: #4b5563;         /* Supporting body text (avoid pure black for contrast harmony) */
   --muted-light: #f3f3f3;   /* Very light, clean background */
   --border: #e0e0e0;        /* Subtle border color */
+
+  /* ——— Design system: services & course pages (teal + orange theme) ——— */
+  --ds-teal-950: #022c22;
+  --ds-teal-900: #134e4a;
+  --ds-teal-800: #0f766e;
+  --ds-teal-700: #0d9488;
+  --ds-teal-600: #119c90;
+  --ds-teal-500: #15b597;
+  --ds-teal-100: #ccfbf1;
+  --ds-surface: #ffffff;
+  --ds-surface-muted: #f8fafc;
+  --ds-surface-mint: #f0fdfa;
+  --ds-surface-faq: #fafafa;
+  /* Light, soft grays (avoid near-black on service/course pages) */
+  --ds-text: #64748b;
+  --ds-text-muted: #94a3b8;
+  --ds-text-subtle: #6b7280;
+  --ds-heading: #556987;
+  --ds-on-teal: #ffffff;
+  --ds-on-teal-soft: rgba(255, 255, 255, 0.92);
+  --ds-border-subtle: #e5e7eb;
+  --ds-border-accent: rgba(24, 130, 121, 0.14);
+  --ds-radius-lg: 18px;
+  --ds-radius-md: 16px;
+  --ds-radius-sm: 14px;
+  --ds-radius-xs: 12px;
+  --ds-shadow-hero: 0 25px 60px rgba(0, 0, 0, 0.22);
+  --ds-shadow-card: 0 12px 35px rgba(0, 0, 0, 0.06);
+  --ds-shadow-card-hover: 0 18px 45px rgba(0, 0, 0, 0.1);
+  --ds-content-max: 1100px;
+  --ds-content-wide: 1200px;
+  --ds-section-y: 4.5rem;
+  --ds-section-x: 1.5rem;
+  --ds-hero-y: clamp(4rem, 8vw, 5.75rem);
+  --ds-gradient-hero: linear-gradient(135deg, var(--ds-teal-800), var(--ds-teal-500));
+  --ds-gradient-cta: linear-gradient(135deg, var(--ds-teal-800), var(--ds-teal-950));
+  --ds-gradient-check: linear-gradient(135deg, var(--ds-teal-500), var(--ds-teal-800));
+  --ds-card-accent-border: 4px solid var(--primary);
 
   /* Spacing & Layout */
   --container-padding: 1rem;
@@ -36,21 +76,7 @@
 }
 
 /* =========================================================================
-   2. DARK MODE OVERRIDES
-   ========================================================================= */
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #white;      /* Slightly softer dark background */
-    --foreground: #ededed;
-    --muted: #3a3a3a;
-    --muted-light: #2c2f33;     /* Dark muted background */
-    --border: #3b3e42;
-  }
-}
-
-/* =========================================================================
-   3. GLOBAL RESET & BASE STYLES
+   2. GLOBAL RESET & BASE STYLES
    ========================================================================= */
 
 /* Box-sizing reset */
@@ -65,12 +91,14 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  color-scheme: light;
+  background-color: var(--ds-surface);
 }
 
 /* Base Body Styles */
 body {
   color: var(--foreground);
-  background: var(--background);
+  background: var(--ds-surface);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -97,7 +125,7 @@ a {
 }
 
 a:hover {
-    color: var(--primary-dark);
+    color: var(--primary-hover);
 }
 
 a:focus-visible {

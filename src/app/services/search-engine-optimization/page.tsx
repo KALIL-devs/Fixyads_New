@@ -1,64 +1,26 @@
-import type { Metadata } from "next";
-// import styles from "../Services.module.css";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import ds from "@/styles/pageDesignSystem.module.css";
 import Styles from "./SeoPage.module.css";
+import PageTemplate from "@/components/layout/PageTemplate";
+import { siteContent, generateSiteMetadata } from "@/data/site-content";
+import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  alternates: { canonical: '/search-engine-optimization' },
-  title: "SEO Services | Rank Higher & Grow Organic Traffic",
-  description:
-    "Professional SEO services to boost your website rankings, increase organic traffic, and drive quality leads. On-page, off-page & technical SEO.",
-  keywords: [
-    "SEO services",
-    "search engine optimization",
-    "on page seo",
-    "off page seo",
-    "technical seo",
-    "local seo",
-  ],
-};
+export const metadata: Metadata = generateSiteMetadata("search-engine-optimization");
 
 export default function ServicesPage() {
+  const data = siteContent["search-engine-optimization"];
+
   return (
-    <>
-      {/* Hero Section with Image */}
-      <section className={Styles.seoHero}>
-        <div className={Styles.seoHeroGrid}>
-          <div className={Styles.seoHeroContent}>
-            <p>Turn Website Visitors Into Paying Clients</p>
-            <h1>Leading Search Engine Optimization Company</h1>
-            <p>
-              We help businesses attract the right audience and convert traffic into real customer inquiries. 
-              Our SEO services strengthen your search visibility, improve rankings, and drive consistent, high-intent 
-              visitors to your website. With a focused strategy and continuous optimization, we support steady growth 
-              and measurable results for your brand.
-            </p>
-            <Link href="/contact" className="btn btn-primary">
-              Get Free SEO Audit
-            </Link>
-          </div>
-
-          {/* Image */}
-          <div className={Styles.seoHeroImage}>
-            <Image
-              src="/services/seo.png"
-              alt="SEO analytics and growth dashboard"
-              fill
-              priority
-            />
-          </div>
-        </div>
-      </section>
-
+    <PageTemplate data={data}>
       {/* Services Overview */}
-      <section className={Styles.section}>
-        <div className={Styles.container}>
-          <h2 className={Styles.sectionTitle}>Our End to End SEO Services to Meet Your Business Needs</h2>
+      <section className={ds.section}>
+        <div className={ds.container}>
+          <h2 className={ds.sectionTitle}>Our End to End SEO Services to Meet Your Business Needs</h2>
 
-          <div className={Styles.grid}>
-            <div className={Styles.card}>
-              <div className={Styles.cardImage}>
+          <div className={`${ds.grid} ${ds.gridWide}`}>
+            <div className={ds.card}>
+              <div className={ds.cardImage}>
                 <Image
                   src="/services/seopage/webseoaudit.png"
                   alt="Website SEO Audit"
@@ -75,8 +37,8 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className={Styles.card}>
-              <div className={Styles.cardImage}>
+            <div className={ds.card}>
+              <div className={ds.cardImage}>
                 <Image
                   src="/services/seopage/onpageseo.png"
                   alt="On-page SEO"
@@ -92,8 +54,8 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className={Styles.card}>
-              <div className={Styles.cardImage}>
+            <div className={ds.card}>
+              <div className={ds.cardImage}>
                 <Image
                   src="/services/seopage/technicalseo.png"
                   alt="Technical SEO"
@@ -109,8 +71,8 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className={Styles.card}>
-              <div className={Styles.cardImage}>
+            <div className={ds.card}>
+              <div className={ds.cardImage}>
                 <Image
                   src="/services/seopage/offpageseo.png"
                   alt="Off-page SEO"
@@ -125,8 +87,8 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className={Styles.card}>
-              <div className={Styles.cardImage}>
+            <div className={ds.card}>
+              <div className={ds.cardImage}>
                 <Image
                   src="/services/seopage/localseo.png"
                   alt="Local SEO"
@@ -141,8 +103,8 @@ export default function ServicesPage() {
               </p>
             </div>
 
-            <div className={Styles.card}>
-              <div className={Styles.cardImage}>
+            <div className={ds.card}>
+              <div className={ds.cardImage}>
                 <Image
                   src="/services/seopage/report.png"
                   alt="SEO Reporting & Analytics"
@@ -162,53 +124,9 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Process Section */}
-      {/* <section className={styles.altSection}>
-        <div className={styles.container}>
-          <h2 className={styles.sectionTitle}>Our SEO Process</h2>
-
-          <ol className={styles.processList}>
-            <li>Website & Competitor Audit</li>
-            <li>Keyword Research & Strategy</li>
-            <li>On-Page & Technical Optimization</li>
-            <li>Link Building & Content Growth</li>
-            <li>Tracking, Reporting & Scaling</li>
-          </ol>
-        </div>
-      </section>
-      <section className={styles.curriculum}>
-        <h2 style={{color:'#119c90'}}>What You’ll Learn</h2>
-
-        <div className={styles.curriculumGrid}>
-          <div className={styles.curriculumItem}>
-            <span>✓</span>
-            <p>SEO & Content Marketing</p>
-          </div>
-          <div className={styles.curriculumItem}>
-            <span>✓</span>
-            <p>Google Ads & Meta Ads</p>
-          </div>
-          <div className={styles.curriculumItem}>
-            <span>✓</span>
-            <p>Social Media Marketing</p>
-          </div>
-          <div className={styles.curriculumItem}>
-            <span>✓</span>
-            <p>Email Marketing & Automation</p>
-          </div>
-          <div className={styles.curriculumItem}>
-            <span>✓</span>
-            <p>Analytics & Conversion Optimization</p>
-          </div>
-        </div>
-        <div className="text-center" style={{ marginTop: '3rem',}}>
-          <Link href="/contact" className="btn btn-primary">Contact us</Link>
-        </div>
-      </section> */}
-
       {/* Business Value Section - Alternate Layout */}
       <section className={Styles.valueSection}>
-        <div className={Styles.container}>
+        <div className={ds.container}>
 
           <div className={Styles.valueHeader}>
             <h2>
@@ -274,7 +192,7 @@ export default function ServicesPage() {
 
       {/* AI SEO Features Section */}
       <section className={Styles.aiFeatures}>
-        <div className={Styles.container}>
+        <div className={ds.container}>
 
           <div className={Styles.centerHeader}>
             <h2>Dominate AI Search with Our Smart AI SEO Solutions</h2>
@@ -325,8 +243,8 @@ export default function ServicesPage() {
 
       {/* AI SEO Services Section */}
       <section className={Styles.aiSection}>
-        <div className={Styles.container}>
-          <div className={Styles.aititle}>
+        <div className={ds.container}>
+          <div className={Styles.aiTitle}>
             <h2>AI SEO Services</h2>
           </div>
 
@@ -348,9 +266,9 @@ export default function ServicesPage() {
                 continuous performance monitoring to help businesses grow faster in competitive digital markets.
               </p>
 
-              <a href="/contact" className="btn btn-primary" style={{ marginTop: "20px" }}>
+              <Link href="/contact" className={`btn btn-primary ${Styles.aiCtaLead}`}>
                 Talk To Our Expert
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -358,7 +276,7 @@ export default function ServicesPage() {
 
       {/* FAQ Section */}
       <section className={Styles.faqSection}>
-        <div className={Styles.container}>
+        <div className={ds.container}>
 
           <h2 className={Styles.faqTitle}>Frequently Asked Questions</h2>
 
@@ -423,30 +341,6 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* AI CTA Banner */}
-      <section className={Styles.aiCta}>
-        <div className={Styles.container}>
-          <h2>Turn Searches into Sales</h2>
-          <p>Professional SEO services that deliver measurable results.</p>
-
-          <a href="/contact" className="btn btn-primary" style={{ marginTop: "20px" }}>
-            Request a Strategy Call
-          </a>
-        </div>
-      </section>
-
-      {/* CTA */}
-      {/* <section className={styles.cta}>
-        <div className={styles.container}>
-          <h2>Ready to Dominate Search Results?</h2>
-          <p>
-            Let our SEO experts help you grow organic traffic and increase sales.
-          </p>
-          <Link href="/contact" className='btn btn-secondary' style={{marginTop: '30px'}}>
-            Talk to an Expert
-          </Link>
-        </div>
-      </section> */}
-    </>
+    </PageTemplate>
   );
 }

@@ -1,21 +1,28 @@
+import Link from "next/link";
 import styles from "./CoursesTraining.module.css";
 import { FaBullhorn, FaCode, FaBriefcase } from "react-icons/fa";
 
 const courses = [
   {
     title: "Digital Marketing",
-    description: "Hands-on digital marketing course covering SEO, social media marketing, Google Ads, analytics tools, live projects, and real-world strategies.",
+    description:
+      "Hands-on digital marketing covering SEO, social media, Google Ads, analytics, live projects, and real-world strategies.",
     icon: <FaBullhorn />,
+    href: "/courses/digital-marketing",
   },
   {
     title: "Web Development",
-    description: "Practical website development training using HTML, CSS, JavaScript, CMS platforms, responsive design, SEO practices, and performance optimization.",
+    description:
+      "Practical training in HTML, CSS, JavaScript, React, Next.js, APIs, and deployment—with portfolio-ready projects.",
     icon: <FaCode />,
+    href: "/courses/web-development",
   },
   {
     title: "Web Design",
-    description: "Learn web design from basics to advanced with UI/UX, Figma, HTML, CSS, and responsive design. Work on real projects to create modern, creative, and mobile-friendly websites.",
+    description:
+      "UI fundamentals, responsive layout, and design-to-code workflows. Complements our web development track for creative-focused learners.",
     icon: <FaBriefcase />,
+    href: "/courses/web-development",
   },
 ];
 
@@ -31,14 +38,16 @@ export default function CoursesTraining() {
         <div className={styles.cards}>
           {courses.map((course, index) => (
             <div key={index} className={styles.card}>
-              <div >
+              <div>
                 <div className={styles.icon}>{course.icon}</div>
                 <div>
                   <h3 className={styles.cardTitle}>{course.title}</h3>
                   <p className={styles.cardText}>{course.description}</p>
                 </div>
               </div>
-              <button className={styles.cardBtn}>View Details</button>
+              <Link href={course.href} className={styles.cardBtn}>
+                View details
+              </Link>
             </div>
           ))}
         </div>

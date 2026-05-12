@@ -18,11 +18,11 @@ const Footer = () => {
                         <li><Link href="/services#ads">Performance Marketing</Link></li>
                         <li><Link href="/services/influencer-marketing">Web Development</Link></li> */}
 
-                        <li><Link href="/search-engine-optimization">SEO</Link></li>
-                        <li><Link href="/social-media-marketing">SMM</Link></li>
-                        <li><Link href="/content-branding">Content & Branding</Link></li>
-                        <li><Link href="/web-development">Web Development</Link></li>
-                        <li><Link href="/influencer-marketing">Influencer Marketing</Link></li>
+                        <li><Link href="/services/search-engine-optimization">SEO</Link></li>
+                        <li><Link href="/services/social-media-marketing">SMM</Link></li>
+                        <li><Link href="/services/content-branding">Content & Branding</Link></li>
+                        <li><Link href="/services/web-development">Web Development</Link></li>
+                        <li><Link href="/services/influencer-marketing">Influencer Marketing</Link></li>
                     </ul>
                 </div>
 
@@ -30,7 +30,7 @@ const Footer = () => {
                     <h3>Courses</h3>
                     <ul className={styles.linkList}>
                         <li><Link href="/courses/digital-marketing">Digital Marketing Course</Link></li>
-                        <li><Link href="/courses/web-development">Web development Course</Link></li>
+                        <li><Link href="/courses/web-development">Web Development Course</Link></li>
                         <li><Link href="/courses/placement-support">Placement Support</Link></li>
 
                     </ul>

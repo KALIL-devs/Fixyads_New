@@ -3,12 +3,12 @@
 ================================= */
 
 .services {
-  padding: 6rem 1.5rem;
-  background: #ffffff;
+  padding: 6rem var(--ds-section-x);
+  background: var(--ds-surface);
 }
 
 .container {
-  max-width: 1200px;
+  max-width: var(--ds-content-wide);
   margin: 0 auto;
 }
 
@@ -20,7 +20,7 @@
   text-align: center;
   font-size: 2.8rem;
   margin-bottom: 1rem;
-  color: #111827;
+  color: var(--ds-heading);
 }
 
 .subheading {
@@ -28,7 +28,7 @@
   font-size: 1.1rem;
   max-width: 700px;
   margin: 0 auto 4rem;
-  color: #6b7280;
+  color: var(--ds-text-muted);
 }
 
 /* ===============================
@@ -83,13 +83,13 @@
 .content h2 {
   font-size: 2rem;
   margin-bottom: 1.2rem;
-  color: #111827;
+  color: var(--ds-heading);
 }
 
 .content p {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: #4b5563;
+  color: var(--ds-text-subtle);
 }
 
 /* CTA Wrapper */

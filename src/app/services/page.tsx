@@ -5,7 +5,17 @@ import styles from "./Services.module.css";
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/services' },
+  title: "Digital Marketing & Web Services | Fixyads",
+  description:
+    "Explore Fixyads services: web development, SEO, social media marketing, content and branding, and influencer campaigns—built for measurable growth.",
+  alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Digital Marketing & Web Services | Fixyads",
+    description:
+      "End-to-end digital services from technical SEO and performance web builds to social, content, and creator partnerships.",
+    url: "/services",
+    type: "website",
+  },
 };
 
 const services = [

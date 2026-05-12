@@ -79,7 +79,12 @@ export default function RootLayout({
 
 
           <Navbar />
-          <main style={{ minHeight: "calc(100vh - 400px)" }}>
+          <main
+            style={{
+              minHeight: "calc(100vh - 400px)",
+              backgroundColor: "#ffffff",
+            }}
+          >
             {children}
             <FloatingQuote />
           </main>

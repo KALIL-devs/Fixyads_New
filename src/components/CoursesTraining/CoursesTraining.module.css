@@ -77,6 +77,9 @@
 
 /* CTA Button */
 .cardBtn {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
   background: transparent;
   border: 1.5px solid #15b597;
   color: #15b597;

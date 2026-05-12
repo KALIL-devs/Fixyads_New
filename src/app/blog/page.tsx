@@ -2,10 +2,26 @@ import Link from "next/link";
 import { getAllPosts } from "@/lib/wp-rest";
 import styles from "./blog.module.css";
 
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  alternates: { canonical: '/blog' },
+  title: "Blog | Fixyads — Digital Marketing, SEO & Growth",
+  description:
+    "Articles and guides from Fixyads on digital marketing strategy, SEO, social media, branding, web development, and training.",
+  alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "Blog | Fixyads",
+    description:
+      "Insights on digital marketing, SEO, social media, and growing your business online.",
+    url: "/blog",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog | Fixyads",
+    description:
+      "Digital marketing articles, SEO tips, and growth strategies from the Fixyads team.",
+  },
 };
 
 /* Utility: limit words */

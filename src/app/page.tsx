@@ -32,25 +32,25 @@ const services: {
       title: "Branding",
       description: "We craft a brand that commands recognition and trust.Every detail, from visuals to messaging, is designed to tell your story with clarity and impact.A compelling brand instills confidence in your business,turning that trust into lasting customer loyalty.",
       icon: "Palette",
-      link: "/content-branding",
+      link: "/services/content-branding",
     },
     {
       title: "Search Engine Optimization (SEO)",
       description: "Your business appears prominently when customers search for your services. We use precise keyword strategies, technical expertise, and high-quality content to support your visibility.This brings steady, relevant organic traffic to your website.",
       icon: "Search",
-      link: "/search-engine-optimization",
+      link: "/services/search-engine-optimization",
     },
     {
       title: "Search Engine Marketing (SEM)",
       description: "We position your brand in front of the right audience at the right time. Our campaigns target high-intent users, driving meaningful engagement and conversions.Every ad is meticulously optimized to maximize ROI and efficiency.",
       icon: "Megaphone",
-      link: "/search-engine-optimization",
+      link: "/services/search-engine-optimization",
     },
     {
       title: "Content Marketing",
       description: "Strong content helps your audience understand your brand and trust your expertise. We create content that answers real questions and addresses real needs of business.It strengthens your SEO while keeping visitors engaged turning attention into lasting brand connections.",
       icon: "MessageCircle",
-      link: "/social-media-marketing",
+      link: "/services/content-branding",
     },
     // {
     //   title: "PPC Marketing",
@@ -74,7 +74,7 @@ const services: {
       title: "Influencer Marketing",
       description: "We connect your brand with influencers who align naturally with your values and audience. Authentic collaborations help build credibility and introduce your business to new communities. The focus remains on meaningful engagement rather than surface-level reach, so your brand feels trusted, relevant, and real.",
       icon: "Handshake",
-      link: "/influencer-marketing",
+      link: "/services/influencer-marketing",
     },
     // {
     //   title: "Affiliate Marketing",
@@ -86,7 +86,7 @@ const services: {
       title: "Website Development",
       description: "Your website often creates the first impression of your business. We design fast, intuitive, and user-friendly websites that are easy to navigate. Built with SEO, usability, and conversions in mind, your website becomes a powerful asset that supports marketing and business growth.",
       icon: "Code",
-      link: "/web-development",
+      link: "/services/web-development",
     },
   ];
 
