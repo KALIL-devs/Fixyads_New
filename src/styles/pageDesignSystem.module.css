@@ -8,7 +8,13 @@
 .hero {
   background: var(--ds-gradient-hero);
   color: var(--ds-on-teal);
-  padding: var(--ds-hero-y) var(--ds-section-x);
+  padding: calc(var(--navbar-offset) + var(--ds-hero-y)) var(--ds-section-x) var(--ds-hero-y);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: calc(var(--navbar-offset) + 1.5rem) var(--ds-section-x) var(--ds-hero-y);
+  }
 }
 
 .heroGrid {

@@ -5,6 +5,7 @@ import TableOfContents from "@/components/TableOfContents/TableOfContents";
 import { notFound } from "next/navigation";
 import styles from "./blog.module.css";
 import Link from "next/link";
+import { ArrowLeft, ArrowRight, Clock, Calendar } from "lucide-react";
 
 import type { Metadata } from "next";
 
@@ -63,58 +64,127 @@ export default async function BlogDetail({
   const toc: TOCItem[] = extractTOC(rawHtml);
   const contentWithIds = injectHeadingIds(rawHtml);
 
+  const featuredImage =
+    post._embedded?.["wp:featuredmedia"]?.[0]?.source_url as string | undefined;
+
+  const publishDate = post.date
+    ? new Date(post.date).toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      })
+    : null;
+
   return (
     <div className={styles.pageWrapper}>
-      {/* Breadcrumb */}
-      <nav className={styles.breadcrumb}>
-        <Link href="/blog" className={styles.breadcrumbLink}>
-          Blog
-        </Link>
-        <span className={styles.breadcrumbSeparator}>/</span>
-        <span
-          className={styles.breadcrumbCurrent}
-          dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-        />
-      </nav>
 
-      <section className={styles.blogLayout}>
-        {/* MAIN CONTENT */}
-        <article className={styles.blogContent}>
+      {/* ── Hero / Featured Image Header ── */}
+      <div className={styles.hero}>
+        {featuredImage ? (
+          <>
+            <img src={featuredImage} alt={stripHtml(post.title.rendered)} className={styles.heroImg} />
+            <div className={styles.heroOverlay} />
+          </>
+        ) : (
+          <div className={styles.heroPlaceholder}>
+            <div className={styles.heroOrb1} />
+            <div className={styles.heroOrb2} />
+            <div className={styles.heroGrid} />
+          </div>
+        )}
+
+        <div className={styles.heroContent}>
+          {/* Breadcrumbs */}
+          <nav className={styles.breadcrumbs}>
+            <Link href="/">Home</Link>
+            <span className={styles.breadcrumbsSeparator}>/</span>
+            <Link href="/blog">Blog</Link>
+            <span className={styles.breadcrumbsSeparator}>/</span>
+            <span className={styles.breadcrumbsActive} dangerouslySetInnerHTML={{ __html: post.title.rendered }} />
+          </nav>
+
+          {/* Meta row */}
+          <div className={styles.heroMeta}>
+            <span className={styles.heroCat}>SEO</span>
+            {publishDate && (
+              <div className={styles.heroMetaItem}>
+                <Calendar size={13} />
+                <span>{publishDate}</span>
+              </div>
+            )}
+            <div className={styles.heroMetaItem}>
+              <Clock size={13} />
+              <span>5 Min Read</span>
+            </div>
+          </div>
+
+          {/* Title */}
           <h1
-            className={styles.postTitle}
+            className={styles.heroTitle}
             dangerouslySetInnerHTML={{ __html: post.title.rendered }}
           />
+        </div>
+      </div>
 
-          {/* ✅ MOBILE / TABLET TOC */}
-          {toc.length > 0 && (
-            <div className={`${styles.tocCard} ${styles.mobileOnly}`}>
-              <TableOfContents toc={toc} />
+      {/* ── Article Layout ── */}
+      <div className={styles.bodyWrap}>
+        <div className={styles.blogLayout}>
+
+          {/* ── Main Content ── */}
+          <article className={styles.blogContent}>
+
+            {/* Mobile TOC */}
+            {toc.length > 0 && (
+              <div className={`${styles.tocCard} ${styles.mobileOnly}`}>
+                <TableOfContents toc={toc} />
+              </div>
+            )}
+
+            <div
+              className={styles.postContent}
+              dangerouslySetInnerHTML={{ __html: contentWithIds }}
+            />
+
+            {/* Back to blog link at bottom */}
+            <div className={styles.articleFooter}>
+              <Link href="/blog" className={styles.backLink}>
+                <ArrowLeft size={15} />
+                <span>All Articles</span>
+              </Link>
             </div>
-          )}
+          </article>
 
-          <div
-            className={styles.postContent}
-            dangerouslySetInnerHTML={{ __html: contentWithIds }}
-          />
-        </article>
+          {/* ── Desktop Sidebar ── */}
+          <aside className={styles.rightSidebar}>
 
-        {/* DESKTOP SIDEBAR */}
-        <aside className={styles.rightSidebar}>
-          {toc.length > 0 && (
-            <div className={`${styles.tocCard} ${styles.desktopOnly}`}>
-              <TableOfContents toc={toc} />
+            {/* Desktop TOC */}
+            {toc.length > 0 && (
+              <div className={`${styles.tocCard} ${styles.desktopOnly}`}>
+                <TableOfContents toc={toc} />
+              </div>
+            )}
+
+            {/* Premium CTA Card */}
+            <div className={styles.ctaCard}>
+              <div className={styles.ctaCardOrb} />
+              <div className={styles.ctaCardGrid} />
+              <span className={styles.ctaEyebrow}>// Free Consultation</span>
+              <h4 className={styles.ctaTitle}>
+                Ready to Grow Your Business?
+              </h4>
+              <p className={styles.ctaText}>
+                Our experts build custom digital marketing strategies that drive real, measurable results.
+              </p>
+              <Link href="/contact" className={styles.ctaButton}>
+                <span>Get a Free Strategy Call</span>
+                <ArrowRight size={14} className={styles.ctaBtnArrow} />
+              </Link>
             </div>
-          )}
 
-          <div className={styles.ctaCard}>
-            <h4>Need help with Digital Marketing?</h4>
-            <p>Let our experts grow your business.</p>
-            <Link href="/contact" className={styles.ctaButton}>
-              Get a Free Quote
-            </Link>
-          </div>
-        </aside>
-      </section>
+          </aside>
+        </div>
+      </div>
+
     </div>
   );
 }

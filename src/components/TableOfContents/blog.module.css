@@ -1,10 +1,9 @@
-/* =========================================================
-   TOC LEVEL INDENTATION
-========================================================= */
+/* =========================================================================
+   TABLE OF CONTENTS — Level Indentation
+   ========================================================================= */
 
-
-.bg{
-  background-color: #fff;
+.toc {
+  /* inherited from tocCard styles in page module */
 }
 
 .tocItem {
@@ -21,7 +20,17 @@
   padding-left: 1rem;
 }
 
-/* h4 (future-proof) */
+/* h3 border accent */
+.tocLevel3 a {
+  border-left: 2px solid rgba(244, 82, 30, 0.2);
+  padding-left: 0.75rem !important;
+}
+
+.tocLevel3 a:hover {
+  border-left-color: var(--accent) !important;
+}
+
+/* h4 */
 .tocLevel4 {
   padding-left: 2rem;
 }

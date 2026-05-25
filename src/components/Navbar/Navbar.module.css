@@ -1,142 +1,521 @@
 /* ================= HEADER ================= */
 .header {
-  position: sticky;
+  position: absolute;
   top: 0;
+  left: 0;
   z-index: 1000;
-  /* background: rgba(255, 255, 255, 0.9); */
-  background: #e8fffc;
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background: transparent;
+  /* Include transform in transition for butter-smooth sliding */
+  transition: 
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    padding 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.navContainer {
+/* Floating card design inspired by the reference layout */
+.floatingCard {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 1rem;
-  height: 70px;
+  background: #0B1C3D;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Scrolled sticky state transition (re-enabled for reveal-on-scroll-up) */
+.header.scrolled {
+  position: fixed;
+  padding: 0.5rem 1rem;
+}
+
+.header.scrolled .floatingCard {
+  border-radius: 12px;
+  background: rgba(11, 28, 61, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Hidden state: slides up smoothly out of view when scrolling down */
+.header.hidden {
+  transform: translateY(-100%);
+  pointer-events: none; /* Ignore hover interactions when hidden */
+}
+
+/* Keep the top utility contact bar visible when scrolled */
+/* .header.scrolled .topBar {
+  height: 0;
+  opacity: 0;
+  padding: 0;
+  overflow: hidden;
+  border-bottom: 1px solid transparent;
+} */
+
+/* ================= 1. TOP UTILITY BAR ================= */
+.topBar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  height: 42px;
+  padding: 0 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ================= LOGO ================= */
-.logoImage {
-  height: 48px;
-  object-fit: contain;
-}
-
-/* ================= NAV LINKS ================= */
-.navLinks {
+.topBarLeft {
   display: flex;
   align-items: center;
-  gap: 2rem;
 }
 
-.navLink {
+.announcement {
+  font-size: 0.85rem;
   font-weight: 500;
-  color: #444;
-  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0; /* Override p margins */
+}
+
+.announcementLink {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+  margin-left: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.announcementLink:hover {
+  color: #ff7a45;
+  text-decoration: underline;
+}
+
+.topBarRight {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.topContactLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.navLink:hover {
+.topContactLink:hover {
   color: var(--accent);
 }
 
-/* ================= DROPDOWN ================= */
+.contactIcon {
+  color: var(--accent);
+}
+
+.socialDivider {
+  width: 1px;
+  height: 14px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.socialLinks a {
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.socialLinks a:hover {
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* ================= 2. MAIN NAVIGATION BAR ================= */
+.navContainer {
+  height: 76px;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* Essential for link absolute centering */
+  transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header.scrolled .navContainer {
+  height: 68px;
+}
+
+/* Logo renders in crisp white on dark navy background */
+.logoLink {
+  display: flex;
+  align-items: center;
+  z-index: 1010;
+}
+
+.logoImage {
+  height: 44px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header.scrolled .logoImage {
+  height: 38px;
+}
+
+/* Centered Navigation Links */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+@media (min-width: 769px) {
+  .navLinks {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+  }
+}
+
+.navLink {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.navLink:hover {
+  color: var(--accent);
+  opacity: 1;
+}
+
+.arrow {
+  font-size: 0.7rem;
+  opacity: 0.8;
+  transition: transform 0.2s ease;
+}
+
+.dropdown:hover .arrow,
+.dropdown.open .arrow {
+  transform: rotate(180deg);
+}
+
+/* ================= 3. DROPDOWN FLYOUTS ================= */
 .dropdown {
   position: relative;
 }
 
-/* Dropdown Menu Base */
 .dropdownMenu {
   position: absolute;
-  top: 110%;
-  left: 0;
-  min-width: 220px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-  padding: 0.5rem 0;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  min-width: 240px;
+  background: #0B1C3D;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.4);
+  padding: 0.75rem 0;
+  z-index: 1050;
 
-  /* Hidden by default */
-  display: block;
+  /* Smooth reveal */
   opacity: 0;
-  transform: translateY(10px);
+  visibility: hidden;
   pointer-events: none;
-
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
 }
 
-/* Show dropdown when JS adds .open */
+.dropdown:hover .dropdownMenu,
 .dropdown.open .dropdownMenu {
   opacity: 1;
-  transform: translateY(0);
+  visibility: visible;
   pointer-events: auto;
+  transform: translateX(-50%) translateY(4px);
 }
 
-/* Dropdown Items */
 .dropdownMenu a {
   display: block;
-  padding: 0.65rem 1.2rem;
-  font-size: 0.95rem;
-  color: #333;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
   text-decoration: none;
   transition: all 0.2s ease;
 }
 
 .dropdownMenu a:hover {
-  background: #f5f5f5;
+  background: rgba(255, 255, 255, 0.05);
   color: var(--accent);
+  padding-left: 1.5rem;
 }
 
-/* ================= MOBILE MENU BUTTON ================= */
+/* ================= 4. DESKTOP CTA & RIGHT GROUP ================= */
+.rightGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1010;
+}
+
+.orangeCtaBtn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  background: linear-gradient(135deg, #F4521E 0%, #FF7043 100%) !important; /* Solid orange gradient */
+  background-color: #F4521E !important; /* Solid fallback */
+  color: #ffffff !important;
+  border-radius: 8px !important; /* Reduced border-radius (sleek 8px) to avoid "bubble" circle shape */
+  padding: 0.65rem 1.5rem !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 15px rgba(244, 82, 30, 0.35) !important;
+  border: 1px solid transparent !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+/* Unique reflective liquid shimmer glass shine effect */
+.orangeCtaBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+.orangeCtaBtn:hover::before {
+  left: 100%;
+}
+
+.orangeCtaBtn:hover {
+  background: linear-gradient(135deg, #F4521E 0%, #FF7043 100%) !important; /* Keep exact same background gradient to remove hover color transition */
+  transform: translateY(-3px) scale(1.03) !important;
+  box-shadow: 
+    0 12px 25px rgba(244, 82, 30, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1) !important;
+}
+
+.btnArrow {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+}
+
+.orangeCtaBtn:hover .btnArrow {
+  transform: translateX(4px);
+}
+
+.mobileCta {
+  display: none;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* ================= 5. ANIMATED MOBILE HAMBURGER BUTTON ================= */
 .mobileMenuBtn {
   display: none;
   background: none;
   border: none;
-  font-size: 2rem;
   cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  padding: 0;
+  z-index: 1010;
+  transition: transform 0.3s ease;
 }
 
-/* ================= MOBILE ================= */
+.hamburgerLine {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  border-radius: 1px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: 1px 1px;
+}
+
+/* Transform Hamburger into an 'X' close icon */
+.mobileMenuBtn.btnOpen .hamburgerLine:nth-child(1) {
+  transform: rotate(45deg);
+}
+
+.mobileMenuBtn.btnOpen .hamburgerLine:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.mobileMenuBtn.btnOpen .hamburgerLine:nth-child(3) {
+  transform: rotate(-45deg);
+}
+
+/* ================= 6. RESPONSIVE RESPONSIVENESS ================= */
 @media (max-width: 768px) {
-  .mobileMenuBtn {
-    display: block;
+  .header {
+    padding: 0.5rem 1rem;
+  }
+  
+  .header.scrolled {
+    padding: 0.35rem 0.5rem;
   }
 
+  .topBar {
+    display: none; /* Hide top utility bar on mobile to keep interface clean */
+  }
+
+  .navContainer {
+    height: 64px;
+    padding: 0 1rem;
+  }
+
+  .header.scrolled .navContainer {
+    height: 58px;
+  }
+
+  .logoImage {
+    height: 34px;
+  }
+
+  .header.scrolled .logoImage {
+    height: 32px;
+  }
+
+  .orangeCtaBtn {
+    display: none !important; /* Hide desktop button, will be in mobile drawer */
+  }
+
+  .mobileMenuBtn {
+    display: flex; /* Show custom hamburger toggle */
+  }
+
+  /* Mobile Slide Down Navigation Drawer */
   .navLinks {
     position: absolute;
-    top: 70px;
+    top: 100%;
     left: 0;
     width: 100%;
-    background: #fff;
+    background: #0B1C3D;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     flex-direction: column;
     align-items: flex-start;
     padding: 1.5rem;
-    gap: 1.25rem;
+    gap: 1rem;
     display: none;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    z-index: 999;
   }
 
   .navLinks.active {
     display: flex;
+    animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
 
-  /* Mobile Dropdown */
+  .navLink {
+    width: 100%;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    font-size: 1.05rem;
+  }
+
+  .mobileCta {
+    display: block;
+  }
+
+  .mobileCta a {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem !important;
+    background-color: var(--accent) !important;
+    background-image: none !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    border: 1px solid var(--accent) !important;
+  }
+
+  .mobileCta a:hover {
+    background-color: #d84315 !important;
+  }
+
+  /* Mobile Dropdowns */
+  .dropdown {
+    width: 100%;
+  }
+
+  .dropdown:hover .dropdownMenu {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
   .dropdownMenu {
     position: static;
-    box-shadow: none;
-    padding-left: 1rem;
-
-    opacity: 1;
     transform: none;
-    pointer-events: auto;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.03);
+    border: none;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    padding: 0.25rem 0;
     display: none;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    width: 100%;
   }
 
   .dropdown.open .dropdownMenu {
-    display: block;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+
+  .dropdownMenu a {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.95rem;
+    border-bottom: none;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

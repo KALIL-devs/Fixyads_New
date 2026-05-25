@@ -3,77 +3,89 @@
    ========================================================================= */
 
 :root {
-  /* Brand Colors - Directly matched to the Fixyads logo */
-  --primary: #188279;
-  --primary-hover: #0d5f59;
-  --primary-dark: #0d5f59;
-  --accent: #fc7922;      /* An energetic, warm orange for high visibility and focus rings */
+  /* Brand Colors - Directly matched to the new Fixyads identity */
+  --primary: #0B1C3D;
+  --primary-hover: #152C5B;
+  --primary-dark: #0B1C3D;
+  --accent: #F4521E;      /* An energetic, warm orange for high visibility and focus rings */
   --secondary: #ffffff;   /* Surfaces on tinted sections (legacy + page shells) */
 
   /* Neutral Colors (Light Mode) - Clean and modern */
   --background: #ffffff;
-  --foreground: #2c2c2c;    /* Dark gray for good readability, slightly softer than black */
-  --muted: #4b5563;         /* Supporting body text (avoid pure black for contrast harmony) */
-  --muted-light: #f3f3f3;   /* Very light, clean background */
-  --border: #e0e0e0;        /* Subtle border color */
+  --foreground: #1A1A2E;    /* Deep dark blue-gray for ultimate readability */
+  --muted: #6B7280;         /* Supporting body text (cool grey) */
+  --muted-light: #F5F7FA;   /* Very light alt background */
+  --border: #e5e7eb;        /* Subtle border color */
 
-  /* ——— Design system: services & course pages (teal + orange theme) ——— */
-  --ds-teal-950: #022c22;
-  --ds-teal-900: #134e4a;
-  --ds-teal-800: #0f766e;
-  --ds-teal-700: #0d9488;
-  --ds-teal-600: #119c90;
-  --ds-teal-500: #15b597;
-  --ds-teal-100: #ccfbf1;
+  /* ——— Design system: services & course pages (New Premium Palette) ——— */
+  --ds-teal-950: #061126;
+  --ds-teal-900: #0B1C3D;
+  --ds-teal-800: #0B1C3D;
+  --ds-teal-700: #152C5B;
+  --ds-teal-600: #1C3B75;
+  --ds-teal-500: #F4521E;
+  --ds-teal-100: #F5F7FA;
   --ds-surface: #ffffff;
-  --ds-surface-muted: #f8fafc;
-  --ds-surface-mint: #f0fdfa;
-  --ds-surface-faq: #fafafa;
-  /* Light, soft grays (avoid near-black on service/course pages) */
-  --ds-text: #64748b;
-  --ds-text-muted: #94a3b8;
-  --ds-text-subtle: #6b7280;
-  --ds-heading: #556987;
+  --ds-surface-muted: #F5F7FA;
+  --ds-surface-mint: #F5F7FA;
+  --ds-surface-faq: #F5F7FA;
+  /* Premium typography alignment */
+  --ds-text: #6B7280;
+  --ds-text-muted: #6B7280;
+  --ds-text-subtle: #6B7280;
+  --ds-heading: #1A1A2E;
   --ds-on-teal: #ffffff;
   --ds-on-teal-soft: rgba(255, 255, 255, 0.92);
   --ds-border-subtle: #e5e7eb;
-  --ds-border-accent: rgba(24, 130, 121, 0.14);
+  --ds-border-accent: rgba(11, 28, 61, 0.14);
   --ds-radius-lg: 18px;
   --ds-radius-md: 16px;
   --ds-radius-sm: 14px;
   --ds-radius-xs: 12px;
-  --ds-shadow-hero: 0 25px 60px rgba(0, 0, 0, 0.22);
-  --ds-shadow-card: 0 12px 35px rgba(0, 0, 0, 0.06);
-  --ds-shadow-card-hover: 0 18px 45px rgba(0, 0, 0, 0.1);
+  --ds-shadow-hero: 0 25px 60px rgba(11, 28, 61, 0.15);
+  --ds-shadow-card: 0 12px 35px rgba(11, 28, 61, 0.04);
+  --ds-shadow-card-hover: 0 18px 45px rgba(11, 28, 61, 0.08);
   --ds-content-max: 1100px;
   --ds-content-wide: 1200px;
   --ds-section-y: 4.5rem;
   --ds-section-x: 1.5rem;
   --ds-hero-y: clamp(4rem, 8vw, 5.75rem);
-  --ds-gradient-hero: linear-gradient(135deg, var(--ds-teal-800), var(--ds-teal-500));
-  --ds-gradient-cta: linear-gradient(135deg, var(--ds-teal-800), var(--ds-teal-950));
-  --ds-gradient-check: linear-gradient(135deg, var(--ds-teal-500), var(--ds-teal-800));
+  --ds-gradient-hero: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 50%, var(--accent) 100%);
+  --ds-gradient-cta: linear-gradient(135deg, var(--primary), #061126);
+  --ds-gradient-check: linear-gradient(135deg, var(--accent), var(--primary));
   --ds-card-accent-border: 4px solid var(--primary);
 
   /* Spacing & Layout */
   --container-padding: 1rem;
   --max-width: 1280px;
 
-  /* Radius & Shadows - Clean and slightly rounded (matches the softness of the 'dot' in the 'i') */
+  /* Radius & Shadows */
   --radius: 25px;
   --btn-radius: 8px;
-  --shadow-sm: 0 3px 6px rgba(0, 0, 0, 0.1); /* Standard digital-style shadow */
+  --shadow-sm: 0 3px 6px rgba(11, 28, 61, 0.08);
 
-  /* Fluid Typography - Scale based on 1rem = 16px */
-  /* Using a generic sans-serif stack that favors modern, geometric faces like the logo */
-  --font-sans: 'Montserrat', 'Poppins', 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  /* ——— Typography: Innovation-forward font system ——— */
+  /* Space Grotesk: geometric, techy headings */
+  --font-heading: var(--font-heading), 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* DM Sans: clean, friendly body copy */
+  --font-sans:    var(--font-body), 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Space Mono: techy monospace for eyebrows/badges */
+  --font-mono:    var(--font-mono), 'Space Mono', monospace;
   --text-base: 1rem;
   --text-lg: 1.125rem;
   --text-xl: 1.25rem;
   --text-2xl: 1.5rem;
   --text-3xl: 1.875rem;
   --text-4xl: 2.25rem;
+  --navbar-offset: 142px; /* Spacing offset to clear absolute floating navbar */
 }
+
+@media (max-width: 768px) {
+  :root {
+    --navbar-offset: 80px;
+  }
+}
+
 
 /* =========================================================================
    2. GLOBAL RESET & BASE STYLES
@@ -100,13 +112,15 @@ body {
   color: var(--foreground);
   background: var(--ds-surface);
   font-family: var(--font-sans);
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
+  line-height: 1.65;
   min-height: 100vh;
   max-width: 100vw;
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
+  letter-spacing: -0.01em;
 }
 
 /* Reset image styling */
@@ -146,36 +160,49 @@ ol {
    4. TYPOGRAPHY (using fluid scale)
    ========================================================================= */
 
+/* =========================================================================
+   4. TYPOGRAPHY — Space Grotesk headings, energetic scale
+   ========================================================================= */
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+  font-family: var(--font-heading);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.1;       /* Tighter — more impactful */
   margin-bottom: 1rem;
+  letter-spacing: -0.03em; /* Space Grotesk looks great tighter */
 }
 
 h1 {
   font-size: 2.5rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
+  font-weight: 700;
 }
 
 h2 {
   font-size: var(--text-4xl);
+  font-weight: 700;
+  letter-spacing: -0.035em;
 }
 
 h3 {
   font-size: var(--text-3xl);
+  font-weight: 600;
+  letter-spacing: -0.025em;
 }
 
 h4 {
   font-size: var(--text-2xl);
+  font-weight: 600;
 }
 
 h5 {
   font-size: var(--text-xl);
+  font-weight: 600;
 }
 
 h6 {
@@ -184,7 +211,17 @@ h6 {
 }
 
 p {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  font-family: var(--font-sans);
+}
+
+/* Monospace eyebrows/labels — Space Mono accent */
+.mono,
+[class*='eyebrow'],
+[class*='label'] {
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
 }
 
 @media (min-width: 768px) {
@@ -227,10 +264,10 @@ p {
   user-select: none;
   white-space: nowrap;
   box-shadow: var(--shadow-sm);
-  /* Gradient styling */
-  background-image: linear-gradient(to top, #ff7f2a, #ffa560);
+  /* Gradient styling matching the new brand accent orange */
+  background-image: linear-gradient(to top, #F4521E, #FF7043);
   /* Fallback for older browsers (solid color) */
-  background-color: #ff7e5f;
+  background-color: #F4521E;
 }
 
 .btn:hover{
@@ -253,7 +290,7 @@ p {
 }
 
 .btn-primary:hover {
-  background-color: var(--primary)
+  background-color: #d84315; /* Darker vibrant brand orange instead of deep blue to prevent invisibility */
 }
 
 /* Secondary: Uses the complementary purple for visual diversity */
@@ -336,3 +373,70 @@ p {
 .mt-4 { margin-top: 2rem; }
 .mt-6 { margin-top: 3rem; }
 .mt-8 { margin-top: 4rem; }
+
+/* Spacing offset to clear absolute floating navbar on top of non-landing pages */
+.pageTopOffset {
+  padding-top: calc(var(--navbar-offset) + 2rem) !important;
+}
+
+@media (max-width: 768px) {
+  .pageTopOffset {
+    padding-top: calc(var(--navbar-offset) + 1.5rem) !important;
+  }
+}
+
+
+/* =========================================================================
+   8. GLOBAL FONT OVERRIDES — Space Grotesk + DM Sans + Space Mono
+   Make the entire site feel energetic and innovation-forward.
+   ========================================================================= */
+
+/* All headings → Space Grotesk */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), 'Space Grotesk', sans-serif;
+}
+
+/* Body copy, paragraphs, inputs → DM Sans */
+body,
+p,
+span,
+a,
+li,
+input,
+textarea,
+select,
+button {
+  font-family: var(--font-sans), 'DM Sans', sans-serif;
+}
+
+/* Eyebrows, uppercase labels, badges → Space Mono for a techy accent */
+/* Matches any class containing the word "eyebrow", "badge", "label", "tag" */
+[class*="eyebrow"],
+[class*="badgeText"],
+[class*="announcement"],
+[class*="awardBadge"] span,
+[class*="stepNo"] {
+  font-family: var(--font-mono), 'Space Mono', monospace;
+  letter-spacing: 0.08em;
+}
+
+/* Buttons → Space Grotesk for confident, punchy text */
+.btn,
+.btn-primary,
+.btn-secondary,
+[class*="primaryButton"],
+[class*="ghostButton"],
+[class*="viewAllBtn"],
+[class*="submitBtn"] {
+  font-family: var(--font-heading), 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Nav links → Space Grotesk */
+[class*="navLink"],
+[class*="navLinks"] a,
+[class*="dropdownMenu"] a {
+  font-family: var(--font-heading), 'Space Grotesk', sans-serif;
+  font-weight: 500;
+}

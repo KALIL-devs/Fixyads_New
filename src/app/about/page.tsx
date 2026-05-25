@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import styles from './page.module.css';
+import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/about' },
-  title: 'About Us | Digital Marketing Agency',
+  title: 'About Us | Digital Marketing Agency & Training Institute',
   description:
     'Learn about our journey, mission, and the team behind our success. We help businesses grow and students build careers.',
 };
@@ -11,125 +13,108 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      {/* HERO */}
+      {/* ── Glowing Hero Header ── */}
       <section className={styles.hero}>
-        <div className="container">
-          <h1 className={styles.heroTitle}>About Our Agency</h1>
-          <p className={styles.heroText}>
-            We are a team of digital marketers, developers, and educators helping
-            businesses grow and students succeed.
+        <div className={styles.heroOrb1} />
+        <div className={styles.heroOrb2} />
+        <div className={styles.heroGrid} />
+        <div className={styles.heroInner}>
+          <span className={styles.heroEyebrow}>// Who We Are</span>
+          <h1 className={styles.heroTitle}>
+            Bridging the Gap Between <span>Skills &amp; Scale</span>
+          </h1>
+          <p className={styles.heroSubtitle}>
+            We are a dedicated team of digital marketing specialists, software engineers, and professional mentors helping brands grow online and students launch meaningful careers.
           </p>
         </div>
       </section>
 
-      {/* STORY */}
-      <section className={styles.section}>
-        <div className="container">
-          <div className={styles.grid}>
-          <div className={styles.courseHeroImage}>
-            <img
-              src="/aboutus/aboutus.png"
-              alt="Digital Marketing Course"
-              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-            />
-          </div>
+      {/* ── Story Section ── */}
+      <section className={styles.storySection}>
+        <div className={styles.container}>
+          <div className={styles.storyGrid}>
+            <div className={styles.visualColumn}>
+              <div className={styles.visualFrame}>
+                <img
+                  src="/aboutus/aboutus.png"
+                  alt="Fixyads office workspace"
+                  className={styles.visualImg}
+                />
+                <div className={styles.visualOverlay} />
+              </div>
+            </div>
 
-            <div className={styles.content}>
-              <h2>Our Story</h2>
-              <p>
-                Founded in 2020, we started with a simple mission: to bridge the
-                gap between industry requirements and real-world skills.
+            <div className={styles.contentColumn}>
+              <span className={styles.sectionEyebrow}>// Our Journey</span>
+              <h2 className={styles.sectionTitle}>Crafting Real-World Success Stories Since 2020</h2>
+              <p className={styles.textLead}>
+                Founded with a simple mission: to bridge the gap between academic theory and active industry requirements.
               </p>
-              <p>
-                We’ve helped <strong>100+ businesses</strong> scale revenue and
-                trained <strong>500+ students</strong> now working in top MNCs.
-              </p>
-
-              <h3>Our Mission</h3>
-              <p>
-                To empower businesses with data-driven strategies and individuals
-                with career-defining skills.
+              <p className={styles.textBody}>
+                Over the past years, we’ve successfully partnered with **100+ global brands** to scale their monthly revenue and trained **500+ students** now working as specialized marketers and developers in top MNCs.
               </p>
 
-              <h3>Our Vision</h3>
-              <p>
-                To become the most trusted digital partner and training institute
-                globally.
-              </p>
+              <div className={styles.pillars}>
+                <div className={styles.pillar}>
+                  <h3>Our Mission</h3>
+                  <p>To empower local and global businesses with custom, data-driven strategy and individuals with career-defining, practical technical skills.</p>
+                </div>
+                <div className={styles.pillar}>
+                  <h3>Our Vision</h3>
+                  <p>To become the most trusted digital performance partner and career training academy globally, built around transparency and results.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* STATS */}
-      <section className={styles.stats}>
-        <div className="container">
-          <div className={styles.statsGrid}>
-            <div>
-              <div className={styles.statNumber}>100+</div>
-              <div className={styles.statLabel}>Clients Served</div>
-            </div>
-            <div>
-              <div className={styles.statNumber}>500+</div>
-              <div className={styles.statLabel}>Students Trained</div>
-            </div>
-            <div>
-              <div className={styles.statNumber}>95%</div>
-              <div className={styles.statLabel}>Success Rate</div>
-            </div>
-            <div>
-              <div className={styles.statNumber}>50+</div>
-              <div className={styles.statLabel}>Team Members</div>
+      {/* ── Stats Strip (Curated Navy Card) ── */}
+      <section className={styles.statsSection}>
+        <div className={styles.container}>
+          <div className={styles.statsCard}>
+            <div className={styles.statsOrb} />
+            <div className={styles.statsGridPattern} />
+            <div className={styles.statsGrid}>
+              <div className={styles.statItem}>
+                <div className={styles.statNumber}>100+</div>
+                <div className={styles.statLabel}>Brands Scaled</div>
+              </div>
+              <div className={styles.statDivider} />
+              <div className={styles.statItem}>
+                <div className={styles.statNumber}>500+</div>
+                <div className={styles.statLabel}>Graduates Trained</div>
+              </div>
+              <div className={styles.statDivider} />
+              <div className={styles.statItem}>
+                <div className={styles.statNumber}>5x</div>
+                <div className={styles.statLabel}>Average Growth ROI</div>
+              </div>
+              <div className={styles.statDivider} />
+              <div className={styles.statItem}>
+                <div className={styles.statNumber}>95%</div>
+                <div className={styles.statLabel}>Success Placement Rate</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* TEAM */}
-      <section className={`${styles.section} ${styles.teamSection}`}>
-        <div className="container">
-          <h2 className={styles.teamTitle}>Meet Our Team</h2>
-
-          <div className={styles.teamGrid}>
-            {[
-              { name: 'Praveenkumar', role: 'Digital Marketing Specialist', img: '/Team/praveen.png' },
-              { name: 'Raja Slega', role: 'Digital Marketing Specialist', img: '/Team/slega.png' },
-              { name: 'Kalil Rahman', role: 'Web Developer', img: '/Team/Kalil.png' },
-            ].map((member) => (
-              <div key={member.name} className={styles.teamMember}>
-                <div className={styles.memberImage}>
-                  <img
-                    src={member.img}
-                    alt={`${member.name} - ${member.role}`}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                  />
-                </div>
-                <div className={styles.memberName}>{member.name}</div>
-                <div className={styles.memberRole}>{member.role}</div>
-              </div>
-            ))}
+      {/* ── CTA Banner ── */}
+      <section className="container mb-8">
+        <div className={styles.ctaBlock}>
+          <div className={styles.ctaOrb} />
+          <div className={styles.ctaInner}>
+            <span className={styles.ctaEyebrow}>// Work With Us</span>
+            <h2 className={styles.ctaTitle}>Ready to Write Your Success Story?</h2>
+            <p className={styles.ctaText}>
+              Whether you are a growing business looking to double your leads or a passionate student ready to build active, marketable expertise — we are here to guide you.
+            </p>
+            <Link href="/contact" className={styles.ctaBtn}>
+              <span>Get in Touch Today</span>
+              <ArrowRight size={16} className={styles.ctaArrow} />
+            </Link>
           </div>
-
-          <div className={styles.teamGrid}>
-            {[
-              { name: 'gowtham', role: 'Social Media Expert', img: '/Team/tham.png' },
-              { name: 'Yoga', role: 'Social Media Expert', img: '/Team/yoga.png' },
-              { name: 'Aruna', role: 'Digital Marketing Specialist', img: '/Team/aruna.png' },
-            ].map((member) => (
-              <div key={member.name} className={styles.teamMember}>
-                <div className={styles.memberImage}>
-                  <img
-                    src={member.img}
-                    alt={`${member.name} - ${member.role}`}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                  />
-                </div>
-                <div className={styles.memberName}>{member.name}</div>
-                <div className={styles.memberRole}>{member.role}</div>
-              </div>
-            ))}
-          </div>
-
         </div>
       </section>
     </>

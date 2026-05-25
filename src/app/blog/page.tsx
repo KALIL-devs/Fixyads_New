@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getAllPosts } from "@/lib/wp-rest";
 import styles from "./blog.module.css";
+import { ArrowRight, Clock, BookOpen } from "lucide-react";
 
 import type { Metadata } from "next";
 
@@ -24,67 +25,188 @@ export const metadata: Metadata = {
   },
 };
 
-/* Utility: limit words */
-function limitWords(text: string, limit = 18) {
-  const cleanText = text.replace(/<[^>]+>/g, "");
-  const words = cleanText.split(" ");
-  return words.slice(0, limit).join(" ") + (words.length > limit ? "..." : "");
+function limitWords(text: string, limit = 22) {
+  const clean = text.replace(/<[^>]+>/g, "");
+  const words = clean.split(" ");
+  return words.slice(0, limit).join(" ") + (words.length > limit ? "…" : "");
 }
 
+function limitTitle(text: string, limit = 10) {
+  const clean = text.replace(/<[^>]+>/g, "");
+  const words = clean.split(" ");
+  return words.slice(0, limit).join(" ") + (words.length > limit ? "…" : "");
+}
+
+const READ_TIMES = ["5 Min Read", "7 Min Read", "6 Min Read", "8 Min Read", "4 Min Read", "9 Min Read"];
+const CATEGORIES = ["SEO", "Performance", "Content", "Branding", "PPC", "Social Media"];
 
 export default async function BlogPage() {
   const posts = await getAllPosts();
 
+  if (posts.length === 0) {
+    return (
+      <div className={styles.emptyState}>
+        <div className={styles.emptyInner}>
+          <BookOpen size={48} className={styles.emptyIcon} />
+          <h2 className={styles.emptyTitle}>No articles yet</h2>
+          <p className={styles.emptyText}>
+            We are working on bringing you premium digital marketing insights. Check back soon!
+          </p>
+          <Link href="/" className={styles.emptyBtn}>
+            <span>Back to Home</span>
+            <ArrowRight size={15} />
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
+  const [featured, ...rest] = posts;
+  const featuredImage = featured._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
 
   return (
-    <section className={styles.container}>
-      <h1 className={styles.title}>Blog</h1>
-
-      <div className={styles.grid}>
-        {posts.map((post: any) => {
-          const image =
-            post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
-
-          return (
-            <article key={post.id} className={styles.blogCard}>
-              {/* Image */}
-              {image && (
-                <Link href={`/blog/${post.slug}`}>
-                  <img
-                    src={image}
-                    alt={post.title.rendered}
-                    className={styles.cardImage}
-                  />
-                </Link>
-              )}
-
-              {/* Content */}
-              <Link href={`/blog/${post.slug}`}>
-                <div className={styles.cardBody}>
-                  <h2
-                    className={styles.cardTitle}
-                    dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-                  />
-
-                  <p className={styles.cardExcerpt}>
-                    {limitWords(post.excerpt.rendered)}
-                  </p>
-
-                  {/* <Link
-                    href={`/blog/${post.slug}`}
-                    className={styles.readMore}
-                    style={{color: "var(--primary)"}}
-                  >
-                    Read article →
-                  </Link> */}
-                </div>
-              </Link>
-
-            </article>
-          );
-        })}
+    <>
+      {/* ── Hero Header ── */}
+      <div className={styles.hero}>
+        <div className={styles.heroOrb1} />
+        <div className={styles.heroOrb2} />
+        <div className={styles.heroGrid} />
+        <div className={styles.heroInner}>
+          <span className={styles.heroEyebrow}>// Resources &amp; Insights</span>
+          <h1 className={styles.heroTitle}>
+            The Fixyads <span className={styles.heroAccent}>Growth Blog</span>
+          </h1>
+          <p className={styles.heroSubtitle}>
+            Expert guides on SEO, paid media, content strategy, and brand building — from practitioners who live it every day.
+          </p>
+          <div className={styles.heroStats}>
+            <div className={styles.heroStat}>
+              <span className={styles.heroStatNum}>{posts.length}+</span>
+              <span className={styles.heroStatLabel}>Articles</span>
+            </div>
+            <div className={styles.heroStatDivider} />
+            <div className={styles.heroStat}>
+              <span className={styles.heroStatNum}>6</span>
+              <span className={styles.heroStatLabel}>Topics</span>
+            </div>
+            <div className={styles.heroStatDivider} />
+            <div className={styles.heroStat}>
+              <span className={styles.heroStatNum}>Free</span>
+              <span className={styles.heroStatLabel}>Always</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </section>
+
+      <div className={styles.pageBody}>
+
+        {/* ── Featured Post ── */}
+        <div className={styles.featuredWrap}>
+          <div className={styles.featuredLabel}>
+            <span className={styles.featuredDot} />
+            Featured Article
+          </div>
+          <Link href={`/blog/${featured.slug}`} className={styles.featuredCard}>
+            <div className={styles.featuredImgWrap}>
+              {featuredImage ? (
+                <img
+                  src={featuredImage}
+                  alt={featured.title.rendered.replace(/<[^>]+>/g, "")}
+                  className={styles.featuredImg}
+                />
+              ) : (
+                <div className={styles.featuredPlaceholder}>
+                  <div className={styles.placeholderOrb} />
+                  <span className={styles.placeholderGlyph}>✦</span>
+                </div>
+              )}
+              <div className={styles.featuredOverlay} />
+              <span className={styles.featuredCat}>{CATEGORIES[0]}</span>
+            </div>
+            <div className={styles.featuredBody}>
+              <div className={styles.featuredMeta}>
+                <Clock size={13} className={styles.metaIcon} />
+                <span>{READ_TIMES[0]}</span>
+              </div>
+              <h2
+                className={styles.featuredTitle}
+                dangerouslySetInnerHTML={{ __html: featured.title.rendered }}
+              />
+              <p className={styles.featuredExcerpt}>
+                {limitWords(featured.excerpt.rendered, 30)}
+              </p>
+              <div className={styles.featuredCta}>
+                <span>Read Full Article</span>
+                <span className={styles.featuredArrow}><ArrowRight size={16} /></span>
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        {/* ── All Posts Grid ── */}
+        {rest.length > 0 && (
+          <div className={styles.gridSection}>
+            <div className={styles.gridHeader}>
+              <h2 className={styles.gridTitle}>All Articles</h2>
+              <span className={styles.gridCount}>{rest.length} more posts</span>
+            </div>
+            <div className={styles.grid}>
+              {rest.map((post: any, i: number) => {
+                const image = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
+                const readTime = READ_TIMES[(i + 1) % READ_TIMES.length];
+                const category = CATEGORIES[(i + 1) % CATEGORIES.length];
+
+                return (
+                  <article key={post.id} className={styles.card}>
+                    <Link href={`/blog/${post.slug}`} className={styles.cardImgLink}>
+                      <div className={styles.cardImgWrap}>
+                        {image ? (
+                          <img
+                            src={image}
+                            alt={post.title.rendered.replace(/<[^>]+>/g, "")}
+                            className={styles.cardImg}
+                          />
+                        ) : (
+                          <div className={styles.cardPlaceholder}>
+                            <div className={styles.cardPlaceholderOrb} />
+                            <span className={styles.cardPlaceholderGlyph}>✦</span>
+                          </div>
+                        )}
+                        <div className={styles.cardImgOverlay} />
+                        <span className={styles.cardCat}>{category}</span>
+                      </div>
+                    </Link>
+
+                    <div className={styles.cardBody}>
+                      <div className={styles.cardMeta}>
+                        <Clock size={11} className={styles.metaIcon} />
+                        <span className={styles.cardReadTime}>{readTime}</span>
+                      </div>
+
+                      <h3 className={styles.cardTitle}>
+                        <Link
+                          href={`/blog/${post.slug}`}
+                          dangerouslySetInnerHTML={{ __html: limitTitle(post.title.rendered, 9) }}
+                        />
+                      </h3>
+
+                      <p className={styles.cardExcerpt}>
+                        {limitWords(post.excerpt.rendered, 18)}
+                      </p>
+
+                      <Link href={`/blog/${post.slug}`} className={styles.cardLink}>
+                        <span>Read Article</span>
+                        <ArrowRight size={13} className={styles.cardArrow} />
+                      </Link>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+          </div>
+        )}
+
+      </div>
+    </>
   );
 }

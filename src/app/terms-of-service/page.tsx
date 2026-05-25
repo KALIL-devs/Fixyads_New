@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function TermsOfService() {
     return (
-        <div className="container section">
+        <div className="container section pageTopOffset">
             <h1 className="title mb-4">Terms of Service</h1>
             <div className={styles.legalContent}>
                 <p>Last Updated: {new Date().toLocaleDateString()}</p>

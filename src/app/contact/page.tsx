@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
     return (
         <>
-            <div className="container section">
+            <div className="container section pageTopOffset">
                 <div className={styles.grid}>
                     <div className='contactdetails'>
                         <h1 className="mb-4 title" style={{ color: '#15b597' }}>Get In Touch</h1>

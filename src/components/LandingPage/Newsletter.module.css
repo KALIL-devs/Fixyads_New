@@ -1,0 +1,305 @@
+/* =========================================================================
+   MAIN CTA SECTION — Dark Navy Card on White Background
+   ========================================================================= */
+
+.section {
+  padding: 2rem 0 3.5rem;
+  background: #FFFFFF;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+/* ── Dark Navy Card ── */
+.card {
+  background: linear-gradient(135deg, #0B1C3D 0%, #091629 100%);
+  border-radius: 28px;
+  padding: 3.5rem 3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(11, 28, 61, 0.25), 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Ambient Orb Glows (inside the card) ── */
+.orbLeft {
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(244, 82, 30, 0.14) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.orbRight {
+  position: absolute;
+  bottom: -90px;
+  right: -60px;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(244, 82, 30, 0.09) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* Subtle grid texture */
+.gridOverlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 55px 55px;
+  pointer-events: none;
+}
+
+/* ── Trust Badge ── */
+.trustRow {
+  margin-bottom: 1.25rem;
+  position: relative;
+  z-index: 5;
+}
+
+.trustBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1rem;
+  background: rgba(244, 82, 30, 0.1);
+  border: 1px solid rgba(244, 82, 30, 0.25);
+  border-radius: 50px;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 1px;
+  color: #F59E0B;
+}
+
+.trustText {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+/* ── Headline ── */
+.title {
+  font-size: clamp(1.85rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+  position: relative;
+  z-index: 5;
+}
+
+.titleAccent {
+  background: linear-gradient(135deg, #F4521E 0%, #FF7043 50%, #FFB74D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Subtitle ── */
+.subtitle {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 560px;
+  margin: 0 auto 2rem;
+  position: relative;
+  z-index: 5;
+}
+
+/* ── Button Row ── */
+.btnRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 5;
+}
+
+/* Primary — solid orange gradient */
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem 2.25rem;
+  background: linear-gradient(135deg, #F4521E 0%, #FF7043 100%);
+  color: #FFFFFF !important;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid transparent;
+  box-shadow: 0 8px 28px rgba(244, 82, 30, 0.45);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.primaryBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.22), transparent);
+  transition: left 0.55s ease;
+}
+
+.primaryBtn:hover::before {
+  left: 100%;
+}
+
+.primaryBtn:hover {
+  background: linear-gradient(135deg, #FF7043 0%, #F4521E 100%);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 14px 38px rgba(244, 82, 30, 0.6);
+  color: #FFFFFF !important;
+}
+
+.btnArrow {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+}
+
+.primaryBtn:hover .btnArrow {
+  transform: translateX(5px);
+}
+
+/* Secondary — ghost style */
+.secondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.85rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.88) !important;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.secondaryBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #FFFFFF !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ── Trust Strip ── */
+.trustStrip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 5;
+}
+
+.stripItem {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.stripDot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.stripDivider {
+  width: 1px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+/* =========================================================================
+   RESPONSIVE
+   ========================================================================= */
+
+@media (max-width: 768px) {
+  .section {
+    padding: 1.5rem 0 2.5rem;
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .card {
+    padding: 2.5rem 1.75rem;
+    border-radius: 20px;
+  }
+
+  .title {
+    font-size: clamp(1.6rem, 6vw, 2.25rem);
+  }
+
+  .subtitle {
+    font-size: 0.92rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .btnRow {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem;
+  }
+
+  .primaryBtn,
+  .secondaryBtn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .trustStrip {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .stripDivider {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 2rem 1.25rem;
+    border-radius: 16px;
+  }
+}

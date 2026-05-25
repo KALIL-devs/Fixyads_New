@@ -1,63 +1,430 @@
-.wrap {
-  padding: 5rem var(--ds-section-x) 6rem;
-  background: linear-gradient(180deg, var(--ds-surface-muted) 0%, var(--ds-surface) 45%);
+/* =========================================================================
+   COURSES DIRECTORY PAGE — Premium Academy Aesthetic
+   ========================================================================= */
+
+/* ── Hero Header ── */
+.hero {
+  background: linear-gradient(135deg, #0B1C3D 0%, #061126 100%);
+  padding: calc(var(--navbar-offset) + 2rem) 1.5rem 5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.inner {
-  max-width: var(--ds-content-max);
+.heroOrb1 {
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(244, 82, 30, 0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.heroOrb2 {
+  position: absolute;
+  bottom: -120px;
+  right: -80px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(244, 82, 30, 0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.heroGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.heroInner {
+  max-width: 780px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+.heroEyebrow {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-family: var(--font-mono), 'Space Mono', monospace;
+}
+
+.heroTitle {
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.035em;
+}
+
+.heroTitle span {
+  background: linear-gradient(135deg, #F4521E 0%, #FF7043 50%, #FFB74D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroSubtitle {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
+}
+
+/* Stats strip */
+.heroStats {
+  display: inline-flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.85rem 2.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 50px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.heroStat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.heroStatNum {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.heroStatLabel {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.heroStatDivider {
+  width: 1px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ── Page Body & Courses Grid ── */
+.pageBody {
+  background: #F8FAFC;
+  padding: 5rem 1.5rem;
+  min-height: 50vh;
+}
+
+.gridContainer {
+  max-width: var(--max-width);
   margin: 0 auto;
 }
 
-.title {
-  text-align: center;
-  font-size: clamp(2rem, 4vw, 2.75rem);
-  margin-bottom: 0.75rem;
-  color: var(--ds-heading);
-}
-
-.lead {
-  text-align: center;
-  max-width: 640px;
-  margin: 0 auto 3rem;
-  color: var(--ds-text-muted);
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.75rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem;
 }
 
+/* ── Premium Academy Cards ── */
 .card {
-  background: var(--ds-surface);
-  border-radius: var(--ds-radius-md);
-  padding: 2rem;
-  box-shadow: var(--ds-shadow-card);
-  border: 1px solid var(--ds-border-accent);
+  background: #FFFFFF;
+  border-radius: 24px;
+  border: 1px solid #EAEAEA;
+  padding: 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 20px rgba(11, 28, 61, 0.03);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s ease;
+  text-decoration: none;
+  position: relative;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--ds-shadow-card-hover);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 55px rgba(11, 28, 61, 0.08);
+  border-color: rgba(244, 82, 30, 0.2);
 }
 
-.card h2 {
-  font-size: 1.35rem;
-  color: var(--ds-teal-800);
-  margin: 0;
+/* Accent top-border glow */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 30px;
+  right: 30px;
+  height: 4px;
+  background: linear-gradient(90deg, #F4521E, #FF7043);
+  border-radius: 0 0 4px 4px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
-.card p {
-  margin: 0;
-  color: var(--ds-text-subtle);
-  line-height: 1.55;
-  flex: 1;
+.card:hover::before {
+  opacity: 1;
 }
-.cta {
-  margin-top: 0.5rem;
+
+/* Top Card Row with Duration Tag */
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.durationBadge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  background: rgba(244, 82, 30, 0.06);
+  padding: 0.3rem 0.85rem;
+  border-radius: 50px;
+}
+
+.tagGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #10B981;
+}
+
+.tagDot {
+  width: 6px;
+  height: 6px;
+  background: #10B981;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Title & Description */
+.cardTitle {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #1A1A2E;
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.cardDesc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #6B7280;
+  margin-bottom: 1.75rem;
+  flex-grow: 1;
+}
+
+/* Skills list bubbles */
+.skillsGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-top: 1px solid #F0F0F0;
+  padding-top: 1.25rem;
+}
+
+.skillBadge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--primary);
+  background: #F1F5F9;
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+  transition: background 0.2s ease;
+}
+
+.card:hover .skillBadge {
+  background: rgba(11, 28, 61, 0.05);
+}
+
+/* Action button inside card */
+.cardAction {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-top: auto;
+  transition: gap 0.2s ease;
+}
+
+.cardActionArrow {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .cardAction {
+  gap: 0.7rem;
+}
+
+.card:hover .cardActionArrow {
+  transform: translateX(4px);
+}
+
+/* ── Admissions Advisory CTA Block ── */
+.ctaBlock {
+  max-width: var(--max-width);
+  margin: 4rem auto 0;
+  background: linear-gradient(135deg, #0B1C3D 0%, #061126 100%);
+  border-radius: 28px;
+  padding: 4.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(11, 28, 61, 0.2);
+  text-align: center;
+}
+
+.ctaOrb {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(244, 82, 30, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.ctaInner {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+.ctaEyebrow {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-family: var(--font-mono), 'Space Mono', monospace;
+}
+
+.ctaTitle {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+
+.ctaText {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.65;
+  margin-bottom: 2.25rem;
+}
+
+.ctaBtn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  background: linear-gradient(135deg, #F4521E 0%, #FF7043 100%) !important;
+  color: #FFFFFF !important;
+  border-radius: 8px !important;
+  padding: 0.85rem 2rem !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  box-shadow: 0 6px 20px rgba(244, 82, 30, 0.45) !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  text-decoration: none;
+}
+
+.ctaBtn:hover {
+  transform: translateY(-3px) scale(1.03) !important;
+  box-shadow: 0 12px 28px rgba(244, 82, 30, 0.6) !important;
+}
+
+.ctaArrow {
+  transition: transform 0.3s ease;
+}
+
+.ctaBtn:hover .ctaArrow {
+  transform: translateX(4px);
+}
+
+/* =========================================================================
+   RESPONSIVE
+   ========================================================================= */
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+
+  .ctaBlock {
+    padding: 3.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: calc(var(--navbar-offset) + 1.5rem) 1.5rem 3.5rem;
+  }
+
+  .heroStats {
+    flex-direction: column;
+    gap: 0.75rem;
+    border-radius: 20px;
+    padding: 1.25rem 2rem;
+  }
+
+  .heroStatDivider {
+    width: 40px;
+    height: 1px;
+  }
+
+  .pageBody {
+    padding: 3.5rem 1.5rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .ctaTitle {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ctaBlock {
+    padding: 2.5rem 1.5rem;
+  }
 }

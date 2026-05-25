@@ -1,13 +1,13 @@
 const WP_BASE =
   // "https://public-api.wordpress.com/wp/v2/sites/devs68.wordpress.com";
   "https://public-api.wordpress.com/wp/v2/sites/fixyadscom.wordpress.com";
-  //"https://public-api.wordpress.com/wp/v2/sites/symphonybalispa-ervhc.wordpress.com";
+//"https://public-api.wordpress.com/wp/v2/sites/symphonybalispa-ervhc.wordpress.com";
 
 
 /* Get all posts (list page) */
 export async function getAllPosts() {
   const res = await fetch(
-    `${WP_BASE}/posts?per_page=10&_embed`, 
+    `${WP_BASE}/posts?per_page=10&_embed`,
     { next: { revalidate: 3600 } }
   );
 
