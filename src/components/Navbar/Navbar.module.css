@@ -165,7 +165,6 @@
 .logoImage {
   height: 44px;
   object-fit: contain;
-  filter: brightness(0) invert(1);
   transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -212,9 +211,14 @@
   transition: transform 0.2s ease;
 }
 
-.dropdown:hover .arrow,
 .dropdown.open .arrow {
   transform: rotate(180deg);
+}
+
+@media (min-width: 769px) {
+  .dropdown:hover .arrow {
+    transform: rotate(180deg);
+  }
 }
 
 /* ================= 3. DROPDOWN FLYOUTS ================= */
@@ -242,7 +246,6 @@
   transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
 }
 
-.dropdown:hover .dropdownMenu,
 .dropdown.open .dropdownMenu {
   opacity: 1;
   visibility: visible;
@@ -250,12 +253,24 @@
   transform: translateX(-50%) translateY(4px);
 }
 
+@media (min-width: 769px) {
+  .dropdown:hover .dropdownMenu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(4px);
+  }
+}
+
+/* Helper class for CSS Modules exporter */
+.open {}
+
 .dropdownMenu a {
-  display: block;
+  display: block !important;
   padding: 0.65rem 1.25rem;
   font-size: 0.9rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.85) !important;
   text-decoration: none;
   transition: all 0.2s ease;
 }
@@ -422,6 +437,9 @@
     top: 100%;
     left: 0;
     width: 100%;
+    max-height: calc(85vh); /* Prevent menu from going off-screen on short devices */
+    overflow-y: auto; /* Enable scrolling inside the menu itself */
+    -webkit-overflow-scrolling: touch; /* Smooth momentum scrolling on iOS */
     background: #0B1C3D;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     flex-direction: column;
@@ -472,39 +490,46 @@
     width: 100%;
   }
 
-  .dropdown:hover .dropdownMenu {
-    display: none;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-  }
-
   .dropdownMenu {
     position: static;
+    left: auto;
+    min-width: unset;
     transform: none;
     box-shadow: none;
     background: rgba(255, 255, 255, 0.03);
     border: none;
     border-radius: 8px;
-    margin-top: 0.5rem;
-    padding: 0.25rem 0;
-    display: none;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
     width: 100%;
-  }
-
-  .dropdown.open .dropdownMenu {
-    display: block !important;
+    
+    /* Force always visible on mobile; rely purely on max-height & overflow to show/hide */
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
+    
+    /* Smooth premium slide-down accordion transition */
+    display: block !important;
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 0;
+    padding: 0;
+    transition: 
+      max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+      padding 0.25s ease,
+      margin-top 0.25s ease;
+  }
+
+  .dropdown.open .dropdownMenu {
+    max-height: 350px; /* Generous allowance to fit all dropdown sub-links without layout breaking */
+    transform: none !important; /* Prevent desktop transform from shifting the menu off-screen */
+    margin-top: 0.5rem;
+    padding: 0.25rem 0;
   }
 
   .dropdownMenu a {
-    padding: 0.65rem 1.25rem;
+    display: block !important;
+    padding: 0.65rem 1.5rem; /* Nest/indent sub-links for a high-end hierarchical aesthetic */
     font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85) !important;
     border-bottom: none;
   }
 }
